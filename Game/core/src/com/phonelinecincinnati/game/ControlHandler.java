@@ -19,7 +19,7 @@ public class ControlHandler extends InputAdapter {
         keys.put(Input.Keys.A, false);
         keys.put(Input.Keys.S, false);
         keys.put(Input.Keys.D, false);
-        keys.put(Input.Keys.SPACE, false);
+        keys.put(Input.Keys.R, false);
         keys.put(Input.Keys.SHIFT_LEFT, false);
         keys.put(Input.Keys.UP, false);
         keys.put(Input.Keys.DOWN, false);

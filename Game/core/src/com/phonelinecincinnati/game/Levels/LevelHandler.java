@@ -9,7 +9,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public class LevelHandler {
     private CopyOnWriteArrayList<GameObject> activeObjects;
     private int progression = 1; //TODO: Change this to 0 to reset progress
-    private Level currentLevel;
+    public Level currentLevel;
 
     public LevelHandler() {
         activeObjects = new CopyOnWriteArrayList<GameObject>();
@@ -19,7 +19,7 @@ public class LevelHandler {
         return activeObjects;
     }
 
-    private void clearActiveObjects() {
+    public void clearActiveObjects() {
         for(GameObject object : activeObjects) {
             if(object.getClass() == Player.class)
                 Main.controlHandler.resetPlayer();

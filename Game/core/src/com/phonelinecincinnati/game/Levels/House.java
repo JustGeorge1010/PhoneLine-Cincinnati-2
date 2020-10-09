@@ -417,4 +417,9 @@ class House extends Level{
         list.add(new Fade(true, null, 0.005f));
         list.add(new PauseMenuHandler(true));
     }
+
+    @Override
+    public void reload() {
+
+    }
 }

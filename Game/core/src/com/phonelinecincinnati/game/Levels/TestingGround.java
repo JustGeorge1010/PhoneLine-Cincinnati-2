@@ -16,7 +16,11 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import static com.phonelinecincinnati.game.GameObjects.Objects.Enemies.PathFinding.AStar.getAStar;
 
 public class TestingGround extends Level {
-    public TestingGround(final CopyOnWriteArrayList<GameObject> list) {
+    public TestingGround(final CopyOnWriteArrayList<GameObject> activeObjects) {
+        this.activeObjects = activeObjects;
+    }
+
+    private void load() {
         Main.backgroundColor.set(1, 0, 1, 1);
         Main.modelHandler.setModelsForLevel1();
 
@@ -25,13 +29,18 @@ public class TestingGround extends Level {
 
         Main.camera.lookAt(25, 3.6f, 1);
 
-        list.add(new SolidWall(new Vector3(20f, -6f, 5f), new Vector3(10f, 12, 0.5f), TextureName.Concrete1));
-        list.add(new SolidWall(new Vector3(20f, -6f, 5f), new Vector3(0.5f, 12, 5f), TextureName.Concrete1));
+        activeObjects.add(new SolidWall(new Vector3(20f, -6f, 5f), new Vector3(10f, 12, 0.5f), TextureName.Concrete1));
+        activeObjects.add(new SolidWall(new Vector3(20f, -6f, 5f), new Vector3(0.5f, 12, 5f), TextureName.Concrete1));
 
         MafiaMob mob = new MafiaMob(new Vector3(25, 0, 11), new Vector3(0, 25, 0), new Melee(WeaponType.Bat), player);
         AStar.generateAStar();
 
-        list.add(mob);
-        list.add(player);
+        activeObjects.add(mob);
+        activeObjects.add(player);
+    }
+
+    @Override
+    public void reload() {
+
     }
 }

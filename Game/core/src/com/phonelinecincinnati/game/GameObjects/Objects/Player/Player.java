@@ -129,9 +129,10 @@ public class Player extends GameObject {
 
     @Override
     public void update() {
+        System.out.println(dead);
         if(dead) {
             if(Main.controlHandler.keys.get(Input.Keys.R))
-                Main.levelHandler.loadCurrent();
+                Main.levelHandler.currentLevel.reload();
             return;
         }
 

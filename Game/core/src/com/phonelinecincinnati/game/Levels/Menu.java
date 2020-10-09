@@ -14,4 +14,9 @@ public class Menu extends Level {
         list.add(new Background());
         list.add(new MenuHandler());
     }
+
+    @Override
+    public void reload() {
+
+    }
 }
