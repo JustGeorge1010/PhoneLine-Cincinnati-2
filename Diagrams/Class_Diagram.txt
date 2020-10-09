@@ -1,0 +1,65 @@
+@startuml
+class Main {
+  + {static} PerspectiveCamera camera
+  + {static} ModelBatch modelBatch
+  + {static} SceneHandler sceneHandler
+  - Renderer renderer
+
+  + void create()
+  + void update()
+  + void render()
+  + void dispose()
+}
+
+class SceneHandler {
+  + CopyOnWriteArrayList<GameObject> activeObjects
+
+  + SceneHandler()
+  + void setSceneOne()
+  + void setSceneTwo()
+  + void dispose()
+}
+
+class Renderer {
+  - PerspectiveCamera camera
+  - ModelBatch modelBatch
+  - SpriteBatch spritebatch
+  - Environment environment
+
+  ~ Renderer(PerspectiveCamera camera)
+  + void setAmbientLight(float red, float green, float blue, float alpha)
+  + void renderModel(ModelInstance model)
+  + void renderSprite(Sprite sprite)
+  + void dispose()
+}
+
+class GameObject {
+  + {abstract} void update()
+  + {abstract} void render(Renderer renderer)
+  + {abstract} void dispose()
+}
+
+class Box {
+  - ModelInstance boxInstance
+  - Model box
+
+  + Box(float x, float y, float z, float width, float height, float depth, Color color)
+  + void update()
+  + void render(Renderer renderer)
+  + void dispose()
+  + void moveTo()
+}
+
+interface Positionable {
+  ~ void moveTo()
+}
+
+Main *-- PerspectiveCamera : contains
+Main *-- ModelBatch : contains
+Main *-- SceneHandler : contains
+Main *-- Renderer : contains
+
+SceneHandler "1" *-- "many" GameObject : contains
+GameObject <|.. Box : extends
+Box --> Positionable : implements
+@enduml

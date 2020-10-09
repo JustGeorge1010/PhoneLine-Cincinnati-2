@@ -1,0 +1,91 @@
+package com.phonelinecincinnati.game;
+
+import com.badlogic.gdx.Input;
+import com.badlogic.gdx.InputAdapter;
+import com.phonelinecincinnati.game.GameObjects.Objects.GameObject;
+import com.phonelinecincinnati.game.GameObjects.Objects.MenuObjects.PauseMenuHandler;
+import com.phonelinecincinnati.game.GameObjects.Objects.Player.Player;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class ControlHandler extends InputAdapter {
+    private Player player;
+    public Map<Integer, Boolean> keys;
+
+    public ControlHandler() {
+        keys = new HashMap<Integer, Boolean>();
+        keys.put(Input.Keys.W, false);
+        keys.put(Input.Keys.A, false);
+        keys.put(Input.Keys.S, false);
+        keys.put(Input.Keys.D, false);
+        keys.put(Input.Keys.SPACE, false);
+        keys.put(Input.Keys.SHIFT_LEFT, false);
+        keys.put(Input.Keys.UP, false);
+        keys.put(Input.Keys.DOWN, false);
+        keys.put(Input.Keys.LEFT, false);
+        keys.put(Input.Keys.RIGHT, false);
+        keys.put(Input.Keys.ENTER, false);
+        keys.put(Input.Keys.SPACE, false);
+        keys.put(Input.Keys.ESCAPE, false);
+    }
+
+    @Override
+    public boolean keyDown(int keycode) {
+        keys.put(keycode, true);
+        if(keycode == Input.Keys.SPACE) {
+            if(player != null) {
+                player.spb();
+            } else {
+                findPlayer();
+                if(player != null) {
+                    player.spb();
+                }
+            }
+        }
+        return true;
+    }
+
+    @Override
+    public boolean keyUp(int keycode) {
+        keys.put(keycode, false);
+        return true;
+    }
+
+    @Override
+    public boolean mouseMoved(int screenX, int screenY) {
+        if(player == null) {
+            findPlayer();
+            if(player != null) {
+                player.controlCamera();
+            }
+        } else {
+            player.controlCamera();
+        }
+        return true;
+    }
+
+    @Override
+    public boolean touchDown(int screenX, int screenY, int pointer, int button) {
+        if(player == null) {
+            findPlayer();
+            if(player == null) {
+                return true;
+            }
+        }
+        if(button == Input.Buttons.LEFT) player.LMB();
+        if(button == Input.Buttons.RIGHT) player.RMB();
+        return true;
+    }
+
+    private void findPlayer() {
+        for(GameObject object : Main.levelHandler.getActiveObjects()) {
+            if(object.getClass() == Player.class) {
+                player = (Player)object;
+            }
+        }
+    }
+    public void resetPlayer() {
+        player = null;
+    }
+}

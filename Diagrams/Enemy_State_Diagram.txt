@@ -1,0 +1,17 @@
+@startuml
+Idle : Enemies idle position/route
+Seeking : Move to location where player is last seen/heard
+Attacking : Attack player
+
+[*] --> Idle
+
+Idle --> Seeking : <- Player is heard
+Idle -> Attacking : <- Player is seen
+
+Seeking --> Idle : <- Seek Location is reached\n and 4 seconds have passed
+Seeking --> Attacking : <- Player is seen
+
+Attacking --> Seeking : <- Player moves out of sight
+Attacking --> Idle : <- Enemy dead
+
+@enduml
