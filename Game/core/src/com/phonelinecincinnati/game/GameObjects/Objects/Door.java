@@ -13,8 +13,10 @@ import com.phonelinecincinnati.game.Main;
 import com.phonelinecincinnati.game.Models.ModelName;
 import com.phonelinecincinnati.game.Renderer;
 import com.phonelinecincinnati.game.Utility.CollisionMaths;
+import com.sun.org.apache.xpath.internal.operations.Mod;
 
 import java.awt.geom.Rectangle2D;
+import java.util.ArrayList;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class Door extends GameObject implements Collidable{
@@ -22,6 +24,7 @@ public class Door extends GameObject implements Collidable{
     private ModelInstance modelInstance;
     private BoundingBox bounds;
     private boolean horizontal;
+    private ModelName modelName;
     private float baseRotation, rotation, minRotation, maxRotation, targetRotation;
     private Player player;
     private SoundSource openSound, knockOverSound;
@@ -34,6 +37,7 @@ public class Door extends GameObject implements Collidable{
         this.position = position;
         this.horizontal = horizontal;
         this.locked = locked;
+        this.modelName = modelName;
 
         if(horizontal) {
             baseRotation = -90;
@@ -147,6 +151,16 @@ public class Door extends GameObject implements Collidable{
     @Override
     public void dispose() {
 
+    }
+
+    @Override
+    public ArrayList<String> getConstructParams() {
+        ArrayList<String> params = new ArrayList<String>();
+        params.add(position.toString());
+        params.add(String.valueOf(horizontal));
+        params.add(String.valueOf(locked));
+        params.add(modelName.toString());
+        return params;
     }
 
     @Override

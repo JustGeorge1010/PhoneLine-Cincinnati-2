@@ -1,9 +1,13 @@
 package com.phonelinecincinnati.game.Levels;
 
+import com.google.gson.Gson;
 import com.phonelinecincinnati.game.GameObjects.Objects.GameObject;
 import com.phonelinecincinnati.game.GameObjects.Objects.Player.Player;
 import com.phonelinecincinnati.game.Main;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.ArrayList;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class LevelHandler {
@@ -44,6 +48,29 @@ public class LevelHandler {
         } else if(progression == 1) {
             loadLevel1();
         }
+    }
+
+    public void loadFromJson(String levelFileName) {
+        Gson gson = new Gson();
+        LevelJson level;
+        try {
+            level = gson.fromJson(new FileReader("Config/Levels/"+levelFileName), LevelJson.class);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void SaveToJson(String levelFileName) {
+        Gson gson = new Gson();
+        LevelJson level = new LevelJson();
+
+        for(GameObject object : activeObjects) {
+            String key = object.getClass().toString();
+            ArrayList<String> values = object.getConstructParams();
+            level.json.put(key, values);
+        }
+
+        String json = gson.toJson(level);
     }
 
     public void loadMenu() {

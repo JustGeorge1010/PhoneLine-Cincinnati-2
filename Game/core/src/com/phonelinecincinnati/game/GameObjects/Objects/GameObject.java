@@ -3,6 +3,8 @@ package com.phonelinecincinnati.game.GameObjects.Objects;
 import com.badlogic.gdx.math.Vector3;
 import com.phonelinecincinnati.game.Renderer;
 
+import java.util.ArrayList;
+
 public abstract class GameObject {
     public Vector3 position;
 
@@ -10,6 +12,7 @@ public abstract class GameObject {
     public abstract void render(Renderer renderer);
     public abstract void postRender(Renderer renderer);
     public abstract void dispose();
+    public abstract ArrayList<String> getConstructParams();
 
     public void moveTo(Vector3 location) {
         position.set(location);
@@ -20,5 +23,4 @@ public abstract class GameObject {
     public Vector3 getPosition() {
         return position;
     }
-
 }
