@@ -350,7 +350,7 @@ class House extends Level{
         list.add(new SolidWall(new Vector3(18.2f, 0f, 20.61f), new Vector3(14.9f, 6f, 0.5f), TextureName.Concrete1));
         //</editor-fold>
 
-        PlayerCar car = new PlayerCar(new Vector3(-15f, 0f, 28.32f), -90, ModelName.PlayerCar, player);
+        PlayerCar car = new PlayerCar(new Vector3(-15f, 0f, 28.32f), -90, player);
         car.setAction(new Action() {
             @Override
             public void activate() {

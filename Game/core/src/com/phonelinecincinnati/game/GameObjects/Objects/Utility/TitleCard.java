@@ -3,6 +3,8 @@ package com.phonelinecincinnati.game.GameObjects.Objects.Utility;
 import com.phonelinecincinnati.game.GameObjects.Objects.GameObject;
 import com.phonelinecincinnati.game.Renderer;
 
+import java.util.ArrayList;
+
 public class TitleCard extends GameObject{
     String textTop, textBottom;
     int duration;
@@ -37,5 +39,14 @@ public class TitleCard extends GameObject{
     @Override
     public void dispose() {
 
+    }
+
+    @Override
+    public ArrayList<String> getConstructParams() {
+        ArrayList<String> params = new ArrayList<String>();
+        params.add(textTop);
+        params.add(textBottom);
+        params.add(String.valueOf(duration));
+        return params;
     }
 }

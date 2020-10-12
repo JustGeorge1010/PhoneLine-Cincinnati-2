@@ -10,6 +10,8 @@ import com.phonelinecincinnati.game.GameObjects.Objects.Utility.SoundSource;
 import com.phonelinecincinnati.game.Main;
 import com.phonelinecincinnati.game.Renderer;
 
+import java.util.ArrayList;
+
 public class PauseMenuHandler extends GameObject {
     private MenuOptions menuOptions;
 
@@ -95,5 +97,12 @@ public class PauseMenuHandler extends GameObject {
     @Override
     public void dispose() {
 
+    }
+
+    @Override
+    public ArrayList<String> getConstructParams() {
+        ArrayList<String> params = new ArrayList<String>();
+        params.add(String.valueOf(canPause));
+        return params;
     }
 }

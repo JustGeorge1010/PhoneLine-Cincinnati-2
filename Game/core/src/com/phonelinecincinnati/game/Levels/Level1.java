@@ -168,6 +168,8 @@ public class Level1 extends Level {
             });
             activeObjects.add(titleCard);
         }
+
+        Main.levelHandler.SaveToJson("");
     }
 
     @Override

@@ -8,6 +8,7 @@ import com.badlogic.gdx.math.MathUtils;
 import com.phonelinecincinnati.game.GameObjects.Objects.GameObject;
 import com.phonelinecincinnati.game.Renderer;
 
+import java.util.ArrayList;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class Background extends GameObject {
@@ -29,7 +30,7 @@ public class Background extends GameObject {
         skyScrapers = new CopyOnWriteArrayList<SkyScraper>();
         skyScrapers.add(new SkyScraper(Gdx.graphics.getWidth()/1.7f, new Color(0.61f, 0, 0.2f, 0.5f), 500));
         skyScrapers.add(new SkyScraper(Gdx.graphics.getWidth()/2f, new Color(0.61f, 0, 0.2f, 0.5f), 500));
-        skyScrapers.add(new SkyScraper(Gdx.graphics.getWidth()/4, new Color(0.61f, 0, 0.2f, 0.5f), 500));
+        skyScrapers.add(new SkyScraper(Gdx.graphics.getWidth()/4f, new Color(0.61f, 0, 0.2f, 0.5f), 500));
 
         backgroundTexture = new Texture(Gdx.files.internal("Textures/Menu/back.png"));
         background = new Sprite(backgroundTexture);
@@ -98,5 +99,10 @@ public class Background extends GameObject {
     @Override
     public void dispose() {
         backgroundTexture.dispose();
+    }
+
+    @Override
+    public ArrayList<String> getConstructParams() {
+        return new ArrayList<String>();
     }
 }

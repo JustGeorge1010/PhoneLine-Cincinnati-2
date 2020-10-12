@@ -6,6 +6,7 @@ import com.phonelinecincinnati.game.Renderer;
 import com.phonelinecincinnati.game.Utility.CollisionMaths;
 
 import java.awt.geom.Rectangle2D;
+import java.util.ArrayList;
 
 public class Threshold extends GameObject implements Collidable {
     Vector3 position, size;
@@ -33,6 +34,14 @@ public class Threshold extends GameObject implements Collidable {
     @Override
     public void dispose() {
 
+    }
+
+    @Override
+    public ArrayList<String> getConstructParams() {
+        ArrayList<String> params = new ArrayList<String>();
+        params.add(position.toString());
+        params.add(size.toString());
+        return params;
     }
 
     @Override

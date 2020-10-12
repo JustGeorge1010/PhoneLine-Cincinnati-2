@@ -12,11 +12,15 @@ import java.util.ArrayList;
 public class Stairs extends GameObject implements Collidable{
     private Vector3 start, end;
     private ArrayList<Step> steps;
+    private boolean up;
+    private Direction direction;
 
     private Player player;
     private float stepHeight;
 
     public Stairs(boolean up, Direction direction, Vector3 startPos, int steps, float stepHeight) {
+        this.up = up;
+        this.direction = direction;
         start = new Vector3(startPos);
         this.stepHeight = stepHeight;
 
@@ -87,6 +91,17 @@ public class Stairs extends GameObject implements Collidable{
     @Override
     public void dispose() {
 
+    }
+
+    @Override
+    public ArrayList<String> getConstructParams() {
+        ArrayList<String> params = new ArrayList<String>();
+        params.add(String.valueOf(up));
+        params.add(direction.toString());
+        params.add(start.toString());
+        params.add(String.valueOf(steps.size()));
+        params.add(String.valueOf(stepHeight));
+        return params;
     }
 
     @Override

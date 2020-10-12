@@ -9,6 +9,8 @@ import com.phonelinecincinnati.game.Main;
 import com.phonelinecincinnati.game.Models.TextureName;
 import com.phonelinecincinnati.game.Renderer;
 
+import java.util.ArrayList;
+
 public class BloodSplat extends GameObject {
     private boolean collided = false;
     private Decal decal;
@@ -57,5 +59,10 @@ public class BloodSplat extends GameObject {
     @Override
     public void dispose() {
 
+    }
+
+    @Override
+    public ArrayList<String> getConstructParams() {
+        return null;
     }
 }

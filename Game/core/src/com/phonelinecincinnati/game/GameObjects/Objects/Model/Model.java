@@ -10,6 +10,8 @@ import com.phonelinecincinnati.game.Main;
 import com.phonelinecincinnati.game.Models.ModelName;
 import com.phonelinecincinnati.game.Renderer;
 
+import java.util.ArrayList;
+
 public class Model extends GameObject {
     private Vector3 offset;
 
@@ -103,5 +105,14 @@ public class Model extends GameObject {
     @Override
     public void dispose() {
 
+    }
+
+    @Override
+    public ArrayList<String> getConstructParams() {
+        ArrayList<String> params = new ArrayList<String>();
+        params.add(position.toString());
+        params.add(String.valueOf(rotation));
+        params.add(name.toString());
+        return params;
     }
 }

@@ -376,4 +376,13 @@ public class MafiaMob extends GameObject{
     public void dispose() {
 
     }
+
+    @Override
+    public ArrayList<String> getConstructParams() {
+        ArrayList<String> params = new ArrayList<String>();
+        params.add(position.toString());
+        params.add(rotation.toString());
+        params.add(weapon.getClass().toString());
+        return params;
+    }
 }

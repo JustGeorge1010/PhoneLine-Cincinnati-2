@@ -6,13 +6,17 @@ import com.phonelinecincinnati.game.Main;
 import com.phonelinecincinnati.game.Models.TextureName;
 import com.phonelinecincinnati.game.Renderer;
 
+import java.util.ArrayList;
+
 public class Plane extends GameObject {
-    private ModelInstance modelInstance;
+    private final ModelInstance modelInstance;
     public Vector3 size;
+    private final TextureName textureName;
 
     public Plane(Vector3 position, Vector3 size, TextureName name) {
         this.position = position;
         this.size = size;
+        this.textureName = name;
 
         modelInstance = Main.modelHandler.getBox(position.x+size.x/2, position.y, position.z+size.z/2, size.x, size.y, size.z, name);
     }
@@ -35,5 +39,14 @@ public class Plane extends GameObject {
     @Override
     public void dispose() {
 
+    }
+
+    @Override
+    public ArrayList<String> getConstructParams() {
+        ArrayList<String> params = new ArrayList<String>();
+        params.add(position.toString());
+        params.add(size.toString());
+        params.add(textureName.toString());
+        return params;
     }
 }

@@ -8,6 +8,8 @@ import com.phonelinecincinnati.game.Main;
 import com.phonelinecincinnati.game.Models.TextureName;
 import com.phonelinecincinnati.game.Renderer;
 
+import java.util.ArrayList;
+
 public class BloodPool extends GameObject {
     private Vector3 rotation;
     private int blindex, timer;
@@ -57,5 +59,10 @@ public class BloodPool extends GameObject {
     @Override
     public void dispose() {
 
+    }
+
+    @Override
+    public ArrayList<String> getConstructParams() {
+        return null;
     }
 }

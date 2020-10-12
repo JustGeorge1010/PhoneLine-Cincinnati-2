@@ -71,6 +71,7 @@ public class LevelHandler {
         }
 
         String json = gson.toJson(level);
+        System.out.println(json);
     }
 
     public void loadMenu() {

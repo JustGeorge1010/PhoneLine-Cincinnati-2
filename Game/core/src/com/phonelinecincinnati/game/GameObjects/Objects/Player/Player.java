@@ -386,4 +386,9 @@ public class Player extends GameObject {
         pickupSound.dispose();
         throwSound.dispose();
     }
+
+    @Override
+    public ArrayList<String> getConstructParams() {
+        return new ArrayList<String>();
+    }
 }

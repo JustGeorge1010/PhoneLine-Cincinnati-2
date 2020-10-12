@@ -16,8 +16,8 @@ public class PlayerCar extends InteractiveSolidModel {
 
     private Player player;
 
-    public PlayerCar(Vector3 position, float rotation, ModelName name, Player player) {
-        super(position, rotation, name);
+    public PlayerCar(Vector3 position, float rotation, Player player) {
+        super(position, rotation, ModelName.PlayerCar);
         modelInstance.transform.scale(1.3f, 1.6f, 1.5f);
 
         if(rotation == -90) {

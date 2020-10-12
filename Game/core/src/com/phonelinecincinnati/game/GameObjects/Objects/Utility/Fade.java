@@ -8,6 +8,8 @@ import com.phonelinecincinnati.game.GameObjects.Objects.MenuObjects.PauseMenuHan
 import com.phonelinecincinnati.game.Main;
 import com.phonelinecincinnati.game.Renderer;
 
+import java.util.ArrayList;
+
 public class Fade extends GameObject {
     private boolean in;
     private Color color;
@@ -63,5 +65,13 @@ public class Fade extends GameObject {
     @Override
     public void dispose() {
 
+    }
+
+    @Override
+    public ArrayList<String> getConstructParams() {
+        ArrayList<String> params = new ArrayList<String>();
+        params.add(String.valueOf(in));
+        params.add(String.valueOf(speed));
+        return params;
     }
 }

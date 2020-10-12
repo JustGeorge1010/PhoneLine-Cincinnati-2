@@ -15,6 +15,8 @@ import com.phonelinecincinnati.game.GameObjects.Objects.Utility.SoundSource;
 import com.phonelinecincinnati.game.Main;
 import com.phonelinecincinnati.game.Renderer;
 
+import java.util.ArrayList;
+
 public class WeaponPickUp extends GameObject{
     private Vector3 position;
     private Weapon item;
@@ -183,5 +185,13 @@ public class WeaponPickUp extends GameObject{
     @Override
     public void dispose() {
 
+    }
+
+    @Override
+    public ArrayList<String> getConstructParams() {
+        ArrayList<String> params = new ArrayList<String>();
+        params.add(position.toString());
+        params.add(item.getClass().toString());
+        return params;
     }
 }
