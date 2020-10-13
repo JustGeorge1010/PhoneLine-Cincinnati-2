@@ -12,12 +12,9 @@ import com.phonelinecincinnati.game.GameObjects.Objects.Utility.SoundSource;
 import com.phonelinecincinnati.game.Main;
 import com.phonelinecincinnati.game.Models.ModelName;
 import com.phonelinecincinnati.game.Renderer;
-import com.phonelinecincinnati.game.Utility.CollisionMaths;
-import com.sun.org.apache.xpath.internal.operations.Mod;
+import com.phonelinecincinnati.game.Utility.VectorMaths;
 
-import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
-import java.util.concurrent.CopyOnWriteArrayList;
 
 public class Door extends GameObject implements Collidable{
     private Vector3 center;
@@ -33,12 +30,25 @@ public class Door extends GameObject implements Collidable{
     public boolean locked;
 
     public Door(Vector3 position, boolean horizontal, boolean locked, ModelName modelName) {
-        bounds = new BoundingBox();
         this.position = position;
         this.horizontal = horizontal;
         this.locked = locked;
         this.modelName = modelName;
 
+        setup();
+    }
+
+    public Door(ArrayList<String> params) {
+        position = VectorMaths.constructFromString(params.get(0));
+        horizontal = Boolean.parseBoolean(params.get(1));
+        locked = Boolean.parseBoolean(params.get(2));
+        modelName = ModelName.valueOf(params.get(3));
+
+        setup();
+    }
+
+    private void setup() {
+        bounds = new BoundingBox();
         if(horizontal) {
             baseRotation = -90;
             Main.levelHandler.getActiveObjects().add(new Model(new Vector3(position.x+1.56f, position.y, position.z), -90, ModelName.DoorFrame));

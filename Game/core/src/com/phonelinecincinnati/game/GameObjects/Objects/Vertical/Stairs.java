@@ -6,6 +6,7 @@ import com.phonelinecincinnati.game.GameObjects.Objects.GameObject;
 import com.phonelinecincinnati.game.GameObjects.Objects.Player.Player;
 import com.phonelinecincinnati.game.Main;
 import com.phonelinecincinnati.game.Renderer;
+import com.phonelinecincinnati.game.Utility.VectorMaths;
 
 import java.util.ArrayList;
 
@@ -24,6 +25,19 @@ public class Stairs extends GameObject implements Collidable{
         start = new Vector3(startPos);
         this.stepHeight = stepHeight;
 
+        setup(startPos, steps);
+    }
+
+    public Stairs(ArrayList<String> params) {
+        this.up = Boolean.parseBoolean(params.get(0));
+        this.direction = Direction.valueOf(params.get(1));
+        start = VectorMaths.constructFromString(params.get(2));
+        this.stepHeight = Float.parseFloat(params.get(4));
+
+        setup(start.cpy(), Integer.parseInt(params.get(3)));
+    }
+
+    private void setup(Vector3 startPos, int steps) {
         Step first;
         float rotation;
         if (direction == Direction.North || direction == Direction.South) {

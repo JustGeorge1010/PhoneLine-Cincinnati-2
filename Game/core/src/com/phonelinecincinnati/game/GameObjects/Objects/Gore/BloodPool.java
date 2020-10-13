@@ -63,6 +63,6 @@ public class BloodPool extends GameObject {
 
     @Override
     public ArrayList<String> getConstructParams() {
-        return null;
+        return new ArrayList<String>();
     }
 }

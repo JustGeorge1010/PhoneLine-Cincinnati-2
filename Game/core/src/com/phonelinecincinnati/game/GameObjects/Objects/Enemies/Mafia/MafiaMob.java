@@ -58,13 +58,27 @@ public class MafiaMob extends GameObject{
 
     private MafiaMobBrain brain;
 
-    public MafiaMob(Vector3 position, Vector3 rotation, Weapon weapon, Player player) {
+    public MafiaMob(Vector3 position, Vector3 rotation, Weapon weapon) {
         this.position = position;
         this.baseRotation = new Vector3(rotation);
         this.rotation = new Vector3(rotation);
-
         this.weapon = weapon;
+        playerRef = Main.levelHandler.player;
 
+        setup();
+    }
+
+    public MafiaMob(ArrayList<String> params) {
+        this.position = VectorMaths.constructFromString(params.get(0));
+        this.rotation = VectorMaths.constructFromString(params.get(1));
+        this.baseRotation = new Vector3(rotation);
+        this.weapon = new Melee(WeaponType.valueOf(params.get(2)));
+        playerRef = Main.levelHandler.player;
+
+        setup();
+    }
+
+    private void setup() {
         patrolRoute = new ArrayList<Vector3>();
         patrolRoute.add(new Vector3(position));
 
@@ -79,9 +93,7 @@ public class MafiaMob extends GameObject{
         impactSound = SoundSource.buildSoundSource(1).setSound("Combat/EnemyBluntHit.wav");
         deathSound = SoundSource.buildSoundSource(2).setSound("Combat/EnemyDeath.wav");
 
-        playerRef = player;
-
-        brain = new MafiaMobBrain(this, player);
+        brain = new MafiaMobBrain(this, playerRef);
     }
 
     @Override
@@ -382,7 +394,7 @@ public class MafiaMob extends GameObject{
         ArrayList<String> params = new ArrayList<String>();
         params.add(position.toString());
         params.add(rotation.toString());
-        params.add(weapon.getClass().toString());
+        params.add(weapon.name.toString());
         return params;
     }
 }

@@ -36,8 +36,12 @@ public class Level1 extends Level {
         activeObjects.add(SoundSource.buildSoundSource(0).setMusic("M.O.O.N. - Paris.mp3").playMusic());
 
         final Player player = new Player(25, 9.6f, 0);
+        Main.levelHandler.player = player;
         player.takeControl(null);
 
+        Main.levelHandler.loadFromJson("");
+
+        /*
         activeObjects.add(new Plane(new Vector3(0, 6.05f, -10), new Vector3(51, 0.1f, 10), TextureName.FakeLimbo));
         //<editor-fold desc="Platform1">
         activeObjects.add(new SolidModel(new Vector3(15.4f, 0, 2.48f), 180, ModelName.SubwayBench3));
@@ -73,7 +77,7 @@ public class Level1 extends Level {
         activeObjects.add(new SolidModel(new Vector3(34f, 0, 11.48f), 180, ModelName.SubwayBench2));
         activeObjects.add(new SolidModel(new Vector3(34f, 0, 16.1f), 180, ModelName.SubwayBench1));
 
-        activeObjects.add(new MafiaMob(new Vector3(25f, 0, 11), new Vector3(0, 0, 0), new Melee(WeaponType.Bat), player));
+        activeObjects.add(new MafiaMob(new Vector3(25f, 0, 11), new Vector3(0, 0, 0), new Melee(WeaponType.Bat)));
 
         //wall
         activeObjects.add(new SolidWall(new Vector3(15f, 0, 9), new Vector3(8.8f, 12, 0.5f), TextureName.Concrete1));
@@ -96,7 +100,7 @@ public class Level1 extends Level {
         activeObjects.add(new Plane(new Vector3(15.24f, -0.05f, 9), new Vector3(20, 0.1f, 16.7f), TextureName.DarkBrownCheckeredTiles));
         //</editor-fold>
         //<editor-fold desc="Bathroom">
-        activeObjects.add(new MafiaMob(new Vector3(28f, 0, 36), new Vector3(0, -90, 0), new Melee(WeaponType.Bat), player));
+        activeObjects.add(new MafiaMob(new Vector3(28f, 0, 36), new Vector3(0, -90, 0), new Melee(WeaponType.Bat)));
 
         //wall
         activeObjects.add(new SolidWall(new Vector3(15.25f, 0, 25.5f), new Vector3(0.4f, 6, 9.4f), TextureName.Concrete1));
@@ -119,7 +123,7 @@ public class Level1 extends Level {
         activeObjects.add(new SolidModel(new Vector3(35f, 0, 2.48f), 0, ModelName.SubwayBench3));
         activeObjects.add(new SolidModel(new Vector3(35f, 0, 6.5f), 0, ModelName.SubwayBench2));
 
-        activeObjects.add(new MafiaMob(new Vector3(38f, 0, 20), new Vector3(0, 180, 0), new Melee(WeaponType.GolfClub), player));
+        activeObjects.add(new MafiaMob(new Vector3(38f, 0, 20), new Vector3(0, 180, 0), new Melee(WeaponType.GolfClub)));
 
         //Wall
         activeObjects.add(new Model(new Vector3(30.3f, 6, -0.1f), 0, ModelName.Pillar));
@@ -140,6 +144,7 @@ public class Level1 extends Level {
         activeObjects.add(new Plane(new Vector3(47.3f, -0.05f, 0), new Vector3(4f, 0.1f, 49f), TextureName.DarkGreenDiamonds));
         //</editor-fold>
         activeObjects.add(new SolidWall(new Vector3(0, 0, 48), new Vector3(52f, 12, 0.5f), TextureName.Brick));
+        */
 
         AStar.generateAStar();
 
@@ -169,7 +174,7 @@ public class Level1 extends Level {
             activeObjects.add(titleCard);
         }
 
-        Main.levelHandler.SaveToJson("");
+        //Main.levelHandler.SaveToJson("");
     }
 
     @Override

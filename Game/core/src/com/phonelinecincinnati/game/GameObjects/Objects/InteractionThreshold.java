@@ -47,11 +47,7 @@ public class InteractionThreshold extends Threshold {
 
     @Override
     public ArrayList<String> getConstructParams() {
-        ArrayList<String> params = new ArrayList<String>();
-        params.add(listeningObject.getClass().toString());
-        params.add(position.toString());
-        params.add(size.toString());
-        return params;
+        return new ArrayList<String>();
     }
 
     @Override

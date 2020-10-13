@@ -4,6 +4,7 @@ import com.badlogic.gdx.math.Vector3;
 import com.phonelinecincinnati.game.GameObjects.ObjectTraits.Collidable;
 import com.phonelinecincinnati.game.Renderer;
 import com.phonelinecincinnati.game.Utility.CollisionMaths;
+import com.phonelinecincinnati.game.Utility.VectorMaths;
 
 import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
@@ -14,6 +15,11 @@ public class Threshold extends GameObject implements Collidable {
     public Threshold(Vector3 position, Vector3 size) {
         this.position = position;
         this.size = size;
+    }
+
+    public Threshold(ArrayList<String> params) {
+        this.position = VectorMaths.constructFromString(params.get(0));
+        this.size = VectorMaths.constructFromString(params.get(1));
     }
 
     @Override

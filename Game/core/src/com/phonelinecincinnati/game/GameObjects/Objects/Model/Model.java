@@ -9,22 +9,35 @@ import com.phonelinecincinnati.game.GameObjects.Objects.GameObject;
 import com.phonelinecincinnati.game.Main;
 import com.phonelinecincinnati.game.Models.ModelName;
 import com.phonelinecincinnati.game.Renderer;
+import com.phonelinecincinnati.game.Utility.VectorMaths;
 
 import java.util.ArrayList;
 
 public class Model extends GameObject {
     private Vector3 offset;
 
-    private float rotation;
-    private ModelName name;
-
     protected ModelInstance modelInstance;
-    BoundingBox boundingBox;
+    protected ModelName name;
+    protected float rotation;
+    protected BoundingBox boundingBox;
 
     public Model(Vector3 position, float rotation, ModelName name) {
         this.position = position;
         this.rotation = rotation;
         this.name = name;
+
+        setup();
+    }
+
+    public Model(ArrayList<String> params) {
+        this.position = VectorMaths.constructFromString(params.get(0));
+        this.rotation = Float.parseFloat(params.get(1));
+        this.name = ModelName.valueOf(params.get(2));
+
+        setup();
+    }
+
+    private void setup() {
         boundingBox = new BoundingBox();
 
         modelInstance = Main.modelHandler.getModel(name);

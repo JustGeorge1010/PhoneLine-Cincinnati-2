@@ -6,6 +6,7 @@ import com.badlogic.gdx.math.Vector3;
 import com.phonelinecincinnati.game.Main;
 import com.phonelinecincinnati.game.Models.TextureName;
 import com.phonelinecincinnati.game.Renderer;
+import com.phonelinecincinnati.game.Utility.VectorMaths;
 
 import java.util.ArrayList;
 
@@ -21,6 +22,15 @@ public class GameDecal extends GameObject{
         decal = Decal.newDecal(width, height, textureRegion, true);
         decal.rotateX(rotation.x); decal.rotateY(rotation.y); decal.rotateZ(rotation.z);
         decal.translate(position);
+    }
+
+    public GameDecal(ArrayList<String> params) {
+        this.rotation = VectorMaths.constructFromString(params.get(3));
+        this.textureType = TextureName.valueOf(params.get(4));
+        TextureRegion textureRegion = new TextureRegion(Main.modelHandler.textures.get(textureType));
+        decal = Decal.newDecal(Float.parseFloat(params.get(1)), Float.parseFloat(params.get(2)), textureRegion, true);
+        decal.rotateX(rotation.x); decal.rotateY(rotation.y); decal.rotateZ(rotation.z);
+        decal.translate(VectorMaths.constructFromString(params.get(0)));
     }
 
     @Override

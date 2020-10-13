@@ -9,8 +9,8 @@ import com.phonelinecincinnati.game.Models.ModelHandler;
 
 public class Main extends ApplicationAdapter {
     //todo debugVariables
-    public static boolean debug = false;
-    public static boolean debugBlindEnemies = false;
+    public static boolean debug = true;
+    public static boolean debugBlindEnemies = true;
     public static boolean debugDrawPaths = false;
 
     public static Color backgroundColor;

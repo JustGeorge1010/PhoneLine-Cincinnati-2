@@ -3,11 +3,18 @@ package com.phonelinecincinnati.game.GameObjects.Objects;
 import com.badlogic.gdx.math.Vector3;
 import com.phonelinecincinnati.game.GameObjects.ObjectTraits.Collidable;
 import com.phonelinecincinnati.game.Models.TextureName;
+import com.phonelinecincinnati.game.Utility.VectorMaths;
+
+import java.util.ArrayList;
 
 public class SolidWall extends Wall implements Collidable {
 
     public SolidWall(Vector3 position, Vector3 size, TextureName name) {
         super(position, size, name);
+    }
+
+    public SolidWall(ArrayList<String> params) {
+        super(VectorMaths.constructFromString(params.get(0)), VectorMaths.constructFromString(params.get(1)), TextureName.valueOf(params.get(2)));
     }
 
     @Override

@@ -6,11 +6,18 @@ import com.phonelinecincinnati.game.GameObjects.ObjectTraits.Collidable;
 import com.phonelinecincinnati.game.GameObjects.Objects.GameObject;
 import com.phonelinecincinnati.game.Models.ModelName;
 import com.phonelinecincinnati.game.Renderer;
+import com.phonelinecincinnati.game.Utility.VectorMaths;
+
+import java.util.ArrayList;
 
 public class SolidModel extends Model implements Collidable{
 
     public SolidModel(Vector3 position, float rotation, ModelName name) {
         super(position, rotation, name);
+    }
+
+    public SolidModel(ArrayList<String> params) {
+        super(VectorMaths.constructFromString(params.get(0)), Float.parseFloat(params.get(1)), ModelName.valueOf(params.get(2)));
     }
 
     @Override

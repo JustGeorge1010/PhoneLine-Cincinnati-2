@@ -101,8 +101,6 @@ public class PauseMenuHandler extends GameObject {
 
     @Override
     public ArrayList<String> getConstructParams() {
-        ArrayList<String> params = new ArrayList<String>();
-        params.add(String.valueOf(canPause));
-        return params;
+        return new ArrayList<String>();
     }
 }

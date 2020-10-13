@@ -43,10 +43,6 @@ public class TitleCard extends GameObject{
 
     @Override
     public ArrayList<String> getConstructParams() {
-        ArrayList<String> params = new ArrayList<String>();
-        params.add(textTop);
-        params.add(textBottom);
-        params.add(String.valueOf(duration));
-        return params;
+        return new ArrayList<String>();
     }
 }

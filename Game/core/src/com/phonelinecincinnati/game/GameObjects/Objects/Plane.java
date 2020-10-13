@@ -5,6 +5,7 @@ import com.badlogic.gdx.math.Vector3;
 import com.phonelinecincinnati.game.Main;
 import com.phonelinecincinnati.game.Models.TextureName;
 import com.phonelinecincinnati.game.Renderer;
+import com.phonelinecincinnati.game.Utility.VectorMaths;
 
 import java.util.ArrayList;
 
@@ -18,7 +19,15 @@ public class Plane extends GameObject {
         this.size = size;
         this.textureName = name;
 
-        modelInstance = Main.modelHandler.getBox(position.x+size.x/2, position.y, position.z+size.z/2, size.x, size.y, size.z, name);
+        modelInstance = Main.modelHandler.getBox(position.x+size.x/2, position.y, position.z+size.z/2, size.x, size.y, size.z, textureName);
+    }
+
+    public Plane(ArrayList<String> params) {
+        this.position = VectorMaths.constructFromString(params.get(0));
+        this.size = VectorMaths.constructFromString(params.get(1));
+        this.textureName = TextureName.valueOf(params.get(2));
+
+        modelInstance = Main.modelHandler.getBox(position.x+size.x/2, position.y, position.z+size.z/2, size.x, size.y, size.z, textureName);
     }
 
     @Override
