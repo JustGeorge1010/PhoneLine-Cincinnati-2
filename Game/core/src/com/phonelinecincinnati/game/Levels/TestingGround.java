@@ -40,6 +40,10 @@ public class TestingGround extends Level {
     }
 
     @Override
+    public void load(boolean reloading, boolean retainPlayer) {
+
+    }
+    @Override
     public void reload() {
 
     }

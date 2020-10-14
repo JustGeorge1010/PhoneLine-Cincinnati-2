@@ -13,6 +13,7 @@ public class Melee extends Weapon{
     private float reach;
 
     public Melee(WeaponType type) {
+        this.type = type;
         switch (type) {
             case Bat:
                 name = ModelName.Bat;

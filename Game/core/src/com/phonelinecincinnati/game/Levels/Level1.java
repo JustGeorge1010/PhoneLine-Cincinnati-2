@@ -11,10 +11,7 @@ import com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel;
 import com.phonelinecincinnati.game.GameObjects.Objects.Player.Player;
 import com.phonelinecincinnati.game.GameObjects.Objects.Player.Weapons.Melee;
 import com.phonelinecincinnati.game.GameObjects.Objects.Player.Weapons.WeaponType;
-import com.phonelinecincinnati.game.GameObjects.Objects.Utility.Action;
-import com.phonelinecincinnati.game.GameObjects.Objects.Utility.Fade;
-import com.phonelinecincinnati.game.GameObjects.Objects.Utility.LevelTitleCard;
-import com.phonelinecincinnati.game.GameObjects.Objects.Utility.SoundSource;
+import com.phonelinecincinnati.game.GameObjects.Objects.Utility.*;
 import com.phonelinecincinnati.game.GameObjects.Objects.Vertical.Direction;
 import com.phonelinecincinnati.game.GameObjects.Objects.Vertical.Stairs;
 import com.phonelinecincinnati.game.Main;
@@ -26,20 +23,22 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public class Level1 extends Level {
     public Level1(final CopyOnWriteArrayList<GameObject> activeObjects) {
         this.activeObjects = activeObjects;
-        load(false);
+        load(false, false);
     }
 
-    private void load(boolean reloading) {
+    @Override
+    public void load(boolean reloading, boolean retainPlayer) {
         Main.backgroundColor.set(1, 0, 1, 1);
         Main.modelHandler.setModelsForLevel1();
 
         activeObjects.add(SoundSource.buildSoundSource(0).setMusic("M.O.O.N. - Paris.mp3").playMusic());
 
-        final Player player = new Player(25, 9.6f, 0);
-        Main.levelHandler.player = player;
-        player.takeControl(null);
+        final Player player =
+                createPlayer(new Vector3(25, 9.6f, 0), new Vector3(0, 0, 1), new Melee(WeaponType.Bat),
+                        reloading, retainPlayer);
 
-        Main.levelHandler.loadFromJson("");
+        String levelFileName = "level1";
+        Main.levelHandler.loadFromJson(levelFileName);
 
         /*
         activeObjects.add(new Plane(new Vector3(0, 6.05f, -10), new Vector3(51, 0.1f, 10), TextureName.FakeLimbo));
@@ -148,14 +147,12 @@ public class Level1 extends Level {
 
         AStar.generateAStar();
 
-        player.weapon = new Melee(WeaponType.Bat);
-        Main.camera.lookAt(player.position.cpy().add(0, 0, 100));
         activeObjects.add(player);
         final PauseMenuHandler pauseMenuHandler = new PauseMenuHandler(true);
 
         if(!reloading) {
             final LevelTitleCard titleCard = new LevelTitleCard("PRELUDE", "THE METRO", 400);//todo set duration to 400
-            titleCard.addAction( new Action() {
+            titleCard.addAction(new Action() {
                 @Override
                 public void activate() {
                     activeObjects.add(new Fade(false, new Action() {
@@ -174,12 +171,12 @@ public class Level1 extends Level {
             activeObjects.add(titleCard);
         }
 
-        //Main.levelHandler.SaveToJson("");
+        //Main.levelHandler.SaveToJson(levelFileName);
     }
 
     @Override
     public void reload() {
         Main.levelHandler.clearActiveObjects();
-        load(true);
+        load(true, false);
     }
 }
