@@ -8,8 +8,9 @@ import com.phonelinecincinnati.game.Main;
 
 import java.awt.geom.Line2D;
 import java.awt.geom.Rectangle2D;
-import java.util.List;
+import java.util.ArrayList;
 
+@SuppressWarnings("rawtypes")
 public class CollisionMaths {
 
      /*********************************************
@@ -84,43 +85,40 @@ public class CollisionMaths {
     }
 
     public static boolean lineOfSightClear(Vector3 a, Vector3 b, float modifier) {
+        return lineOfSightClear(a, b, modifier, new ArrayList<Class>());
+    }
+
+    public static boolean lineOfSightClear(Vector3 a, Vector3 b, float modifier, ArrayList<Class> ignored) {
         Line2D[] line3D = CollisionMaths.lineTo2DLines(a, b);
 
         for(GameObject object : Main.levelHandler.getActiveObjects()) {
-            if(lineCollision(line3D, object, modifier)) return false;
-//            if(Door.class.isInstance(object)) { TODO: delete
-//                if(((Door)object).open) continue;
-//                Rectangle2D[] faces = CollisionMaths.collidableTo2DFaces((Collidable)object, modifier);
-//                if(line3D[0].intersects(faces[0]) &&
-//                        line3D[1].intersects(faces[1]) &&
-//                        line3D[2].intersects(faces[2])) {
-//                    return false;
-//                }
-//            }
-//            if(Collidable.class.isInstance(object)) {
-//                Rectangle2D[] faces = CollisionMaths.collidableTo2DFaces((Collidable)object, modifier);
-//                if(line3D[0].intersects(faces[0]) &&
-//                        line3D[1].intersects(faces[1]) &&
-//                        line3D[2].intersects(faces[2])) {
-//                    return false;
-//                }
-//            }
+            if(lineCollision(line3D, object, modifier, ignored)) return false;
         }
 
         return true;
     }
 
     public static boolean lineCollision(Line2D[] line, GameObject object) {
-        return lineCollision(line, object, 0f);
+        return lineCollision(line, object, 0f, new ArrayList<Class>());
     }
 
     public static boolean lineCollision(Line2D[] line, GameObject object, float modifier) {
-        if(Door.class.isInstance(object)) {
+        return lineCollision(line, object, modifier, new ArrayList<Class>());
+    }
+
+    @SuppressWarnings({"unchecked"})
+    public static boolean lineCollision(Line2D[] line, GameObject object, float modifier, ArrayList<Class> ignored) {
+        for(Class ignore : ignored) {
+            if(ignore.isAssignableFrom(object.getClass())) {
+                return false;
+            }
+        }
+        if(object instanceof Door) {
             if(((Door)object).open) return false;
             Rectangle2D[] faces = CollisionMaths.collidableTo2DFaces((Collidable)object, modifier);
             return line[0].intersects(faces[0]) && line[1].intersects(faces[1]) && line[2].intersects(faces[2]);
         }
-        if(Collidable.class.isInstance(object)) {
+        if(object instanceof Collidable) {
             Rectangle2D[] faces = CollisionMaths.collidableTo2DFaces((Collidable)object, modifier);
             return line[0].intersects(faces[0]) && line[1].intersects(faces[1]) && line[2].intersects(faces[2]);
         }

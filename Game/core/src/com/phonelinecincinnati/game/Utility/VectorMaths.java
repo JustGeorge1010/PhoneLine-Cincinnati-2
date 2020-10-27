@@ -20,4 +20,11 @@ public class VectorMaths {
     public static boolean vectorIsInsideTriangle(Vector3 point, Vector3 triangle1, Vector3 triangle2, Vector3 triangle3) {
         return vectorIsInsideTriangle(new Vector2(point.x, point.z), new Vector2(triangle1.x, triangle1.z), new Vector2(triangle2.x, triangle2.z), new Vector2(triangle3.x, triangle3.z));
     }
+
+    public static Vector3 constructFromString(String positionStr) {
+        positionStr = positionStr.replace("(", "");
+        positionStr = positionStr.replace(")", "");
+        String[] floats = positionStr.split(",");
+        return new Vector3(Float.parseFloat(floats[0]), Float.parseFloat(floats[1]), Float.parseFloat(floats[2]));
+    }
 }

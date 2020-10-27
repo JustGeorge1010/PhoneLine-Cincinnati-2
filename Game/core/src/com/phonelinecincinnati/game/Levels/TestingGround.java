@@ -32,13 +32,17 @@ public class TestingGround extends Level {
         activeObjects.add(new SolidWall(new Vector3(20f, -6f, 5f), new Vector3(10f, 12, 0.5f), TextureName.Concrete1));
         activeObjects.add(new SolidWall(new Vector3(20f, -6f, 5f), new Vector3(0.5f, 12, 5f), TextureName.Concrete1));
 
-        MafiaMob mob = new MafiaMob(new Vector3(25, 0, 11), new Vector3(0, 25, 0), new Melee(WeaponType.Bat), player);
+        MafiaMob mob = new MafiaMob(new Vector3(25, 0, 11), new Vector3(0, 25, 0), new Melee(WeaponType.Bat));
         AStar.generateAStar();
 
         activeObjects.add(mob);
         activeObjects.add(player);
     }
 
+    @Override
+    public void load(boolean reloading, boolean retainPlayer) {
+
+    }
     @Override
     public void reload() {
 

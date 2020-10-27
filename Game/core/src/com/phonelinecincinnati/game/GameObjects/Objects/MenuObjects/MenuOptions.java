@@ -11,6 +11,7 @@ import com.phonelinecincinnati.game.Main;
 import com.phonelinecincinnati.game.Renderer;
 import javafx.util.Pair;
 
+import java.util.ArrayList;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class MenuOptions extends GameObject{
@@ -224,5 +225,10 @@ public class MenuOptions extends GameObject{
     @Override
     public void dispose() {
 
+    }
+
+    @Override
+    public ArrayList<String> getConstructParams() {
+        return new ArrayList<String>();
     }
 }

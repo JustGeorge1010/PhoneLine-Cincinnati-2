@@ -10,10 +10,15 @@ import com.phonelinecincinnati.game.GameObjects.Objects.Enemies.Mafia.MafiaMob;
 import com.phonelinecincinnati.game.GameObjects.Objects.GameObject;
 import com.phonelinecincinnati.game.GameObjects.Objects.MenuObjects.PauseMenuHandler;
 import com.phonelinecincinnati.game.GameObjects.Objects.Plane;
+import com.phonelinecincinnati.game.GameObjects.Objects.Player.Weapons.Melee;
 import com.phonelinecincinnati.game.GameObjects.Objects.Player.Weapons.Weapon;
+import com.phonelinecincinnati.game.GameObjects.Objects.Player.Weapons.WeaponType;
 import com.phonelinecincinnati.game.GameObjects.Objects.Utility.SoundSource;
 import com.phonelinecincinnati.game.Main;
 import com.phonelinecincinnati.game.Renderer;
+import com.phonelinecincinnati.game.Utility.VectorMaths;
+
+import java.util.ArrayList;
 
 public class WeaponPickUp extends GameObject{
     private Vector3 position;
@@ -31,13 +36,16 @@ public class WeaponPickUp extends GameObject{
         this.position = position;
         this.item = item;
         direction = null;
-        name = item.name.toString();
-        model = Main.modelHandler.getModel(item.name);
-        random = MathUtils.random(360);
-        updateModelPosition();
-        box = new BoundingBox();
-        model.calculateBoundingBox(box);
-        model.transform.translate(0, -box.getHeight()/2, 0);
+
+        setup();
+    }
+
+    public WeaponPickUp(ArrayList<String> params) {
+        this.position = VectorMaths.constructFromString(params.get(0));
+        this.item = new Melee(WeaponType.valueOf(params.get(1)));
+        direction = null;
+
+        setup();
     }
 
     public WeaponPickUp(Vector3 position, Weapon item, Vector3 direction) {
@@ -45,6 +53,12 @@ public class WeaponPickUp extends GameObject{
         this.item = item;
         this.direction = direction.nor();
         this.direction = new Vector3(direction.x, -0.1f, direction.z);
+
+        setup();
+        hitWall = SoundSource.buildSoundSource(1).setSound("Combat/HitWall.wav");
+    }
+
+    private void setup() {
         name = item.name.toString();
         model = Main.modelHandler.getModel(item.name);
         random = MathUtils.random(360);
@@ -52,8 +66,6 @@ public class WeaponPickUp extends GameObject{
         box = new BoundingBox();
         model.calculateBoundingBox(box);
         model.transform.translate(0, -box.getHeight()/2, 0);
-
-        hitWall = SoundSource.buildSoundSource(1).setSound("Combat/HitWall.wav");
     }
 
     public boolean withinRange(Vector3 position) {
@@ -183,5 +195,13 @@ public class WeaponPickUp extends GameObject{
     @Override
     public void dispose() {
 
+    }
+
+    @Override
+    public ArrayList<String> getConstructParams() {
+        ArrayList<String> params = new ArrayList<String>();
+        params.add(position.toString());
+        params.add(item.name.toString());
+        return params;
     }
 }

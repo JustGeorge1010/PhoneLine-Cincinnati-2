@@ -9,6 +9,8 @@ import com.phonelinecincinnati.game.GameObjects.Objects.GameObject;
 import com.phonelinecincinnati.game.GameObjects.Objects.MenuObjects.PauseMenuHandler;
 import com.phonelinecincinnati.game.Renderer;
 
+import java.util.ArrayList;
+
 public class SoundSource extends GameObject {
 
     private Music music;
@@ -104,5 +106,10 @@ public class SoundSource extends GameObject {
     public void dispose() {
         if(music != null) music.dispose();
         if(sound != null) sound.dispose();
+    }
+
+    @Override
+    public ArrayList<String> getConstructParams() {
+        return new ArrayList<String>();
     }
 }

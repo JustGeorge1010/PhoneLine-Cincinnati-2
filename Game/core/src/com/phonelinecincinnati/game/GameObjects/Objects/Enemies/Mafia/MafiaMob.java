@@ -1,6 +1,5 @@
 package com.phonelinecincinnati.game.GameObjects.Objects.Enemies.Mafia;
 
-import com.badlogic.gdx.Game;
 import com.badlogic.gdx.graphics.g3d.ModelInstance;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector3;
@@ -25,9 +24,13 @@ import com.phonelinecincinnati.game.Renderer;
 import com.phonelinecincinnati.game.Utility.CollisionMaths;
 import com.phonelinecincinnati.game.Utility.VectorMaths;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.TreeMap;
 
-import static com.phonelinecincinnati.game.GameObjects.Objects.Enemies.Mafia.AI.MafiaMobBrain.State.*;
+import static com.phonelinecincinnati.game.GameObjects.Objects.Enemies.Mafia.AI.MafiaMobBrain.State.Following;
+import static com.phonelinecincinnati.game.GameObjects.Objects.Enemies.Mafia.AI.MafiaMobBrain.State.Patrolling;
 import static com.phonelinecincinnati.game.Models.ModelName.EnemyBack1;
 import static com.phonelinecincinnati.game.Models.ModelName.EnemyWall;
 
@@ -58,13 +61,27 @@ public class MafiaMob extends GameObject{
 
     private MafiaMobBrain brain;
 
-    public MafiaMob(Vector3 position, Vector3 rotation, Weapon weapon, Player player) {
+    public MafiaMob(Vector3 position, Vector3 rotation, Weapon weapon) {
         this.position = position;
         this.baseRotation = new Vector3(rotation);
         this.rotation = new Vector3(rotation);
-
         this.weapon = weapon;
+        playerRef = Main.levelHandler.player;
 
+        setup();
+    }
+
+    public MafiaMob(ArrayList<String> params) {
+        this.position = VectorMaths.constructFromString(params.get(0));
+        this.rotation = VectorMaths.constructFromString(params.get(1));
+        this.baseRotation = new Vector3(rotation);
+        this.weapon = new Melee(WeaponType.valueOf(params.get(2)));
+        playerRef = Main.levelHandler.player;
+
+        setup();
+    }
+
+    private void setup() {
         patrolRoute = new ArrayList<Vector3>();
         patrolRoute.add(new Vector3(position));
 
@@ -79,9 +96,7 @@ public class MafiaMob extends GameObject{
         impactSound = SoundSource.buildSoundSource(1).setSound("Combat/EnemyBluntHit.wav");
         deathSound = SoundSource.buildSoundSource(2).setSound("Combat/EnemyDeath.wav");
 
-        playerRef = player;
-
-        brain = new MafiaMobBrain(this, player);
+        brain = new MafiaMobBrain(this, playerRef);
     }
 
     @Override
@@ -375,5 +390,14 @@ public class MafiaMob extends GameObject{
     @Override
     public void dispose() {
 
+    }
+
+    @Override
+    public ArrayList<String> getConstructParams() {
+        ArrayList<String> params = new ArrayList<String>();
+        params.add(position.toString());
+        params.add(rotation.toString());
+        params.add(weapon.name.toString());
+        return params;
     }
 }

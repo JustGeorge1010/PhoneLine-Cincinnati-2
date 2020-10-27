@@ -8,6 +8,8 @@ import com.phonelinecincinnati.game.Main;
 import com.phonelinecincinnati.game.Models.ModelName;
 import com.phonelinecincinnati.game.Renderer;
 
+import java.util.ArrayList;
+
 public class InteractiveModel extends Model{
     private String interactionText;
     private Action action;
@@ -34,6 +36,12 @@ public class InteractiveModel extends Model{
     @Override
     public void update() {
 
+    }
+
+
+    @Override
+    public ArrayList<String> getConstructParams() {
+        return new ArrayList<String>();
     }
 
     public boolean canInteract(GameObject object) {

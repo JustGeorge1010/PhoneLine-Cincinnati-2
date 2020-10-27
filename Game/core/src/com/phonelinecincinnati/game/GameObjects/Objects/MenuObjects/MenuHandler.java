@@ -11,6 +11,8 @@ import com.phonelinecincinnati.game.GameObjects.Objects.Utility.SoundSource;
 import com.phonelinecincinnati.game.Main;
 import com.phonelinecincinnati.game.Renderer;
 
+import java.util.ArrayList;
+
 public class MenuHandler extends GameObject {
     private Title title;
     private MenuOptions menuOptions;
@@ -98,5 +100,10 @@ public class MenuHandler extends GameObject {
     public void dispose() {
         title.dispose();
         menuOptions.dispose();
+    }
+
+    @Override
+    public ArrayList<String> getConstructParams() {
+        return new ArrayList<String>();
     }
 }

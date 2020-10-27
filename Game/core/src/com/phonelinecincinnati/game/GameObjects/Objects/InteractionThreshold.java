@@ -5,6 +5,8 @@ import com.phonelinecincinnati.game.GameObjects.ObjectTraits.Collidable;
 import com.phonelinecincinnati.game.GameObjects.Objects.Utility.Action;
 import com.phonelinecincinnati.game.Renderer;
 
+import java.util.ArrayList;
+
 public class InteractionThreshold extends Threshold {
     private GameObject listeningObject;
     private boolean unlocked;
@@ -41,6 +43,11 @@ public class InteractionThreshold extends Threshold {
     @Override
     public void dispose() {
 
+    }
+
+    @Override
+    public ArrayList<String> getConstructParams() {
+        return new ArrayList<String>();
     }
 
     @Override

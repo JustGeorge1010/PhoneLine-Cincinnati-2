@@ -129,7 +129,6 @@ public class Player extends GameObject {
 
     @Override
     public void update() {
-        System.out.println(dead);
         if(dead) {
             if(Main.controlHandler.keys.get(Input.Keys.R))
                 Main.levelHandler.currentLevel.reload();
@@ -385,5 +384,10 @@ public class Player extends GameObject {
     public void dispose() {
         pickupSound.dispose();
         throwSound.dispose();
+    }
+
+    @Override
+    public ArrayList<String> getConstructParams() {
+        return new ArrayList<String>();
     }
 }

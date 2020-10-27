@@ -6,20 +6,38 @@ import com.phonelinecincinnati.game.GameObjects.Objects.GameObject;
 import com.phonelinecincinnati.game.GameObjects.Objects.Player.Player;
 import com.phonelinecincinnati.game.Main;
 import com.phonelinecincinnati.game.Renderer;
+import com.phonelinecincinnati.game.Utility.VectorMaths;
 
 import java.util.ArrayList;
 
 public class Stairs extends GameObject implements Collidable{
     private Vector3 start, end;
     private ArrayList<Step> steps;
+    private boolean up;
+    private Direction direction;
 
     private Player player;
     private float stepHeight;
 
     public Stairs(boolean up, Direction direction, Vector3 startPos, int steps, float stepHeight) {
+        this.up = up;
+        this.direction = direction;
         start = new Vector3(startPos);
         this.stepHeight = stepHeight;
 
+        setup(startPos, steps);
+    }
+
+    public Stairs(ArrayList<String> params) {
+        this.up = Boolean.parseBoolean(params.get(0));
+        this.direction = Direction.valueOf(params.get(1));
+        start = VectorMaths.constructFromString(params.get(2));
+        this.stepHeight = Float.parseFloat(params.get(4));
+
+        setup(start.cpy(), Integer.parseInt(params.get(3)));
+    }
+
+    private void setup(Vector3 startPos, int steps) {
         Step first;
         float rotation;
         if (direction == Direction.North || direction == Direction.South) {
@@ -87,6 +105,17 @@ public class Stairs extends GameObject implements Collidable{
     @Override
     public void dispose() {
 
+    }
+
+    @Override
+    public ArrayList<String> getConstructParams() {
+        ArrayList<String> params = new ArrayList<String>();
+        params.add(String.valueOf(up));
+        params.add(direction.toString());
+        params.add(start.toString());
+        params.add(String.valueOf(steps.size()));
+        params.add(String.valueOf(stepHeight));
+        return params;
     }
 
     @Override

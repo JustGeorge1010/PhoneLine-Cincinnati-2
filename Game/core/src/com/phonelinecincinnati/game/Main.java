@@ -4,13 +4,17 @@ import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.*;
 import com.phonelinecincinnati.game.GameObjects.Objects.GameObject;
+import com.phonelinecincinnati.game.GameObjects.Objects.Utility.Action;
 import com.phonelinecincinnati.game.Levels.LevelHandler;
 import com.phonelinecincinnati.game.Models.ModelHandler;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main extends ApplicationAdapter {
     //todo debugVariables
-    public static boolean debug = false;
-    public static boolean debugBlindEnemies = false;
+    public static boolean debug = true;
+    public static boolean debugBlindEnemies = true;
     public static boolean debugDrawPaths = false;
 
     public static Color backgroundColor;
@@ -20,10 +24,14 @@ public class Main extends ApplicationAdapter {
     public static LevelHandler levelHandler;
     public static ControlHandler controlHandler;
 
+    public static List<Action> postUpdateSchedule;
+
     private Renderer renderer;
 
 	@Override
 	public void create () {
+	    postUpdateSchedule = new ArrayList<Action>();
+
 	    backgroundColor = new Color(0, 0, 0, 1);
 
         camera = new PerspectiveCamera(75f, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
@@ -74,6 +82,11 @@ public class Main extends ApplicationAdapter {
         for(GameObject object : levelHandler.getActiveObjects()) {
             object.postRender(renderer);
         }
+
+        for(Action action : postUpdateSchedule) {
+            action.activate();
+        }
+        postUpdateSchedule.clear();
 	}
 	
 	@Override

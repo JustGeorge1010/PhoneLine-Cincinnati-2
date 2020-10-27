@@ -5,6 +5,8 @@ import com.badlogic.gdx.InputAdapter;
 import com.phonelinecincinnati.game.GameObjects.Objects.GameObject;
 import com.phonelinecincinnati.game.GameObjects.Objects.MenuObjects.PauseMenuHandler;
 import com.phonelinecincinnati.game.GameObjects.Objects.Player.Player;
+import com.phonelinecincinnati.game.GameObjects.Objects.Utility.Action;
+import com.phonelinecincinnati.game.GameObjects.Objects.Utility.Fade;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -43,6 +45,21 @@ public class ControlHandler extends InputAdapter {
                 }
             }
         }
+
+        if(Main.debug) {
+            if(keycode == Input.Keys.F1) {
+                Main.postUpdateSchedule.add(new Action() {
+                    @Override
+                    public void activate() {
+                        Main.levelHandler.clearActiveObjects();
+                        Main.levelHandler.currentLevel.load(true, true);
+                    }
+                });
+            }
+            if(keycode == Input.Keys.J) {
+                Main.debugBlindEnemies = !Main.debugBlindEnemies;
+            }
+        }
         return true;
     }
 
@@ -78,7 +95,7 @@ public class ControlHandler extends InputAdapter {
         return true;
     }
 
-    private void findPlayer() {
+    public void findPlayer() {
         for(GameObject object : Main.levelHandler.getActiveObjects()) {
             if(object.getClass() == Player.class) {
                 player = (Player)object;

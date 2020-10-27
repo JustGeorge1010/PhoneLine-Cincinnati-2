@@ -6,6 +6,8 @@ import com.phonelinecincinnati.game.GameObjects.Objects.GameObject;
 import com.phonelinecincinnati.game.Main;
 import com.phonelinecincinnati.game.Renderer;
 
+import java.util.ArrayList;
+
 public class DebugPathLine extends GameObject {
     private ModelInstance modelInstance;
 
@@ -33,5 +35,10 @@ public class DebugPathLine extends GameObject {
     @Override
     public void dispose() {
 
+    }
+
+    @Override
+    public ArrayList<String> getConstructParams() {
+        return new ArrayList<String>();
     }
 }

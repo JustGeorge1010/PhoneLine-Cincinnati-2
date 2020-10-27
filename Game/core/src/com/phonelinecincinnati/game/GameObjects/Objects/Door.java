@@ -12,16 +12,16 @@ import com.phonelinecincinnati.game.GameObjects.Objects.Utility.SoundSource;
 import com.phonelinecincinnati.game.Main;
 import com.phonelinecincinnati.game.Models.ModelName;
 import com.phonelinecincinnati.game.Renderer;
-import com.phonelinecincinnati.game.Utility.CollisionMaths;
+import com.phonelinecincinnati.game.Utility.VectorMaths;
 
-import java.awt.geom.Rectangle2D;
-import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.ArrayList;
 
 public class Door extends GameObject implements Collidable{
     private Vector3 center;
     private ModelInstance modelInstance;
     private BoundingBox bounds;
     private boolean horizontal;
+    private ModelName modelName;
     private float baseRotation, rotation, minRotation, maxRotation, targetRotation;
     private Player player;
     private SoundSource openSound, knockOverSound;
@@ -30,11 +30,25 @@ public class Door extends GameObject implements Collidable{
     public boolean locked;
 
     public Door(Vector3 position, boolean horizontal, boolean locked, ModelName modelName) {
-        bounds = new BoundingBox();
         this.position = position;
         this.horizontal = horizontal;
         this.locked = locked;
+        this.modelName = modelName;
 
+        setup();
+    }
+
+    public Door(ArrayList<String> params) {
+        position = VectorMaths.constructFromString(params.get(0));
+        horizontal = Boolean.parseBoolean(params.get(1));
+        locked = Boolean.parseBoolean(params.get(2));
+        modelName = ModelName.valueOf(params.get(3));
+
+        setup();
+    }
+
+    private void setup() {
+        bounds = new BoundingBox();
         if(horizontal) {
             baseRotation = -90;
             Main.levelHandler.getActiveObjects().add(new Model(new Vector3(position.x+1.56f, position.y, position.z), -90, ModelName.DoorFrame));
@@ -147,6 +161,16 @@ public class Door extends GameObject implements Collidable{
     @Override
     public void dispose() {
 
+    }
+
+    @Override
+    public ArrayList<String> getConstructParams() {
+        ArrayList<String> params = new ArrayList<String>();
+        params.add(position.toString());
+        params.add(String.valueOf(horizontal));
+        params.add(String.valueOf(locked));
+        params.add(modelName.toString());
+        return params;
     }
 
     @Override

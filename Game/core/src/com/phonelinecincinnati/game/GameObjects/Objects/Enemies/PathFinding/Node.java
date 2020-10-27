@@ -1,6 +1,8 @@
 package com.phonelinecincinnati.game.GameObjects.Objects.Enemies.PathFinding;
 
 import com.badlogic.gdx.math.Vector3;
+import com.phonelinecincinnati.game.GameObjects.Objects.Door;
+import com.phonelinecincinnati.game.GameObjects.Objects.GameObject;
 import com.phonelinecincinnati.game.Utility.CollisionMaths;
 
 import java.util.ArrayList;
@@ -24,6 +26,7 @@ public class Node {
         findNeighbors(nodeList, false);
     }
 
+    @SuppressWarnings("rawtypes")
     void findNeighbors(Collection<Node> nodeList, boolean ignoreLineOfSight) {
         neighbors.clear();
         for(Node node : nodeList) {
@@ -33,7 +36,9 @@ public class Node {
                 neighbors.add(node);
                 continue;
             }
-            if(CollisionMaths.lineOfSightClear(this.position, node.position, 0.4f)) {
+            ArrayList<Class> ignoreList = new ArrayList<Class>();
+            ignoreList.add(Door.class);
+            if(CollisionMaths.lineOfSightClear(this.position, node.position, 0.4f, ignoreList)) {
                 neighbors.add(node);
             }
         }

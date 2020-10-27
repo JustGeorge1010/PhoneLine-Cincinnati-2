@@ -10,6 +10,7 @@ public abstract class Weapon {
     WeaponAnimation attackAnim, finisherAnim;
     ModelInstance model;
     public ModelName name;
+    public WeaponType type;
 
     private boolean finishing = false;
 
