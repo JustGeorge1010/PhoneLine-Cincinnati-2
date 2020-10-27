@@ -71,9 +71,6 @@ public class LevelHandler {
             if(object.getValue().isEmpty())
                 continue;
             try {
-                //Class objectClass = Class.forName(object.getKey());
-                //Constructor<?> constructor = objectClass.getConstructor(ArrayList.class);
-                //GameObject gameObject = (GameObject)constructor.newInstance(object.getValue());
                 activeObjects.add(GameObject.constructFromClassName(object.getKey(), object.getValue()));
             } catch (Exception e) {
                 e.printStackTrace();
