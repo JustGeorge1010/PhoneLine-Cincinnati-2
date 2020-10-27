@@ -2,21 +2,12 @@ package com.phonelinecincinnati.game.Levels;
 
 import com.badlogic.gdx.math.Vector3;
 import com.phonelinecincinnati.game.GameObjects.Objects.*;
-import com.phonelinecincinnati.game.GameObjects.Objects.Enemies.Mafia.MafiaMob;
 import com.phonelinecincinnati.game.GameObjects.Objects.Enemies.PathFinding.AStar;
-import com.phonelinecincinnati.game.GameObjects.Objects.Gore.BloodSplat;
 import com.phonelinecincinnati.game.GameObjects.Objects.MenuObjects.PauseMenuHandler;
-import com.phonelinecincinnati.game.GameObjects.Objects.Model.Model;
-import com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel;
 import com.phonelinecincinnati.game.GameObjects.Objects.Player.Player;
-import com.phonelinecincinnati.game.GameObjects.Objects.Player.Weapons.Melee;
-import com.phonelinecincinnati.game.GameObjects.Objects.Player.Weapons.WeaponType;
+import com.phonelinecincinnati.game.GameObjects.Objects.Weapons.Melee.BaseballBat;
 import com.phonelinecincinnati.game.GameObjects.Objects.Utility.*;
-import com.phonelinecincinnati.game.GameObjects.Objects.Vertical.Direction;
-import com.phonelinecincinnati.game.GameObjects.Objects.Vertical.Stairs;
 import com.phonelinecincinnati.game.Main;
-import com.phonelinecincinnati.game.Models.ModelName;
-import com.phonelinecincinnati.game.Models.TextureName;
 
 import java.util.concurrent.CopyOnWriteArrayList;
 
@@ -34,7 +25,7 @@ public class Level1 extends Level {
         activeObjects.add(SoundSource.buildSoundSource(0).setMusic("M.O.O.N. - Paris.mp3").playMusic());
 
         final Player player =
-                createPlayer(new Vector3(25, 9.6f, 0), new Vector3(0, 0, 1), new Melee(WeaponType.Bat),
+                createPlayer(new Vector3(25, 9.6f, 0), new Vector3(0, 0, 1), new BaseballBat(),
                         reloading, retainPlayer);
 
         String levelFileName = "level1";
@@ -76,7 +67,7 @@ public class Level1 extends Level {
         activeObjects.add(new SolidModel(new Vector3(34f, 0, 11.48f), 180, ModelName.SubwayBench2));
         activeObjects.add(new SolidModel(new Vector3(34f, 0, 16.1f), 180, ModelName.SubwayBench1));
 
-        activeObjects.add(new MafiaMob(new Vector3(25f, 0, 11), new Vector3(0, 0, 0), new Melee(WeaponType.Bat)));
+        activeObjects.add(new MafiaMob(new Vector3(25f, 0, 11), new Vector3(0, 0, 0), new BaseballBat()));
 
         //wall
         activeObjects.add(new SolidWall(new Vector3(15f, 0, 9), new Vector3(8.8f, 12, 0.5f), TextureName.Concrete1));
@@ -99,7 +90,7 @@ public class Level1 extends Level {
         activeObjects.add(new Plane(new Vector3(15.24f, -0.05f, 9), new Vector3(20, 0.1f, 16.7f), TextureName.DarkBrownCheckeredTiles));
         //</editor-fold>
         //<editor-fold desc="Bathroom">
-        activeObjects.add(new MafiaMob(new Vector3(28f, 0, 36), new Vector3(0, -90, 0), new Melee(WeaponType.Bat)));
+        activeObjects.add(new MafiaMob(new Vector3(28f, 0, 36), new Vector3(0, -90, 0), new BaseballBat()));
 
         //wall
         activeObjects.add(new SolidWall(new Vector3(15.25f, 0, 25.5f), new Vector3(0.4f, 6, 9.4f), TextureName.Concrete1));
@@ -122,7 +113,7 @@ public class Level1 extends Level {
         activeObjects.add(new SolidModel(new Vector3(35f, 0, 2.48f), 0, ModelName.SubwayBench3));
         activeObjects.add(new SolidModel(new Vector3(35f, 0, 6.5f), 0, ModelName.SubwayBench2));
 
-        activeObjects.add(new MafiaMob(new Vector3(38f, 0, 20), new Vector3(0, 180, 0), new Melee(WeaponType.GolfClub)));
+        activeObjects.add(new MafiaMob(new Vector3(38f, 0, 20), new Vector3(0, 180, 0), new GolfClub()));
 
         //Wall
         activeObjects.add(new Model(new Vector3(30.3f, 6, -0.1f), 0, ModelName.Pillar));

@@ -14,9 +14,9 @@ import com.phonelinecincinnati.game.GameObjects.Objects.Gore.BloodPool;
 import com.phonelinecincinnati.game.GameObjects.Objects.MenuObjects.PauseMenuHandler;
 import com.phonelinecincinnati.game.GameObjects.Objects.Pickups.WeaponPickUp;
 import com.phonelinecincinnati.game.GameObjects.Objects.Player.Player;
-import com.phonelinecincinnati.game.GameObjects.Objects.Player.Weapons.Melee;
-import com.phonelinecincinnati.game.GameObjects.Objects.Player.Weapons.Weapon;
-import com.phonelinecincinnati.game.GameObjects.Objects.Player.Weapons.WeaponType;
+import com.phonelinecincinnati.game.GameObjects.Objects.Weapons.Melee.Melee;
+import com.phonelinecincinnati.game.GameObjects.Objects.Weapons.Weapon;
+import com.phonelinecincinnati.game.GameObjects.Objects.Weapons.WeaponType;
 import com.phonelinecincinnati.game.GameObjects.Objects.Utility.SoundSource;
 import com.phonelinecincinnati.game.Main;
 import com.phonelinecincinnati.game.Models.ModelName;
@@ -72,13 +72,17 @@ public class MafiaMob extends GameObject{
     }
 
     public MafiaMob(ArrayList<String> params) {
-        this.position = VectorMaths.constructFromString(params.get(0));
-        this.rotation = VectorMaths.constructFromString(params.get(1));
-        this.baseRotation = new Vector3(rotation);
-        this.weapon = new Melee(WeaponType.valueOf(params.get(2)));
-        playerRef = Main.levelHandler.player;
+        try {
+            this.position = VectorMaths.constructFromString(params.get(0));
+            this.rotation = VectorMaths.constructFromString(params.get(1));
+            this.baseRotation = new Vector3(rotation);
+            this.weapon = Weapon.constructFromClassName(params.get(2));
+            playerRef = Main.levelHandler.player;
 
-        setup();
+            setup();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     private void setup() {
@@ -397,7 +401,7 @@ public class MafiaMob extends GameObject{
         ArrayList<String> params = new ArrayList<String>();
         params.add(position.toString());
         params.add(rotation.toString());
-        params.add(weapon.name.toString());
+        params.add(weapon.getClass().getName());
         return params;
     }
 }

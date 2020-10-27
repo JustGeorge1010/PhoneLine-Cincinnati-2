@@ -3,9 +3,7 @@ package com.phonelinecincinnati.game.Levels;
 import com.badlogic.gdx.math.Vector3;
 import com.phonelinecincinnati.game.GameObjects.Objects.GameObject;
 import com.phonelinecincinnati.game.GameObjects.Objects.Player.Player;
-import com.phonelinecincinnati.game.GameObjects.Objects.Player.Weapons.Melee;
-import com.phonelinecincinnati.game.GameObjects.Objects.Player.Weapons.Weapon;
-import com.phonelinecincinnati.game.GameObjects.Objects.Player.Weapons.WeaponType;
+import com.phonelinecincinnati.game.GameObjects.Objects.Weapons.Weapon;
 import com.phonelinecincinnati.game.Main;
 
 import java.util.concurrent.CopyOnWriteArrayList;

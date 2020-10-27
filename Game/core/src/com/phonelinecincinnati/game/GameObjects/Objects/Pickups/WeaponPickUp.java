@@ -5,14 +5,11 @@ import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.math.collision.BoundingBox;
 import com.phonelinecincinnati.game.GameObjects.ObjectTraits.Collidable;
-import com.phonelinecincinnati.game.GameObjects.Objects.Door;
 import com.phonelinecincinnati.game.GameObjects.Objects.Enemies.Mafia.MafiaMob;
 import com.phonelinecincinnati.game.GameObjects.Objects.GameObject;
 import com.phonelinecincinnati.game.GameObjects.Objects.MenuObjects.PauseMenuHandler;
 import com.phonelinecincinnati.game.GameObjects.Objects.Plane;
-import com.phonelinecincinnati.game.GameObjects.Objects.Player.Weapons.Melee;
-import com.phonelinecincinnati.game.GameObjects.Objects.Player.Weapons.Weapon;
-import com.phonelinecincinnati.game.GameObjects.Objects.Player.Weapons.WeaponType;
+import com.phonelinecincinnati.game.GameObjects.Objects.Weapons.Weapon;
 import com.phonelinecincinnati.game.GameObjects.Objects.Utility.SoundSource;
 import com.phonelinecincinnati.game.Main;
 import com.phonelinecincinnati.game.Renderer;
@@ -41,11 +38,15 @@ public class WeaponPickUp extends GameObject{
     }
 
     public WeaponPickUp(ArrayList<String> params) {
-        this.position = VectorMaths.constructFromString(params.get(0));
-        this.item = new Melee(WeaponType.valueOf(params.get(1)));
-        direction = null;
+        try {
+            this.position = VectorMaths.constructFromString(params.get(0));
+            this.item = Weapon.constructFromClassName(params.get(1));
+            direction = null;
 
-        setup();
+            setup();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public WeaponPickUp(Vector3 position, Weapon item, Vector3 direction) {
@@ -201,7 +202,7 @@ public class WeaponPickUp extends GameObject{
     public ArrayList<String> getConstructParams() {
         ArrayList<String> params = new ArrayList<String>();
         params.add(position.toString());
-        params.add(item.name.toString());
+        params.add(item.getClass().getName());
         return params;
     }
 }
