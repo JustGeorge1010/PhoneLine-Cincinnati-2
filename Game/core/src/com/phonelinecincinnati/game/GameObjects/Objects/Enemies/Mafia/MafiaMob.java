@@ -181,7 +181,7 @@ public class MafiaMob extends GameObject{
                     position = position.add(unitVector.scl(speed));
                 }
 
-                float angle = MathUtils.atan2(playerRef.position.z-body.position.z, playerRef.position.x-body.position.x);
+                float angle = MathUtils.atan2(newPosition.z-body.position.z, newPosition.x-body.position.x);
                 rotation.y = (angle*(360/MathUtils.PI2));
                 body.rotation = new Vector3(0, rotation.y, 0);
             }
@@ -264,7 +264,7 @@ public class MafiaMob extends GameObject{
         handleSlideCollisions(newPos);
 
         if(fallVelocity != 0) {
-            position = newPos;
+            position.set(newPos);
             position.y = 0;
         }
 
