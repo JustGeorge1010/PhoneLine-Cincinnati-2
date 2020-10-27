@@ -46,6 +46,11 @@ public class ControlHandler extends InputAdapter {
             }
         }
 
+        debugKeys(keycode);
+        return true;
+    }
+
+    private void debugKeys(int keycode) {
         if(Main.debug) {
             if(keycode == Input.Keys.F1) {
                 Main.postUpdateSchedule.add(new Action() {
@@ -60,7 +65,6 @@ public class ControlHandler extends InputAdapter {
                 Main.debugBlindEnemies = !Main.debugBlindEnemies;
             }
         }
-        return true;
     }
 
     @Override
@@ -95,7 +99,7 @@ public class ControlHandler extends InputAdapter {
         return true;
     }
 
-    public void findPlayer() {
+    private void findPlayer() {
         for(GameObject object : Main.levelHandler.getActiveObjects()) {
             if(object.getClass() == Player.class) {
                 player = (Player)object;
