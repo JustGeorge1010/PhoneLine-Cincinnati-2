@@ -25,7 +25,7 @@ public abstract class Level {
             player.weapon = weapon;
         }
         else {
-            player.weapon = new Melee(player.weapon.type);
+            player.weapon = weapon; //new Melee(player.weapon.type);
         }
         if(reloading) {
             player.giveControl();

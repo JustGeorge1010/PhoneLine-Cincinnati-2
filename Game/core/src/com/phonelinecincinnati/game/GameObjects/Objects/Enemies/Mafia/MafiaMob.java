@@ -101,7 +101,7 @@ public class MafiaMob extends GameObject{
 
     @Override
     public void update() {
-        if(dead && fallVelocity == 0 && !mounted) {
+        if(dead && fallVelocity == 0f && !mounted) {
             if(!bloodPooled) poolBlood();
             return;
         }
@@ -249,7 +249,7 @@ public class MafiaMob extends GameObject{
     }
 
     private void knockOverUpdate() {
-        if(fallVelocity == 0) {
+        if(fallVelocity == 0f) {
             position.y = 0;
             return;
         }
