@@ -1,16 +1,13 @@
-package com.phonelinecincinnati.game.GameObjects.Objects.Player.Weapons;
+package com.phonelinecincinnati.game.GameObjects.Objects.Weapons;
 
 import com.badlogic.gdx.graphics.g3d.ModelInstance;
 import com.badlogic.gdx.math.Vector3;
 import com.phonelinecincinnati.game.Animations.WeaponAnimations.WeaponAnimation;
-import com.phonelinecincinnati.game.GameObjects.Objects.GameObject;
-import com.phonelinecincinnati.game.GameObjects.Objects.Player.Weapons.Melee.BaseballBat;
 import com.phonelinecincinnati.game.Models.ModelName;
 import com.phonelinecincinnati.game.Renderer;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
-import java.util.ArrayList;
 
 public abstract class Weapon {
     protected WeaponAnimation attackAnim, finisherAnim;

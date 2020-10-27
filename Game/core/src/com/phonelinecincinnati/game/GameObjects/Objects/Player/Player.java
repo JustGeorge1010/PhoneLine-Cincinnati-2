@@ -11,7 +11,7 @@ import com.phonelinecincinnati.game.GameObjects.Objects.GameObject;
 import com.phonelinecincinnati.game.GameObjects.Objects.MenuObjects.PauseMenuHandler;
 import com.phonelinecincinnati.game.GameObjects.Objects.Model.InteractiveModel;
 import com.phonelinecincinnati.game.GameObjects.Objects.Pickups.WeaponPickUp;
-import com.phonelinecincinnati.game.GameObjects.Objects.Player.Weapons.Weapon;
+import com.phonelinecincinnati.game.GameObjects.Objects.Weapons.Weapon;
 import com.phonelinecincinnati.game.GameObjects.Objects.Utility.ForcedController;
 import com.phonelinecincinnati.game.GameObjects.Objects.Utility.SoundSource;
 import com.phonelinecincinnati.game.Main;

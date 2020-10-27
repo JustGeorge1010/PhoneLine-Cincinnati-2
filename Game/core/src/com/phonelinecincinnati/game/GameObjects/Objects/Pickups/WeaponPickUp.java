@@ -9,16 +9,12 @@ import com.phonelinecincinnati.game.GameObjects.Objects.Enemies.Mafia.MafiaMob;
 import com.phonelinecincinnati.game.GameObjects.Objects.GameObject;
 import com.phonelinecincinnati.game.GameObjects.Objects.MenuObjects.PauseMenuHandler;
 import com.phonelinecincinnati.game.GameObjects.Objects.Plane;
-import com.phonelinecincinnati.game.GameObjects.Objects.Player.Weapons.Melee.Melee;
-import com.phonelinecincinnati.game.GameObjects.Objects.Player.Weapons.Weapon;
-import com.phonelinecincinnati.game.GameObjects.Objects.Player.Weapons.WeaponType;
+import com.phonelinecincinnati.game.GameObjects.Objects.Weapons.Weapon;
 import com.phonelinecincinnati.game.GameObjects.Objects.Utility.SoundSource;
 import com.phonelinecincinnati.game.Main;
-import com.phonelinecincinnati.game.Models.ModelName;
 import com.phonelinecincinnati.game.Renderer;
 import com.phonelinecincinnati.game.Utility.VectorMaths;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 
 public class WeaponPickUp extends GameObject{

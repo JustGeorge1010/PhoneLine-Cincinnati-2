@@ -2,20 +2,12 @@ package com.phonelinecincinnati.game.Levels;
 
 import com.badlogic.gdx.math.Vector3;
 import com.phonelinecincinnati.game.GameObjects.Objects.*;
-import com.phonelinecincinnati.game.GameObjects.Objects.Enemies.Mafia.MafiaMob;
 import com.phonelinecincinnati.game.GameObjects.Objects.Enemies.PathFinding.AStar;
 import com.phonelinecincinnati.game.GameObjects.Objects.MenuObjects.PauseMenuHandler;
-import com.phonelinecincinnati.game.GameObjects.Objects.Model.Model;
-import com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel;
 import com.phonelinecincinnati.game.GameObjects.Objects.Player.Player;
-import com.phonelinecincinnati.game.GameObjects.Objects.Player.Weapons.Melee.BaseballBat;
-import com.phonelinecincinnati.game.GameObjects.Objects.Player.Weapons.Melee.GolfClub;
+import com.phonelinecincinnati.game.GameObjects.Objects.Weapons.Melee.BaseballBat;
 import com.phonelinecincinnati.game.GameObjects.Objects.Utility.*;
-import com.phonelinecincinnati.game.GameObjects.Objects.Vertical.Direction;
-import com.phonelinecincinnati.game.GameObjects.Objects.Vertical.Stairs;
 import com.phonelinecincinnati.game.Main;
-import com.phonelinecincinnati.game.Models.ModelName;
-import com.phonelinecincinnati.game.Models.TextureName;
 
 import java.util.concurrent.CopyOnWriteArrayList;
 
