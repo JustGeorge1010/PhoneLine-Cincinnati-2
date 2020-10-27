@@ -1,6 +1,5 @@
 package com.phonelinecincinnati.game.GameObjects.Objects.Enemies.Mafia;
 
-import com.badlogic.gdx.Game;
 import com.badlogic.gdx.graphics.g3d.ModelInstance;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector3;
@@ -25,9 +24,13 @@ import com.phonelinecincinnati.game.Renderer;
 import com.phonelinecincinnati.game.Utility.CollisionMaths;
 import com.phonelinecincinnati.game.Utility.VectorMaths;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.TreeMap;
 
-import static com.phonelinecincinnati.game.GameObjects.Objects.Enemies.Mafia.AI.MafiaMobBrain.State.*;
+import static com.phonelinecincinnati.game.GameObjects.Objects.Enemies.Mafia.AI.MafiaMobBrain.State.Following;
+import static com.phonelinecincinnati.game.GameObjects.Objects.Enemies.Mafia.AI.MafiaMobBrain.State.Patrolling;
 import static com.phonelinecincinnati.game.Models.ModelName.EnemyBack1;
 import static com.phonelinecincinnati.game.Models.ModelName.EnemyWall;
 
