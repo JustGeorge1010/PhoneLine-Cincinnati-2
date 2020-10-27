@@ -190,7 +190,7 @@
       "value": [
         "(25.0,0.0,11.0)",
         "(0.0,0.0,0.0)",
-        "Bat"
+        "com.phonelinecincinnati.game.GameObjects.Objects.Player.Weapons.Melee.BaseballBat"
       ]
     },
     {
@@ -319,7 +319,7 @@
       "value": [
         "(28.0,0.0,36.0)",
         "(0.0,-90.0,0.0)",
-        "Bat"
+        "com.phonelinecincinnati.game.GameObjects.Objects.Player.Weapons.Melee.BaseballBat"
       ]
     },
     {
@@ -440,7 +440,7 @@
       "value": [
         "(38.0,0.0,20.0)",
         "(0.0,180.0,0.0)",
-        "GolfClub"
+        "com.phonelinecincinnati.game.GameObjects.Objects.Player.Weapons.Melee.GolfClub"
       ]
     },
     {
