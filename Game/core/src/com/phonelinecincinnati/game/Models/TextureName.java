@@ -38,6 +38,7 @@ public enum TextureName {
 
     //Misc
     MaskLetter,
+    Ammo,
 
     //Debug
     BlueCircle

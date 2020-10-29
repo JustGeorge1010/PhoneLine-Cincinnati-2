@@ -11,9 +11,11 @@ import com.phonelinecincinnati.game.GameObjects.Objects.GameObject;
 import com.phonelinecincinnati.game.GameObjects.Objects.MenuObjects.PauseMenuHandler;
 import com.phonelinecincinnati.game.GameObjects.Objects.Model.InteractiveModel;
 import com.phonelinecincinnati.game.GameObjects.Objects.Pickups.WeaponPickUp;
+import com.phonelinecincinnati.game.GameObjects.Objects.Weapons.Ranged.Ranged;
 import com.phonelinecincinnati.game.GameObjects.Objects.Weapons.Weapon;
 import com.phonelinecincinnati.game.GameObjects.Objects.Utility.ForcedController;
 import com.phonelinecincinnati.game.GameObjects.Objects.Utility.SoundSource;
+import com.phonelinecincinnati.game.GameObjects.Objects.Weapons.WeaponType;
 import com.phonelinecincinnati.game.Main;
 import com.phonelinecincinnati.game.Renderer;
 
@@ -33,13 +35,11 @@ public class Player extends GameObject {
     private boolean mounted = false;
     private MafiaMob mountedMob;
 
-    private String pickupText = "";
-    private String interactionText = "";
-
     private boolean inControl = true;
     private ForcedController forcedController;
 
     public TextBox textBox;
+    private Hud hud;
 
     private float floorY;
     private float ySpeed;
@@ -56,6 +56,7 @@ public class Player extends GameObject {
         throwSound = SoundSource.buildSoundSource(2).setSound("Combat/Throw.wav");
 
         textBox = new TextBox();
+        hud = new Hud();
 
         floorY = y;
         ySpeed = 0.08f;
@@ -77,13 +78,25 @@ public class Player extends GameObject {
 
     public void LMB() {
         if(weaponResetTime <= 0) {
-            weaponResetTime = 50;
+            if(!(weapon.type == WeaponType.Automatic || weapon.type == WeaponType.SemiAutomatic)) {
+                weaponResetTime = 50;
+            }
+
             if(inControl && !mounted) {
-                if(weapon != null) useWeapon();
+                if(weapon.type == WeaponType.Automatic) {
+                    ((Ranged)weapon).triggerHeld = true;
+                }
+                useWeapon();
             } else if(mounted) {
                 useWeapon();
                 mountedMob.mountedHit();
             }
+        }
+    }
+
+    public void LMBReleased() {
+        if(weapon.type == WeaponType.Automatic) {
+            ((Ranged)weapon).triggerHeld = false;
         }
     }
 
@@ -95,7 +108,7 @@ public class Player extends GameObject {
                         if(InteractiveModel.class.isAssignableFrom(object.getClass())) {
                             InteractiveModel model = (InteractiveModel)object;
                             if(model.canInteract(this)) {
-                                interactionText = "";
+                                hud.interactionText = "";
                                 model.interact();
                             }
                         }
@@ -109,7 +122,7 @@ public class Player extends GameObject {
     }
 
     public void spb() {
-        if(weapon == null) {
+        if(weapon == null || Ranged.class.isAssignableFrom(weapon.getClass())) {
             return;
         }
         if(!mounted) {
@@ -135,6 +148,8 @@ public class Player extends GameObject {
             return;
         }
 
+        hud.update(weapon);
+
         if(!PauseMenuHandler.isPaused) {
             if(inControl) {
                 if(!textBox.isOpen()) {
@@ -150,8 +165,16 @@ public class Player extends GameObject {
             } else {
                 if(forcedController != null) forcedController.update();
             }
-            if(weapon != null) weapon.update();
-            weaponResetTime--;
+            if(weapon != null) {
+                if(weapon.type == WeaponType.Automatic) {
+                    Ranged w = (Ranged)weapon;
+                    if(w.triggerHeld) {
+                        useWeapon();
+                    }
+                }
+                weapon.update();
+            }
+            if(weaponResetTime > 0) weaponResetTime--;
         }
     }
 
@@ -264,7 +287,7 @@ public class Player extends GameObject {
     }
 
     private void detectPickup() {
-        pickupText = "";
+        hud.pickupText = "";
         currentPickUp = null;
         for(GameObject object : Main.levelHandler.getActiveObjects()) {
             if(object.getClass() == WeaponPickUp.class) {
@@ -273,7 +296,7 @@ public class Player extends GameObject {
                     currentPickUp = pickUp;
                     String name = pickUp.getName();
                     if(!name.equals("")) {
-                        pickupText = "[RMB] to pick up "+name;
+                        hud.pickupText = "(RMB) to pick up "+name;
                     }
                 }
             }
@@ -296,7 +319,7 @@ public class Player extends GameObject {
 
     private void useWeapon() {
         if(!PauseMenuHandler.isPaused) {
-            weapon.use(position, mainCam.direction);
+            weapon.use(position, mainCam.direction.cpy());
         }
     }
 
@@ -306,12 +329,12 @@ public class Player extends GameObject {
     }
 
     private void detectInteraction() {
-        interactionText = "";
+        hud.interactionText = "";
         for(GameObject object : Main.levelHandler.getActiveObjects()) {
             if(InteractiveModel.class.isAssignableFrom(object.getClass())) {
                 InteractiveModel model = ((InteractiveModel)object);
                 if(model.canInteract(this)) {
-                    interactionText = model.getInteractionText();
+                    hud.interactionText = model.getInteractionText();
                 }
             }
         }
@@ -354,7 +377,6 @@ public class Player extends GameObject {
     public void kill() {
         dead = true;
         weapon = null;
-        System.out.println("I was killed");
     }
 
     @Override
@@ -370,13 +392,7 @@ public class Player extends GameObject {
     @Override
     public void postRender(Renderer renderer) {
         if(weapon != null) weapon.render(renderer);
-        String text;
-        if(!pickupText.equals("")) {
-            text = pickupText;
-        } else {
-            text = interactionText;
-        }
-        renderer.renderText(10, Gdx.graphics.getHeight()-10, text, renderer.scriptFont);
+        hud.render(renderer);
         textBox.render(renderer);
     }
 
