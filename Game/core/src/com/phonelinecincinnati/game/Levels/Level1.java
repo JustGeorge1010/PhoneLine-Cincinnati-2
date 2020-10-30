@@ -7,6 +7,7 @@ import com.phonelinecincinnati.game.GameObjects.Objects.MenuObjects.PauseMenuHan
 import com.phonelinecincinnati.game.GameObjects.Objects.Player.Player;
 import com.phonelinecincinnati.game.GameObjects.Objects.Weapons.Melee.BaseballBat;
 import com.phonelinecincinnati.game.GameObjects.Objects.Utility.*;
+import com.phonelinecincinnati.game.GameObjects.Objects.Weapons.Ranged.M16;
 import com.phonelinecincinnati.game.Main;
 
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -25,7 +26,7 @@ public class Level1 extends Level {
         activeObjects.add(SoundSource.buildSoundSource(0).setMusic("M.O.O.N. - Paris.mp3").playMusic());
 
         final Player player =
-                createPlayer(new Vector3(25, 9.6f, 0), new Vector3(0, 0, 1), new BaseballBat(),
+                createPlayer(new Vector3(25, 9.6f, 0), new Vector3(0, 0, 1), new M16(),
                         reloading, retainPlayer);
 
         String levelFileName = "level1";

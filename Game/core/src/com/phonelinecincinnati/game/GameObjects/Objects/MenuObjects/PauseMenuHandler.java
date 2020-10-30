@@ -19,7 +19,8 @@ public class PauseMenuHandler extends GameObject {
 
     private boolean escPressed = false;
     private SoundSource unPause, pause;
-    public static boolean isPaused = false, canPause;
+    public static boolean isPaused = false;
+    private boolean canPause;
 
     public PauseMenuHandler(boolean canPause) {
         this.canPause = canPause;

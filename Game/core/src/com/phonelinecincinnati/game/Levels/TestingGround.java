@@ -4,9 +4,11 @@ import com.badlogic.gdx.math.Vector3;
 import com.phonelinecincinnati.game.GameObjects.Objects.Enemies.Mafia.MafiaMob;
 import com.phonelinecincinnati.game.GameObjects.Objects.Enemies.PathFinding.AStar;
 import com.phonelinecincinnati.game.GameObjects.Objects.GameObject;
+import com.phonelinecincinnati.game.GameObjects.Objects.MenuObjects.PauseMenuHandler;
 import com.phonelinecincinnati.game.GameObjects.Objects.Player.Player;
 import com.phonelinecincinnati.game.GameObjects.Objects.Weapons.Melee.BaseballBat;
 import com.phonelinecincinnati.game.GameObjects.Objects.SolidWall;
+import com.phonelinecincinnati.game.GameObjects.Objects.Weapons.Ranged.M16;
 import com.phonelinecincinnati.game.Main;
 import com.phonelinecincinnati.game.Models.TextureName;
 
@@ -15,14 +17,16 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public class TestingGround extends Level {
     public TestingGround(final CopyOnWriteArrayList<GameObject> activeObjects) {
         this.activeObjects = activeObjects;
+        load(false, false);
     }
 
     private void load() {
         Main.backgroundColor.set(1, 0, 1, 1);
         Main.modelHandler.setModelsForLevel1();
 
-        final Player player = new Player(25, 3.6f, 0);
-        player.weapon = new BaseballBat();
+        Player player = createPlayer(new Vector3(25, 3.6f, 0), new Vector3(0, 0, 1), new M16(),
+                false, false);
+        player.giveControl();
 
         Main.camera.lookAt(25, 3.6f, 1);
 
@@ -34,14 +38,19 @@ public class TestingGround extends Level {
 
         activeObjects.add(mob);
         activeObjects.add(player);
+
+        PauseMenuHandler pauseMenuHandler = new PauseMenuHandler(true);
+        pauseMenuHandler.enablePausing();
+        activeObjects.add(pauseMenuHandler);
     }
 
     @Override
     public void load(boolean reloading, boolean retainPlayer) {
-
+        load();
     }
+
     @Override
     public void reload() {
-
+        load();
     }
 }

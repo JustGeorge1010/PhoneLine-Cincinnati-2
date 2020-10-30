@@ -109,10 +109,6 @@ public class ModelHandler {
         //Car
         putModel("Vehicles/PlayerCar", ModelName.PlayerCar);
         putModel("Vehicles/PlayerCar", ModelName.PlayerCarDoor);
-
-        //Weapons
-        putModel("Weapons", ModelName.Bat);
-        putModel("Weapons", ModelName.GolfClub);
     }
 
     public void setModelsForLevel1() {
@@ -146,6 +142,9 @@ public class ModelHandler {
         //Weapons
         putModel("Weapons", ModelName.Bat);
         putModel("Weapons", ModelName.GolfClub);
+        putModel("Weapons", ModelName.M16);
+
+        putModel("Weapons", ModelName.Bullet);
     }
 
     private void putModel(String category, ModelName name) {
@@ -201,6 +200,7 @@ public class ModelHandler {
         textures.put(TextureName.MidnightAnimal, new Texture(Gdx.files.internal("Textures/Decals/Posters/MidnightAnimal.png")));
 
         textures.put(TextureName.MaskLetter, new Texture(Gdx.files.internal("Textures/Misc/MaskLetter.png")));
+        textures.put(TextureName.Ammo, new Texture(Gdx.files.internal("Textures/Misc/Ammo.png")));
 
         textures.put(TextureName.BlueCircle, new Texture(Gdx.files.internal("Textures/Debug/BlueCircle.png")));
     }

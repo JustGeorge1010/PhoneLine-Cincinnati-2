@@ -75,14 +75,7 @@ public class ControlHandler extends InputAdapter {
 
     @Override
     public boolean mouseMoved(int screenX, int screenY) {
-        if(player == null) {
-            findPlayer();
-            if(player != null) {
-                player.controlCamera();
-            }
-        } else {
-            player.controlCamera();
-        }
+        controlCamera();
         return true;
     }
 
@@ -97,6 +90,35 @@ public class ControlHandler extends InputAdapter {
         if(button == Input.Buttons.LEFT) player.LMB();
         if(button == Input.Buttons.RIGHT) player.RMB();
         return true;
+    }
+
+    @Override
+    public boolean touchDragged(int screenX, int screenY, int pointer) {
+        controlCamera();
+        return true;
+    }
+
+    @Override
+    public boolean touchUp(int screenX, int screenY, int pointer, int button) {
+        if(player == null) {
+            findPlayer();
+            if(player == null) {
+                return true;
+            }
+        }
+        if(button == Input.Buttons.LEFT) player.LMBReleased();
+        return true;
+    }
+
+    private void controlCamera() {
+        if(player == null) {
+            findPlayer();
+            if(player != null) {
+                player.controlCamera();
+            }
+        } else {
+            player.controlCamera();
+        }
     }
 
     private void findPlayer() {

@@ -7,7 +7,6 @@ import com.phonelinecincinnati.game.Main;
 import com.phonelinecincinnati.game.Models.ModelName;
 
 public class BaseballBat extends Melee{
-
     public BaseballBat() {
         name = ModelName.Bat;
         type = WeaponType.Blunt;
@@ -17,5 +16,4 @@ public class BaseballBat extends Melee{
         attackAnim.setUp();
         finisherAnim = new OverheadSwingFinisher(model, false);
     }
-
 }

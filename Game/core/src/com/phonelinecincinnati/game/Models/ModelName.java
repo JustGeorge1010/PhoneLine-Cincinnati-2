@@ -72,6 +72,9 @@ public enum ModelName {
     //Weapons
     Bat,
     GolfClub,
+    M16,
+
+    Bullet,
 
     //Mafia
     EnemyBody,

@@ -187,7 +187,7 @@ class House extends Level{
                 });
                 player.textBox.open();
             }
-        }, "[RMB] to check recording");
+        }, "(RMB) to check recording");
         list.add(phoneTable);
         list.add(new SolidModel(new Vector3(36, 0, 28), 0, ModelName.LivingRoomTable));
         list.add(new Model(new Vector3(35, 0, 21), 0, ModelName.MaroonCarpet));
@@ -243,7 +243,7 @@ class House extends Level{
                 });
                 player.textBox.open();
             }
-        }, "[RMB] to take contents");
+        }, "(RMB) to take contents");
         list.add(box);
 
         list.add(new Door(new Vector3(22.25f, -0.04f, 44.7f), true, true, ModelName.Door));
