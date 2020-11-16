@@ -7,18 +7,24 @@ import com.phonelinecincinnati.game.Main;
 import java.awt.*;
 
 public class DesktopLauncher {
+    @SuppressWarnings("FieldCanBeLocal")
+    private static boolean fullscreen = true;
+
     public static void main(String[] arg) {
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
 
         //config.width = 1000;
         //config.height = 800;
-        config.width = (int) screenSize.getWidth();
-        config.height = (int) screenSize.getHeight();
+        config.width = LwjglApplicationConfiguration.getDesktopDisplayMode().width;
+        config.height = LwjglApplicationConfiguration.getDesktopDisplayMode().height;
 
         config.samples = 50;
 
-        config.fullscreen = true;
+        config.fullscreen = fullscreen;
+        if(!fullscreen) {
+            config.height -= 10;
+        }
 
         new LwjglApplication(new Main(), config);
     }
