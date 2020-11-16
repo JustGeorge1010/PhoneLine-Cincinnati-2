@@ -103,6 +103,7 @@ public class MafiaMob extends GameObject{
         brain = new MafiaMobBrain(this, playerRef);
     }
 
+    @SuppressWarnings("Duplicates")
     @Override
     public void update() {
         if(dead && fallVelocity == 0f && !mounted) {
@@ -247,7 +248,7 @@ public class MafiaMob extends GameObject{
             knockedOverModel = Main.modelHandler.getModel(EnemyBack1);
             knockedOverModel.transform.setToTranslation(position);
             knockedOverModel.transform.rotate(0, 1, 0, rotation.y);
-            Main.levelHandler.addObjectToCurrentLevel(new WeaponPickUp(position, weapon));
+            Main.levelHandler.addObjectToCurrentLevel(new WeaponPickUp(position.cpy(), weapon));
             this.fallVelocity = fallVelocity;
         }
     }
