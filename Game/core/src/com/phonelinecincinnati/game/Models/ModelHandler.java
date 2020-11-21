@@ -5,7 +5,6 @@ import com.badlogic.gdx.assets.loaders.ModelLoader;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.VertexAttributes;
 import com.badlogic.gdx.graphics.g3d.Material;
 import com.badlogic.gdx.graphics.g3d.Model;
 import com.badlogic.gdx.graphics.g3d.ModelInstance;
@@ -23,6 +22,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import static com.badlogic.gdx.graphics.VertexAttributes.*;
+
 public class ModelHandler {
     private ModelLoader modelLoader;
     private ModelBuilder modelBuilder;
@@ -31,6 +32,9 @@ public class ModelHandler {
     public Map<TextureName, Texture> textures;
 
     private ArrayList<Model> runtimeModels;
+
+    private Model xyzGrid;
+    private Model sharedGrid;
 
     public ModelHandler() {
         modelBuilder = new ModelBuilder();
@@ -43,19 +47,11 @@ public class ModelHandler {
         runtimeModels = new ArrayList<Model>();
     }
 
-    public void setModelsForPlayerHome() {
-        for(Model model : models.values()) {
-            model.dispose();
-        }
-        for(Model model : runtimeModels) {
-            model.dispose();
-        }
-        models.clear();
-        runtimeModels.clear();
+    public void setupAllModels() {
 
         models.put(ModelName.nul, modelBuilder.createBox(1, 1, 1,
                 new Material(ColorAttribute.createDiffuse(Color.WHITE)),
-                VertexAttributes.Usage.Position|VertexAttributes.Usage.Normal
+                Usage.Position| Usage.Normal
         ));
 
         //Bedroom
@@ -109,22 +105,6 @@ public class ModelHandler {
         //Car
         putModel("Vehicles/PlayerCar", ModelName.PlayerCar);
         putModel("Vehicles/PlayerCar", ModelName.PlayerCarDoor);
-    }
-
-    public void setModelsForLevel1() {
-        for(Model model : models.values()) {
-            model.dispose();
-        }
-        for(Model model : runtimeModels) {
-            model.dispose();
-        }
-        models.clear();
-        runtimeModels.clear();
-
-        models.put(ModelName.nul, modelBuilder.createBox(1, 1, 1,
-                new Material(ColorAttribute.createDiffuse(Color.WHITE)),
-                VertexAttributes.Usage.Position|VertexAttributes.Usage.Normal
-        ));
 
         putModel("Level1", ModelName.SubwayTracks);
         putModel("Level1/SubwayBenches", ModelName.SubwayBench1);
@@ -221,7 +201,7 @@ public class ModelHandler {
 
     public ModelInstance getBox(float x, float y, float z, float width, float height, float depth, TextureName name) {
         Material material = new Material(TextureAttribute.createDiffuse(textures.get(name)), ColorAttribute.createSpecular(1, 1, 1, 1), FloatAttribute.createShininess(8f));
-        long attributes = VertexAttributes.Usage.Position | VertexAttributes.Usage.Normal | VertexAttributes.Usage.TextureCoordinates;
+        long attributes = Usage.Position | Usage.Normal | Usage.TextureCoordinates;
 
         modelBuilder.begin();
         MeshPartBuilder builder = Main.modelHandler.modelBuilder.part(name.toString(), GL20.GL_TRIANGLES, attributes, material);
@@ -254,7 +234,34 @@ public class ModelHandler {
         return new ModelInstance(lineModel);
     }
 
+    public ModelInstance getSphere(Vector3 size) {
+        Material material = new Material(
+                TextureAttribute.createDiffuse(textures.get(TextureName.BlueCircle)),
+                ColorAttribute.createSpecular(0, 0, 1, 1),
+                FloatAttribute.createShininess(8f)
+        );
+        long attributes = Usage.Position | Usage.Normal | Usage.TextureCoordinates;
+        Model sphereModel = modelBuilder.createSphere(size.x, size.y, size.z, 24, 24, material, attributes);
+        runtimeModels.add(sphereModel);
+
+        return new ModelInstance(sphereModel);
+    }
+
+    public ModelInstance getSharedGrid(float gridSize) {
+        if(sharedGrid != null) {
+            xyzGrid.dispose();
+            sharedGrid.dispose();
+        }
+        xyzGrid = modelBuilder.createXYZCoordinates(20, new Material(), Usage.Position | Usage.ColorPacked);
+        sharedGrid = modelBuilder.createLineGrid(100, 100, gridSize, gridSize, new Material(ColorAttribute.createDiffuse(Color.WHITE)), Usage.Position);
+        return new ModelInstance(sharedGrid);
+    }
+
     public void dispose() {
+        if(sharedGrid != null) {
+            xyzGrid.dispose();
+            sharedGrid.dispose();
+        }
         for(Model model : models.values()) {
             model.dispose();
         }

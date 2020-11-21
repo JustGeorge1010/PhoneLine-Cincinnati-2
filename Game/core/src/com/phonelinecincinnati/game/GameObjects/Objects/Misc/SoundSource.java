@@ -1,12 +1,10 @@
-package com.phonelinecincinnati.game.GameObjects.Objects.Utility;
+package com.phonelinecincinnati.game.GameObjects.Objects.Misc;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Preferences;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.files.FileHandle;
 import com.phonelinecincinnati.game.GameObjects.Objects.GameObject;
-import com.phonelinecincinnati.game.GameObjects.Objects.MenuObjects.PauseMenuHandler;
 import com.phonelinecincinnati.game.Renderer;
 
 import java.util.ArrayList;

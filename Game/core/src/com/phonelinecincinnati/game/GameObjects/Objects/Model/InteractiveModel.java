@@ -2,9 +2,7 @@ package com.phonelinecincinnati.game.GameObjects.Objects.Model;
 
 import com.badlogic.gdx.math.Vector3;
 import com.phonelinecincinnati.game.GameObjects.Objects.GameObject;
-import com.phonelinecincinnati.game.GameObjects.Objects.Player.Player;
-import com.phonelinecincinnati.game.GameObjects.Objects.Utility.Action;
-import com.phonelinecincinnati.game.Main;
+import com.phonelinecincinnati.game.GameObjects.Objects.Misc.Action;
 import com.phonelinecincinnati.game.Models.ModelName;
 import com.phonelinecincinnati.game.Renderer;
 

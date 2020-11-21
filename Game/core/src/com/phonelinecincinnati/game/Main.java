@@ -4,7 +4,7 @@ import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.*;
 import com.phonelinecincinnati.game.GameObjects.Objects.GameObject;
-import com.phonelinecincinnati.game.GameObjects.Objects.Utility.Action;
+import com.phonelinecincinnati.game.GameObjects.Objects.Misc.Action;
 import com.phonelinecincinnati.game.Levels.LevelHandler;
 import com.phonelinecincinnati.game.Models.ModelHandler;
 
@@ -13,6 +13,7 @@ import java.util.List;
 
 public class Main extends ApplicationAdapter {
     //todo debugVariables
+    public static boolean levelEditor = true;
     public static boolean debug = false;
     public static boolean debugBlindEnemies = false;
     public static boolean debugDrawPaths = false;
@@ -51,7 +52,12 @@ public class Main extends ApplicationAdapter {
         levelHandler = new LevelHandler();
         controlHandler = new ControlHandler();
 
-        levelHandler.loadMenu();
+        if(levelEditor) {
+            debug = true;
+            levelHandler.loadLevelEditor("");
+        } else {
+            levelHandler.loadMenu();
+        }
 
         Gdx.input.setCursorCatched(true);
         Gdx.input.setInputProcessor(controlHandler);

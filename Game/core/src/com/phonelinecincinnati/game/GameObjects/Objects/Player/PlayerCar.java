@@ -3,7 +3,7 @@ package com.phonelinecincinnati.game.GameObjects.Objects.Player;
 import com.badlogic.gdx.graphics.g3d.ModelInstance;
 import com.badlogic.gdx.math.Vector3;
 import com.phonelinecincinnati.game.GameObjects.Objects.Model.InteractiveSolidModel;
-import com.phonelinecincinnati.game.GameObjects.Objects.Utility.SoundSource;
+import com.phonelinecincinnati.game.GameObjects.Objects.Misc.SoundSource;
 import com.phonelinecincinnati.game.Main;
 import com.phonelinecincinnati.game.Models.ModelName;
 import com.phonelinecincinnati.game.Renderer;

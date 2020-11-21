@@ -6,8 +6,8 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.GlyphLayout;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.phonelinecincinnati.game.GameObjects.Objects.GameObject;
-import com.phonelinecincinnati.game.GameObjects.Objects.Utility.Action;
-import com.phonelinecincinnati.game.GameObjects.Objects.Utility.SoundSource;
+import com.phonelinecincinnati.game.GameObjects.Objects.Misc.Action;
+import com.phonelinecincinnati.game.GameObjects.Objects.Misc.SoundSource;
 import com.phonelinecincinnati.game.Main;
 import com.phonelinecincinnati.game.Renderer;
 

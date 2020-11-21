@@ -11,7 +11,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public abstract class Level {
     CopyOnWriteArrayList<GameObject> activeObjects;
 
-    public Player createPlayer(Vector3 position, Vector3 lookDirection, Weapon weapon, boolean reloading, boolean retainPlayer) {
+    public static Player createPlayer(Vector3 position, Vector3 lookDirection, Weapon weapon, boolean reloading, boolean retainPlayer) {
         Player player;
         if(!retainPlayer) {
             player = new Player(position.x, position.y, position.z);

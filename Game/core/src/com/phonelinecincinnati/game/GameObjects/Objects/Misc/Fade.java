@@ -1,4 +1,4 @@
-package com.phonelinecincinnati.game.GameObjects.Objects.Utility;
+package com.phonelinecincinnati.game.GameObjects.Objects.Misc;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;

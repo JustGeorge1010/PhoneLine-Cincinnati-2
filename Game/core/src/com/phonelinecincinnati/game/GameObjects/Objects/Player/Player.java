@@ -13,8 +13,8 @@ import com.phonelinecincinnati.game.GameObjects.Objects.Model.InteractiveModel;
 import com.phonelinecincinnati.game.GameObjects.Objects.Pickups.WeaponPickUp;
 import com.phonelinecincinnati.game.GameObjects.Objects.Weapons.Ranged.Ranged;
 import com.phonelinecincinnati.game.GameObjects.Objects.Weapons.Weapon;
-import com.phonelinecincinnati.game.GameObjects.Objects.Utility.ForcedController;
-import com.phonelinecincinnati.game.GameObjects.Objects.Utility.SoundSource;
+import com.phonelinecincinnati.game.GameObjects.Objects.Misc.ForcedController;
+import com.phonelinecincinnati.game.GameObjects.Objects.Misc.SoundSource;
 import com.phonelinecincinnati.game.GameObjects.Objects.Weapons.WeaponType;
 import com.phonelinecincinnati.game.Main;
 import com.phonelinecincinnati.game.Renderer;
@@ -77,7 +77,7 @@ public class Player extends GameObject {
     }
 
     public void LMB() {
-        if(weaponResetTime <= 0) {
+        if(weaponResetTime <= 0 && weapon != null) {
             if(!(weapon.type == WeaponType.Automatic || weapon.type == WeaponType.SemiAutomatic)) {
                 weaponResetTime = 50;
             }
@@ -95,7 +95,7 @@ public class Player extends GameObject {
     }
 
     public void LMBReleased() {
-        if(weapon.type == WeaponType.Automatic) {
+        if(weapon != null && weapon.type == WeaponType.Automatic) {
             ((Ranged)weapon).triggerHeld = false;
         }
     }

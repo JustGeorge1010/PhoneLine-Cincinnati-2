@@ -11,10 +11,10 @@ import com.phonelinecincinnati.game.GameObjects.Objects.Model.Model;
 import com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel;
 import com.phonelinecincinnati.game.GameObjects.Objects.Player.Player;
 import com.phonelinecincinnati.game.GameObjects.Objects.Player.PlayerCar;
-import com.phonelinecincinnati.game.GameObjects.Objects.Utility.Action;
-import com.phonelinecincinnati.game.GameObjects.Objects.Utility.Fade;
-import com.phonelinecincinnati.game.GameObjects.Objects.Utility.ForcedController;
-import com.phonelinecincinnati.game.GameObjects.Objects.Utility.SoundSource;
+import com.phonelinecincinnati.game.GameObjects.Objects.Misc.Action;
+import com.phonelinecincinnati.game.GameObjects.Objects.Misc.Fade;
+import com.phonelinecincinnati.game.GameObjects.Objects.Misc.ForcedController;
+import com.phonelinecincinnati.game.GameObjects.Objects.Misc.SoundSource;
 import com.phonelinecincinnati.game.Main;
 import com.phonelinecincinnati.game.Models.ModelName;
 import com.phonelinecincinnati.game.Models.TextureName;
@@ -24,8 +24,6 @@ import java.util.concurrent.CopyOnWriteArrayList;
 class House extends Level{
 
     House(final CopyOnWriteArrayList<GameObject> list, int currentProgression) {
-        Main.modelHandler.setModelsForPlayerHome();
-
         final SoundSource soundSource = SoundSource.buildSoundSource(1).setMusic("DeepCover.mp3").playMusic();
         list.add(soundSource);
         Main.backgroundColor.set(1, 0, 1, 1);
@@ -358,7 +356,6 @@ class House extends Level{
                         for(GameObject object : list) {
                             object.dispose();
                         }
-                        Main.modelHandler.setModelsForLevel1();
                         Main.levelHandler.loadLevel1();
                     }
                 }, 0.008f));

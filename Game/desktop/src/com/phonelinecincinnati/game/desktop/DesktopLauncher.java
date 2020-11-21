@@ -25,7 +25,7 @@ public class DesktopLauncher {
         if(!fullscreen) {
             config.height -= 10;
         }
-
+        
         new LwjglApplication(new Main(), config);
     }
 }

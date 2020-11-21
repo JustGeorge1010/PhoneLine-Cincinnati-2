@@ -1,8 +1,10 @@
 package com.phonelinecincinnati.game.Levels;
 
+import com.badlogic.gdx.math.Vector3;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.phonelinecincinnati.game.GameObjects.Objects.GameObject;
+import com.phonelinecincinnati.game.GameObjects.Objects.Misc.BuilderWidget;
 import com.phonelinecincinnati.game.GameObjects.Objects.Player.Player;
 import com.phonelinecincinnati.game.Main;
 import javafx.util.Pair;
@@ -10,9 +12,7 @@ import javafx.util.Pair;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.lang.reflect.Constructor;
 import java.util.ArrayList;
-import java.util.Timer;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class LevelHandler {
@@ -22,6 +22,7 @@ public class LevelHandler {
     public Player player = null;
 
     public LevelHandler() {
+        Main.modelHandler.setupAllModels();
         activeObjects = new CopyOnWriteArrayList<GameObject>();
     }
 
@@ -85,7 +86,9 @@ public class LevelHandler {
         for(GameObject object : activeObjects) {
             String key = object.getClass().getName();
             ArrayList<String> values = object.getConstructParams();
-            level.json.add(new Pair<String, ArrayList<String>>(key, values));
+            if(!values.isEmpty()) {
+                level.json.add(new Pair<String, ArrayList<String>>(key, values));
+            }
         }
 
         //Can take a Writable(file) in the toJson method to write directly to file instead of to string
@@ -96,6 +99,23 @@ public class LevelHandler {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void loadLevelEditor(String levelName) {
+        clearActiveObjects();
+
+        Main.backgroundColor.set(1, 0, 1, 1);
+
+        if(!levelName.equals("")) {
+            loadFromJson(levelName);
+        }
+
+        final Player player =
+                Level.createPlayer(new Vector3(0, 1, -5), new Vector3(0, 0, 1), null,
+                        false, false);
+        player.giveControl();
+        activeObjects.add(player);
+        activeObjects.add(new BuilderWidget());
     }
 
     public void loadMenu() {

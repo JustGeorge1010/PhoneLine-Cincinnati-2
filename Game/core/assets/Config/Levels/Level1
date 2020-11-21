@@ -1,7 +1,7 @@
 {
   "json": [
     {
-      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Utility.SoundSource",
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Misc.SoundSource",
       "value": []
     },
     {
@@ -551,7 +551,7 @@
       "value": []
     },
     {
-      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Utility.LevelTitleCard",
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Misc.LevelTitleCard",
       "value": []
     }
   ]
