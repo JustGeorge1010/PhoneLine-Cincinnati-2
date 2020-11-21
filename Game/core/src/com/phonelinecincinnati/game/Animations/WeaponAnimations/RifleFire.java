@@ -2,7 +2,7 @@ package com.phonelinecincinnati.game.Animations.WeaponAnimations;
 
 import com.badlogic.gdx.graphics.g3d.ModelInstance;
 import com.badlogic.gdx.math.Vector3;
-import com.phonelinecincinnati.game.GameObjects.Objects.Utility.SoundSource;
+import com.phonelinecincinnati.game.GameObjects.Objects.Misc.SoundSource;
 
 public class RifleFire extends WeaponAnimation {
     private SoundSource gunshot;

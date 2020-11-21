@@ -22,7 +22,6 @@ public class TestingGround extends Level {
 
     private void load() {
         Main.backgroundColor.set(1, 0, 1, 1);
-        Main.modelHandler.setModelsForLevel1();
 
         Player player = createPlayer(new Vector3(25, 3.6f, 0), new Vector3(0, 0, 1), new M16(),
                 false, false);

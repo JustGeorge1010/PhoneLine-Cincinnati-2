@@ -1,8 +1,7 @@
 package com.phonelinecincinnati.game.GameObjects.Objects;
 
 import com.badlogic.gdx.math.Vector3;
-import com.phonelinecincinnati.game.GameObjects.ObjectTraits.Collidable;
-import com.phonelinecincinnati.game.GameObjects.Objects.Utility.Action;
+import com.phonelinecincinnati.game.GameObjects.Objects.Misc.Action;
 import com.phonelinecincinnati.game.Renderer;
 
 import java.util.ArrayList;

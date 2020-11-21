@@ -8,7 +8,7 @@ import com.phonelinecincinnati.game.GameObjects.Objects.Enemies.Mafia.MafiaMob;
 import com.phonelinecincinnati.game.GameObjects.Objects.Model.Model;
 import com.phonelinecincinnati.game.GameObjects.Objects.Pickups.WeaponPickUp;
 import com.phonelinecincinnati.game.GameObjects.Objects.Player.Player;
-import com.phonelinecincinnati.game.GameObjects.Objects.Utility.SoundSource;
+import com.phonelinecincinnati.game.GameObjects.Objects.Misc.SoundSource;
 import com.phonelinecincinnati.game.Main;
 import com.phonelinecincinnati.game.Models.ModelName;
 import com.phonelinecincinnati.game.Renderer;

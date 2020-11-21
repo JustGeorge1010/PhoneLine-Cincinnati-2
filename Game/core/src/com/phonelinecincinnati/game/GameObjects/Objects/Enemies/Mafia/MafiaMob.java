@@ -17,7 +17,7 @@ import com.phonelinecincinnati.game.GameObjects.Objects.Player.Player;
 import com.phonelinecincinnati.game.GameObjects.Objects.Weapons.Melee.Melee;
 import com.phonelinecincinnati.game.GameObjects.Objects.Weapons.Weapon;
 import com.phonelinecincinnati.game.GameObjects.Objects.Weapons.WeaponType;
-import com.phonelinecincinnati.game.GameObjects.Objects.Utility.SoundSource;
+import com.phonelinecincinnati.game.GameObjects.Objects.Misc.SoundSource;
 import com.phonelinecincinnati.game.Main;
 import com.phonelinecincinnati.game.Models.ModelName;
 import com.phonelinecincinnati.game.Renderer;

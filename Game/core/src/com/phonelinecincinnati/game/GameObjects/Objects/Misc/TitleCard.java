@@ -1,4 +1,4 @@
-package com.phonelinecincinnati.game.GameObjects.Objects.Utility;
+package com.phonelinecincinnati.game.GameObjects.Objects.Misc;
 
 import com.phonelinecincinnati.game.GameObjects.Objects.GameObject;
 import com.phonelinecincinnati.game.Renderer;

@@ -1,7 +1,7 @@
 package com.phonelinecincinnati.game.Animations.WeaponAnimations;
 
 import com.badlogic.gdx.graphics.g3d.ModelInstance;
-import com.phonelinecincinnati.game.GameObjects.Objects.Utility.SoundSource;
+import com.phonelinecincinnati.game.GameObjects.Objects.Misc.SoundSource;
 
 public class OverheadSwingFinisher extends WeaponAnimation{
     private boolean down = false;

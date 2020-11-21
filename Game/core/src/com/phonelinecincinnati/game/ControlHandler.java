@@ -3,10 +3,8 @@ package com.phonelinecincinnati.game;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputAdapter;
 import com.phonelinecincinnati.game.GameObjects.Objects.GameObject;
-import com.phonelinecincinnati.game.GameObjects.Objects.MenuObjects.PauseMenuHandler;
 import com.phonelinecincinnati.game.GameObjects.Objects.Player.Player;
-import com.phonelinecincinnati.game.GameObjects.Objects.Utility.Action;
-import com.phonelinecincinnati.game.GameObjects.Objects.Utility.Fade;
+import com.phonelinecincinnati.game.GameObjects.Objects.Misc.Action;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -14,6 +12,7 @@ import java.util.Map;
 public class ControlHandler extends InputAdapter {
     private Player player;
     public Map<Integer, Boolean> keys;
+    private Map<Integer, Boolean> keyTapped;
 
     public ControlHandler() {
         keys = new HashMap<Integer, Boolean>();
@@ -30,11 +29,23 @@ public class ControlHandler extends InputAdapter {
         keys.put(Input.Keys.ENTER, false);
         keys.put(Input.Keys.SPACE, false);
         keys.put(Input.Keys.ESCAPE, false);
+        keys.put(Input.Keys.CONTROL_LEFT, false);
+
+        keyTapped = new HashMap<Integer, Boolean>();
+    }
+
+    public boolean getKeyTapped(int key) {
+        if(keyTapped.containsKey(key) && keyTapped.get(key)) {
+            keyTapped.put(key, false);
+            return true;
+        }
+        return false;
     }
 
     @Override
     public boolean keyDown(int keycode) {
         keys.put(keycode, true);
+        keyTapped.put(keycode, true);
         if(keycode == Input.Keys.SPACE) {
             if(player != null) {
                 player.spb();
