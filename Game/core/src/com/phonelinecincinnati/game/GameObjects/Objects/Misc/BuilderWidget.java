@@ -1,17 +1,13 @@
 package com.phonelinecincinnati.game.GameObjects.Objects.Misc;
 
-import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.g3d.ModelInstance;
-import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Vector3;
-import com.phonelinecincinnati.game.GameObjects.Objects.GameObject;
+import com.phonelinecincinnati.game.GameObjects.Objects.*;
 import com.phonelinecincinnati.game.GameObjects.Objects.Model.Model;
 import com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel;
-import com.phonelinecincinnati.game.GameObjects.Objects.Plane;
-import com.phonelinecincinnati.game.GameObjects.Objects.SolidWall;
-import com.phonelinecincinnati.game.GameObjects.Objects.Wall;
+import com.phonelinecincinnati.game.GameObjects.Objects.Player.Player;
 import com.phonelinecincinnati.game.Main;
 import com.phonelinecincinnati.game.Models.ModelName;
 import com.phonelinecincinnati.game.Models.TextureName;
@@ -35,7 +31,8 @@ enum BuildMode {
 
 enum BrushMode {
     Base,
-    Model
+    Model,
+    Decal
 }
 
 enum Direction {
@@ -50,6 +47,8 @@ public class BuilderWidget extends GameObject{
 
     private int textureIndex = 1;
     private TextureName textureName = TextureName.values()[textureIndex];
+    private int secondaryTextureIndex = 1;
+    private TextureName secondaryTextureName = TextureName.values()[secondaryTextureIndex];
 
     private int modelIndex;
 
@@ -60,7 +59,10 @@ public class BuilderWidget extends GameObject{
     private int deleteIndex = 0;
 
     private Vector3 size = new Vector3(1, 0.1f, 1);
-    private int rotation;
+    private boolean hardRotation = true;
+    private int rotationX;
+    private int rotationY;
+    private int rotationZ;
 
     private Base selectedBase = Base.Plane;
     private GameObject currentObject;
@@ -110,6 +112,9 @@ public class BuilderWidget extends GameObject{
         else if(base.equals("Controls")) {
             System.out.println("Arrow keys: Move builder");
             System.out.println("Numpad 8/5: Raise/Lower move builder");
+            System.out.println("Pg Up/Down: Change wall height");
+            System.out.println("R: Rotate by 90");
+            System.out.println("CTRL + R: Rotate by 1");
             System.out.println("Delete: switch between placement and delete modes");
             System.out.println("Numpad 4/6: Cycle through Base tools (Wall, Plane)");
             System.out.println("Numpad 2: toggle object solidness (Can be collided with)");
@@ -117,6 +122,7 @@ public class BuilderWidget extends GameObject{
             System.out.println("Numpad + -: increase Base tool size by 1 grid unit");
             System.out.println("Numpad 7/9: Cycle through brush modes (Base, Model");
             System.out.println("Square Brackets: cycle through variants (Textures/Models/Objects to delete)");
+            System.out.println("CTRL + Square Brackets: cycle through alternate variants");
             System.out.println("Enter: Place/Delete Object");
         }
         else if(base.equals("ls")) {
@@ -253,6 +259,9 @@ public class BuilderWidget extends GameObject{
             if(brushMode == BrushMode.Base) {
                 brushMode = BrushMode.Model;
             }
+            else if(brushMode == BrushMode.Model) {
+                brushMode = BrushMode.Decal;
+            }
             else {
                 brushMode = BrushMode.Base;
             }
@@ -269,9 +278,27 @@ public class BuilderWidget extends GameObject{
 
         int brushIncrement = 0;
         if(Main.controlHandler.getKeyTapped(Input.Keys.LEFT_BRACKET))
-            brushIncrement--;
-        else if(Main.controlHandler.getKeyTapped(Input.Keys.RIGHT_BRACKET))
-            brushIncrement++;
+            if(Main.controlHandler.keys.get(Input.Keys.CONTROL_LEFT)) {
+                secondaryTextureIndex--;
+            }
+            else {
+                brushIncrement--;
+            }
+        else if(Main.controlHandler.getKeyTapped(Input.Keys.RIGHT_BRACKET)) {
+            if(Main.controlHandler.keys.get(Input.Keys.CONTROL_LEFT)) {
+                secondaryTextureIndex++;
+            }
+            else {
+                brushIncrement++;
+            }
+        }
+
+        if (secondaryTextureIndex > TextureName.values().length-1) {
+            secondaryTextureIndex = 0;
+        } else if(secondaryTextureIndex < 0) {
+            secondaryTextureIndex = TextureName.values().length-1;
+        }
+        secondaryTextureName = TextureName.values()[secondaryTextureIndex];
 
         if(buildMode == BuildMode.Delete) {
             deleteIndex += brushIncrement;
@@ -289,8 +316,10 @@ public class BuilderWidget extends GameObject{
             if(Main.controlHandler.getKeyTapped(Input.Keys.NUMPAD_6) ||
                     Main.controlHandler.getKeyTapped(Input.Keys.NUMPAD_4)) {
                 if(selectedBase == Base.Plane) {
+                    size.y = 6f;
                     selectedBase = Base.Wall;
                 } else {
+                    size.y = 0.1f;
                     selectedBase = Base.Plane;
                 }
             }
@@ -304,6 +333,16 @@ public class BuilderWidget extends GameObject{
                 modelIndex = 0;
             }
         }
+        else if(brushMode == BrushMode.Decal) {
+            textureIndex += brushIncrement;
+            if(textureIndex < 0) {
+                textureIndex = TextureName.values().length-1;
+            }
+            else if(textureIndex >= TextureName.values().length) {
+                textureIndex = 0;
+            }
+            textureName = TextureName.values()[textureIndex];
+        }
 
         if(Main.controlHandler.getKeyTapped(Input.Keys.NUMPAD_1)) {
             gridLockAmount -= 0.1f;
@@ -311,9 +350,8 @@ public class BuilderWidget extends GameObject{
         else if(Main.controlHandler.getKeyTapped(Input.Keys.NUMPAD_3)) {
             gridLockAmount += 0.1f;
         }
-
-        if(gridLockAmount < 0) {
-            gridLockAmount = 0;
+        if(gridLockAmount <= 0) {
+            gridLockAmount = 0.1f;
         }
     }
 
@@ -399,12 +437,49 @@ public class BuilderWidget extends GameObject{
                     break;
             }
         }
-        if(Main.controlHandler.getKeyTapped(Input.Keys.R)) {
-            rotation += 90;
-            if(rotation >= 360) {
-                rotation = 0;
+        if(Main.controlHandler.keys.get(Input.Keys.CONTROL_LEFT)) {
+            if(Main.controlHandler.getKeyTapped(Input.Keys.R)) {
+                hardRotation = false;
+                rotationY += 1;
+            }
+            else if(Main.controlHandler.getKeyTapped(Input.Keys.T)) {
+                hardRotation = false;
+                rotationZ += 1;
+            }
+            else if(Main.controlHandler.getKeyTapped(Input.Keys.G)) {
+                hardRotation = false;
+                rotationX += 1;
             }
         }
+        else {
+            if(Main.controlHandler.getKeyTapped(Input.Keys.R)) {
+                if(hardRotation) {
+                    rotationY += 90;
+                } else {
+                    hardRotation = true;
+                    rotationY = Math.round(rotationY/90f)*90;
+                }
+            }
+            else if(Main.controlHandler.getKeyTapped(Input.Keys.T)) {
+                if(hardRotation) {
+                    rotationZ += 90;
+                } else {
+                    hardRotation = true;
+                    rotationZ = Math.round(rotationZ/90f)*90;
+                }
+            }
+            else if(Main.controlHandler.getKeyTapped(Input.Keys.G)) {
+                if(hardRotation) {
+                    rotationX += 90;
+                } else {
+                    hardRotation = true;
+                    rotationX = Math.round(rotationX/90f)*90;
+                }
+            }
+        }
+        if(rotationY >= 360) rotationY = 0;
+        if(rotationZ >= 360) rotationZ = 0;
+        if(rotationX >= 360) rotationX = 0;
 
         if(Main.controlHandler.getKeyTapped(Input.Keys.PLUS)) {
             if(Main.controlHandler.keys.get(Input.Keys.CONTROL_LEFT)) {
@@ -421,7 +496,6 @@ public class BuilderWidget extends GameObject{
                 else {
                     size.z += gridLockAmount;
                 }
-
             }
         }
         else if(Main.controlHandler.getKeyTapped(Input.Keys.MINUS)) {
@@ -442,6 +516,15 @@ public class BuilderWidget extends GameObject{
             }
         }
 
+        if(Main.controlHandler.getKeyTapped(Input.Keys.PAGE_UP)) {
+            size.y += gridLockAmount;
+            size.y = Math.round(size.y/gridLockAmount)*gridLockAmount;
+        }
+        else if(Main.controlHandler.getKeyTapped(Input.Keys.PAGE_DOWN)) {
+            size.y -= gridLockAmount;
+            size.y = Math.round(size.y/gridLockAmount)*gridLockAmount;
+        }
+
         if(Main.controlHandler.getKeyTapped(Input.Keys.NUMPAD_8)) {
             position.y += gridLockAmount;
         }
@@ -453,31 +536,29 @@ public class BuilderWidget extends GameObject{
     private void setSelectedObject() {
         if(brushMode == BrushMode.Base) {
             if(selectedBase == Base.Plane) {
-                size.y = 0.1f;
                 currentObject = new Plane(new Vector3(position), new Vector3(size), textureName);
             }
             else if(selectedBase == Base.Wall) {
                 Vector3 wallSize;
-                if(rotation == 0 || rotation == 180) {
-                    wallSize = new Vector3(size.x, 6, 0.5f);
+                if(rotationY == 0 || rotationY == 180) {
+                    wallSize = new Vector3(size.x, size.y, 0.5f);
                 } else {
-                    wallSize = new Vector3(0.5f, 6, size.x);
+                    wallSize = new Vector3(0.5f, size.y, size.x);
                 }
-                if(isSolid) {
-                    currentObject = new SolidWall(new Vector3(position), wallSize, textureName);
-                }
-                else {
-                    currentObject = new Wall(new Vector3(position), wallSize, textureName);
-                }
+                currentObject = new DoubleWall(new Vector3(position), wallSize, textureName, secondaryTextureName);
             }
         }
         else if(brushMode == BrushMode.Model) {
             if(isSolid) {
-                currentObject = new SolidModel(position.cpy(), rotation, ModelName.values()[modelIndex]);
+                currentObject = new SolidModel(position.cpy(), rotationY, ModelName.values()[modelIndex]);
             }
             else {
-                currentObject = new Model(position.cpy(), rotation, ModelName.values()[modelIndex]);
+                currentObject = new Model(position.cpy(), rotationY, ModelName.values()[modelIndex]);
             }
+        }
+        else if(brushMode == BrushMode.Decal) {
+            Vector3 rot = new Vector3(rotationX, rotationY, rotationZ);
+            currentObject = new GameDecal(position.cpy(), size.x, size.z, rot, textureName);
         }
     }
 
@@ -488,6 +569,10 @@ public class BuilderWidget extends GameObject{
             if(gameObject.getClass() == BuilderWidget.class) {
                 continue;
             }
+            else if(gameObject.getClass() == Player.class) {
+                continue;
+            }
+
             float distanceToPointer = gameObject.position.dst(position);
             if(distanceToPointer < smallestDistance) {
                 closestObjects.clear();
@@ -499,13 +584,18 @@ public class BuilderWidget extends GameObject{
             }
         }
 
-        if(deleteIndex < 0) {
-            deleteIndex = 0;
+        if(closestObjects.size() != 0) {
+            if(deleteIndex < 0) {
+                deleteIndex = 0;
+            }
+            else if(deleteIndex >= closestObjects.size()) {
+                deleteIndex = closestObjects.size()-1;
+            }
+            currentObject = closestObjects.get(deleteIndex);
         }
-        else if(deleteIndex >= closestObjects.size()) {
-            deleteIndex = closestObjects.size()-1;
+        else {
+            currentObject = null;
         }
-        currentObject = closestObjects.get(deleteIndex);
     }
 
     @Override
@@ -526,8 +616,13 @@ public class BuilderWidget extends GameObject{
         renderer.renderText(10, Gdx.graphics.getHeight()-10, "gridLockAmount="+gridLockAmount, renderer.scriptFont);
         renderer.renderText(10, Gdx.graphics.getHeight()-60, "isSolid="+isSolid, renderer.scriptFont);
         renderer.renderText(10, Gdx.graphics.getHeight()-110, "BuildMode="+buildMode.toString(), renderer.scriptFont);
-        if(buildMode == BuildMode.Delete) {
-            renderer.renderText(10, Gdx.graphics.getHeight()-160, "ObjectToDelete="+currentObject.getClass().getSimpleName(), renderer.scriptFont);
+        String rotStr = "Rotation="+ rotationY;
+        if(brushMode == BrushMode.Decal) {
+            rotStr += ","+ rotationZ;
+        }
+        renderer.renderText(10, Gdx.graphics.getHeight()-160, rotStr, renderer.scriptFont);
+        if(buildMode == BuildMode.Delete && currentObject != null) {
+            renderer.renderText(10, Gdx.graphics.getHeight()-210, "ObjectToDelete="+currentObject.getClass().getSimpleName(), renderer.scriptFont);
         }
     }
 

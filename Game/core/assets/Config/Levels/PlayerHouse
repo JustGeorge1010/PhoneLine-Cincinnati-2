@@ -1,0 +1,1465 @@
+{
+  "json": [
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-5.0,0.0,-4.0)",
+        "(13.0,6.0,0.5)",
+        "Concrete1",
+        "Wood"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(5.599998,0.0,-2.799999)",
+        "0.0",
+        "Wardrobe"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(8.000001,0.0,4.700001)",
+        "0.0",
+        "DoorFrame"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(4.4000006,0.0,6.7000012)",
+        "270.0",
+        "TableLamp"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(1.6,0.0,5.2000003)",
+        "180.0",
+        "MasterBed"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Plane",
+      "value": [
+        "(-5.0000005,0.0,-4.0000005)",
+        "(13.000002,0.1,12.000002)",
+        "GrayCarpet"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-3.0000002,0.0,6.8000007)",
+        "180.0",
+        "Drawers"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-5.0000005,2.2000003,5.4000006)",
+        "0.0",
+        "LargeWindow"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(8.1,0.0,-4.1)",
+        "0.0",
+        "Pillar"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-5.100001,0.0,-4.100001)",
+        "0.0",
+        "Pillar"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-4.3,2.8,1.2)",
+        "180.0",
+        "Shelf"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(-4.3000007,0.0,1.2000002)",
+        "90.0",
+        "Radiator"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-5.0,0.0,-4.0)",
+        "(0.5,6.0,6.0)",
+        "FloralBeige",
+        "ArtisticBeige"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-5.000001,0.0,2.0000002)",
+        "(0.5,6.0,1.8000003)",
+        "Brick",
+        "ArtisticBeige"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-5.000001,0.0,3.8000007)",
+        "(0.5,2.3000004,3.2000005)",
+        "Brick",
+        "ArtisticBeige"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-5.0,4.75,3.8)",
+        "(0.5,1.25,3.2)",
+        "Brick",
+        "ArtisticBeige"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(8.0,0.0,-4.0)",
+        "(0.5,6.0,7.0)",
+        "ArtisticBeige",
+        "Concrete1"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(8.0,0.0,6.4)",
+        "(0.5,6.0,1.6)",
+        "ArtisticBeige",
+        "Concrete1"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-5.0000005,0.0,7.000001)",
+        "(0.5,6.0,1.0000001)",
+        "Brick",
+        "ArtisticBeige"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-3.1999989,2.599999,-3.5999987)",
+        "0.0",
+        "LongMirror"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(1.2,0.0,-2.7)",
+        "0.0",
+        "VanityTable"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(0.5,0.0,-1.8000001)",
+        "72.0",
+        "WoodenChair"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(-3.0,0.0,11.0)",
+        "0.0",
+        "SingleBed"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-1.0,0.0,17.0)",
+        "0.0",
+        "GravelPieces"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-1.0,0.0,14.0)",
+        "0.0",
+        "TrashPiece"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Plane",
+      "value": [
+        "(-5.0,0.0,8.0)",
+        "(13.0,0.1,12.0)",
+        "DarkGreenCarpet"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Plane",
+      "value": [
+        "(8.0,0.0,-4.0)",
+        "(6.0,0.1,24.0)",
+        "Wood"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(8.0,0.0,17.300001)",
+        "180.0",
+        "DoorFrame"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(8.000001,0.0,14.000002)",
+        "(0.5,6.0,1.6000003)",
+        "Cool",
+        "Concrete1"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(8.000001,0.0,8.000001)",
+        "(0.5,6.0,6.000001)",
+        "Cool",
+        "Concrete1"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(8.000001,0.0,19.000002)",
+        "(0.5,6.0,1.0000001)",
+        "Cool",
+        "Concrete1"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-5.0000005,0.0,20.000002)",
+        "(13.000002,6.0,0.5)",
+        "Cool",
+        "Brick"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-5.0000005,0.0,8.000001)",
+        "(0.5,6.0,5.0000005)",
+        "Brick",
+        "Cool"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(-5.0,2.2,14.6)",
+        "0.0",
+        "LargeWindow"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-5.0,0.0,13.0)",
+        "(0.5,2.3,3.2)",
+        "Brick",
+        "Cool"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-5.0,4.75,13.0)",
+        "(0.5,1.25,3.2)",
+        "Brick",
+        "Cool"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-5.0,0.0,16.2)",
+        "(0.5,6.0,1.8000001)",
+        "Brick",
+        "Cool"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-5.0000005,0.0,8.000001)",
+        "(13.000002,6.0,0.5)",
+        "ArtisticBeige",
+        "Cool"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-5.0000005,0.0,18.000002)",
+        "(0.5,6.0,2.0000002)",
+        "Brick",
+        "Cool"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(-3.0,0.0,18.6)",
+        "180.0",
+        "Drawers"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-3.5,0.0,16.6)",
+        "77.0",
+        "NES"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-3.1000001,2.6000001,18.7)",
+        "85.0",
+        "TV"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(0.0,0.0,19.2)",
+        "180.0",
+        "Radiator"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(6.0,0.0,10.0)",
+        "90.0",
+        "Crib"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(5.1,2.6000001,10.0)",
+        "90.0",
+        "MobileBase"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(5.2000003,2.8,10.0)",
+        "90.0",
+        "MobilePart"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(5.6,2.8,10.400001)",
+        "180.0",
+        "MobilePart"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(5.6,2.8,9.6)",
+        "0.0",
+        "MobilePart"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(6.0,2.8,10.0)",
+        "270.0",
+        "MobilePart"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(3.0,0.0,14.0)",
+        "270.0",
+        "PlayMat"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(2.0,0.0,9.0)",
+        "0.0",
+        "Wardrobe"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.GameDecal",
+      "value": [
+        "(3.6899998,3.1799998,-2.6399999)",
+        "0.87",
+        "1.23",
+        "(0.0,270.0,3.0)",
+        "MVCalendar"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.GameDecal",
+      "value": [
+        "(7.74,3.0,12.33)",
+        "1.74",
+        "2.55",
+        "(0.0,270.0,358.0)",
+        "NeverendingStory"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.GameDecal",
+      "value": [
+        "(7.7399983,2.9699993,14.399997)",
+        "1.7599996",
+        "2.5299995",
+        "(0.0,270.0,0.0)",
+        "BatteriesNotIncluded"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.GameDecal",
+      "value": [
+        "(-0.4,3.7,19.7)",
+        "1.8000001",
+        "2.6000001",
+        "(0.0,180.0,3.0)",
+        "DarkCrystal"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-6.5,0.0,0.6)",
+        "90.0",
+        "Fridge"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-9.2,0.0,0.6)",
+        "90.0",
+        "KitchenCabinetOverhead"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-12.3,0.0,0.6)",
+        "90.0",
+        "KitchenSink"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-14.900001,0.0,0.6)",
+        "270.0",
+        "Oven"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-19.000002,0.0,-4.0000005)",
+        "(0.5,6.0,6.000001)",
+        "Brick",
+        "FloralBeige"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Plane",
+      "value": [
+        "(-19.000002,0.0,-4.0000005)",
+        "(14.000002,0.1,6.000001)",
+        "BrownGrayKitchenTile"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-19.000002,-11.000001,2.0000002)",
+        "(14.000002,11.000001,0.5)",
+        "Brick",
+        "Brick"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-5.0000005,-11.000001,2.0000002)",
+        "(0.5,11.000001,18.000002)",
+        "Brick",
+        "Brick"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-14.900001,3.3,1.0)",
+        "90.0",
+        "ExtractorCabinet"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-17.4,0.0,-1.1)",
+        "90.0",
+        "KitchenCabinetCorner"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-12.3,2.0,2.1000001)",
+        "90.0",
+        "LargeWindow"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-10.7,0.0,2.0)",
+        "(5.5,4.5,0.5)",
+        "FloralBeige",
+        "Brick"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-19.0,0.0,2.0)",
+        "(5.1,4.5,0.5)",
+        "FloralBeige",
+        "Brick"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-19.0,4.5,2.0)",
+        "(14.0,1.5,0.5)",
+        "FloralBeige",
+        "Brick"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-13.900001,-0.1,2.0)",
+        "(3.2,2.1000001,0.5)",
+        "FloralBeige",
+        "Brick"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(16.000002,0.0,4.0000005)",
+        "180.0",
+        "Sink"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Plane",
+      "value": [
+        "(14.0,0.0,-4.0)",
+        "(12.0,0.1,9.0)",
+        "BlackWhiteCheckeredTiles"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(14.0,3.0,-4.0)",
+        "(0.5,3.0,3.0)",
+        "Concrete1",
+        "FloralBeige"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(14.0,0.0,-4.0)",
+        "(0.5,3.0,3.0)",
+        "Concrete1",
+        "GreenSmallTiles"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(14.0,3.0,5.0)",
+        "(4.0,3.0,0.5)",
+        "FloralBeige",
+        "Brick"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(14.0,3.0,5.0)",
+        "(4.0,3.0,0.5)",
+        "FloralBeige",
+        "Brick"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(14.0,3.0,5.0)",
+        "(4.0,3.0,0.5)",
+        "FloralBeige",
+        "Brick"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(14.0,3.0,5.0)",
+        "(12.0,3.0,0.5)",
+        "FloralBeige",
+        "Brick"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(14.0,0.0,5.0)",
+        "(12.0,3.0,0.5)",
+        "GreenSmallTiles",
+        "Brick"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(14.0,0.0,0.7)",
+        "180.0",
+        "DoorFrame"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(14.0,0.0,6.0)",
+        "(0.5,6.0,14.0)",
+        "Concrete1",
+        "Brick"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(8.0,0.0,20.0)",
+        "(6.0,6.0,0.5)",
+        "Concrete1",
+        "Brick"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(14.0,0.0,5.0)",
+        "(0.5,6.0,1.0)",
+        "Concrete1",
+        "Brick"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(14.0,0.0,2.4)",
+        "(0.5,3.0,2.6000001)",
+        "Concrete1",
+        "GreenSmallTiles"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(14.0,3.0,2.4)",
+        "(0.5,3.0,2.6000001)",
+        "Concrete1",
+        "FloralBeige"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(26.0,3.0,-4.0)",
+        "(0.5,3.0,9.0)",
+        "FloralBeige",
+        "Brick"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(26.0,0.0,-4.0)",
+        "(0.5,3.0,9.0)",
+        "GreenSmallTiles",
+        "Brick"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(25.2,0.2,0.6)",
+        "167.0",
+        "ShowerDoor"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.GameDecal",
+      "value": [
+        "(25.2,2.7,0.6)",
+        "2.3",
+        "4.6",
+        "(0.0,256.0,0.0)",
+        "Glass"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(24.1,0.05,3.2)",
+        "90.0",
+        "Shower"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.GameDecal",
+      "value": [
+        "(22.65,2.7,2.7)",
+        "1.9",
+        "4.6",
+        "(0.0,90.0,0.0)",
+        "Glass"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.GameDecal",
+      "value": [
+        "(25.25,2.7,1.75)",
+        "0.5",
+        "4.4500003",
+        "(0.0,180.0,0.0)",
+        "Glass"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.GameDecal",
+      "value": [
+        "(-5.3,3.4,5.4)",
+        "2.8",
+        "2.3",
+        "(0.0,90.0,0.0)",
+        "Glass"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.GameDecal",
+      "value": [
+        "(-5.3,3.4,14.6)",
+        "2.8",
+        "2.3",
+        "(0.0,90.0,0.0)",
+        "Glass"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.GameDecal",
+      "value": [
+        "(-12.3,3.3,2.4)",
+        "2.8",
+        "2.3",
+        "(0.0,180.0,0.0)",
+        "Glass"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(18.9,0.0,3.7)",
+        "180.0",
+        "Drawers"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(21.5,0.1,3.6000001)",
+        "270.0",
+        "WashingMachine"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.GameDecal",
+      "value": [
+        "(21.5,1.1,2.7)",
+        "1.3000001",
+        "1.4",
+        "(0.0,0.0,0.0)",
+        "Glass"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(14.0,0.0,-4.0)",
+        "(12.0,3.0,0.5)",
+        "Wood",
+        "GreenSmallTiles"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(14.0,3.0,-4.0)",
+        "(12.0,3.0,0.5)",
+        "Wood",
+        "FloralBeige"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.GameDecal",
+      "value": [
+        "(-3.99,3.9099998,0.14999999)",
+        "0.39",
+        "0.5",
+        "(0.0,90.0,0.0)",
+        "CouplePhoto"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(19.4,2.6000001,3.9)",
+        "270.0",
+        "PinkShirt"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(19.4,2.7,3.9)",
+        "38.0",
+        "BlueShirt"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(19.300001,2.8,3.9)",
+        "180.0",
+        "MiamiShirt"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(16.7,3.2,4.7000003)",
+        "180.0",
+        "WideMirror"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(17.5,0.0,-2.6000001)",
+        "90.0",
+        "BathTub"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(24.4,0.0,-2.8)",
+        "270.0",
+        "Toilet"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(25.6,1.8000001,-1.8000001)",
+        "90.0",
+        "ToiletRoll"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(21.6,2.8,-3.3)",
+        "90.0",
+        "BathroomShelf"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(15.400001,0.0,-1.1)",
+        "279.0",
+        "Door"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-17.0,2.0,1.0)",
+        "240.0",
+        "Kettle"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-18.0,2.0,-3.0)",
+        "180.0",
+        "CoffeeMachine"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.GameDecal",
+      "value": [
+        "(-18.05,2.35,-2.6499999)",
+        "0.29999998",
+        "0.29999998",
+        "(0.0,90.0,0.0)",
+        "Glass"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.GameDecal",
+      "value": [
+        "(-17.749,2.3500001,-2.65)",
+        "0.30100003",
+        "0.303",
+        "(0.0,90.0,0.0)",
+        "Glass"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.GameDecal",
+      "value": [
+        "(-17.898,2.3500001,-2.499)",
+        "0.3",
+        "0.3",
+        "(0.0,180.0,0.0)",
+        "Glass"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.GameDecal",
+      "value": [
+        "(-17.899,2.3500001,-2.801)",
+        "0.3",
+        "0.3",
+        "(0.0,180.0,0.0)",
+        "Glass"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.GameDecal",
+      "value": [
+        "(-14.900001,1.0,-0.25)",
+        "1.5500001",
+        "1.4",
+        "(0.0,180.0,0.0)",
+        "DarkGlass"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(18.2,2.6000001,3.7)",
+        "180.0",
+        "WhiteShirt"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(24.0,0.0,-14.0)",
+        "270.0",
+        "WritingTable"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(26.0,0.0,-9.0)",
+        "(0.5,6.0,5.0)",
+        "Wood",
+        "Brick"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(22.5,0.0,-13.8)",
+        "24.0",
+        "WoodenChair"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(14.0,0.0,-8.0)",
+        "(0.5,6.0,4.0)",
+        "Concrete1",
+        "Wood"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(14.0,0.0,-9.7)",
+        "180.0",
+        "DoorFrame"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(14.0,0.0,-20.0)",
+        "(0.5,6.0,8.6)",
+        "Concrete1",
+        "Wood"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Plane",
+      "value": [
+        "(14.0,0.0,-20.0)",
+        "(12.0,0.1,16.0)",
+        "GrayCarpet"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(26.0,0.0,-11.7)",
+        "270.0",
+        "FullWindow"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(26.0,0.0,-17.1)",
+        "270.0",
+        "FullWindow"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(23.0,0.0,-20.0)",
+        "0.0",
+        "FullWindow"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(14.0,0.0,-20.0)",
+        "(6.25,6.0,0.5)",
+        "Brick",
+        "Wood"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.GameDecal",
+      "value": [
+        "(23.0,3.0,-20.0)",
+        "6.0",
+        "6.0",
+        "(0.0,180.0,0.0)",
+        "Glass"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.GameDecal",
+      "value": [
+        "(26.0,3.0,-14.400001)",
+        "10.5",
+        "5.6",
+        "(0.0,270.0,0.0)",
+        "Glass"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.GameDecal",
+      "value": [
+        "(23.539999,2.0,-12.3)",
+        "0.22",
+        "0.39999998",
+        "(0.0,90.0,0.0)",
+        "Glass"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.GameDecal",
+      "value": [
+        "(23.76,2.0,-12.3)",
+        "0.22",
+        "0.39999998",
+        "(0.0,90.0,0.0)",
+        "Glass"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.GameDecal",
+      "value": [
+        "(23.65,2.0,-12.41)",
+        "0.22",
+        "0.39999998",
+        "(0.0,180.0,0.0)",
+        "Glass"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.GameDecal",
+      "value": [
+        "(23.65,2.0,-12.19)",
+        "0.22",
+        "0.39999998",
+        "(0.0,180.0,0.0)",
+        "Glass"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(25.2,0.0,-6.6)",
+        "270.0",
+        "Bookshelf"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(17.300001,0.0,-5.6)",
+        "180.0",
+        "BlackSofa"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(16.6,0.0,-19.0)",
+        "0.0",
+        "TrophyCase"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(14.3,1.7,-14.900001)",
+        "90.0",
+        "Noteboard"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(22.6,2.3,-4.7000003)",
+        "270.0",
+        "WhiskeyShelf"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Plane",
+      "value": [
+        "(-19.0,0.0,-20.0)",
+        "(33.0,0.1,16.0)",
+        "Wood"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(10.7,0.0,-20.0)",
+        "90.0",
+        "DoorFrame"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(10.7,0.0,-20.0)",
+        "90.0",
+        "Door"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(12.400001,0.0,-20.0)",
+        "(1.6,6.0,0.5)",
+        "Brick",
+        "Concrete1"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(4.4,0.0,-19.2)",
+        "0.0",
+        "Bookshelf"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(0.3,0.0,-19.2)",
+        "0.0",
+        "Bookshelf"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(-3.8,0.0,-19.2)",
+        "0.0",
+        "Bookshelf"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(10.7,0.0,-19.2)",
+        "0.0",
+        "DoorMat"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(6.4,0.0,-5.2000003)",
+        "90.0",
+        "PhoneTable1"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(-1.8000001,0.0,-5.1)",
+        "180.0",
+        "LargeTV"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-1.0,0.0,-10.0)",
+        "270.0",
+        "MaroonCarpet"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(-1.8000001,0.0,-15.000001)",
+        "0.0",
+        "GreenSofa"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(-2.2,0.1,-9.900001)",
+        "0.0",
+        "LivingRoomTable"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.GameDecal",
+      "value": [
+        "(-0.65,2.45,-5.7599998)",
+        "2.3",
+        "1.6999999",
+        "(0.0,180.0,0.0)",
+        "Miami"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(3.0,0.0,-14.0)",
+        "330.0",
+        "GreenArmchair"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(8.400001,0.0,-17.0)",
+        "90.0",
+        "Divider"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(3.1000001,0.0,-5.0)",
+        "180.0",
+        "Stereo"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.GameDecal",
+      "value": [
+        "(3.1,3.09,-4.8399997)",
+        "1.5",
+        "0.77",
+        "(90.0,0.0,0.0)",
+        "Glass"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.GameDecal",
+      "value": [
+        "(3.1,2.97,-5.22)",
+        "1.5",
+        "0.24",
+        "(0.0,0.0,0.0)",
+        "Glass"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(-14.0,0.0,-13.0)",
+        "0.0",
+        "DiningTable"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(-14.0,0.0,-16.0)",
+        "274.0",
+        "WoodenChair"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(-12.0,0.0,-13.0)",
+        "190.0",
+        "WoodenChair"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(-14.0,0.0,-10.0)",
+        "90.0",
+        "WoodenChair"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(-16.0,0.0,-13.0)",
+        "0.0",
+        "WoodenChair"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(-17.1,0.0,-19.300001)",
+        "0.0",
+        "Radiator"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(-8.2,0.0,-17.0)",
+        "270.0",
+        "Divider"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-8.0,0.0,-20.0)",
+        "(17.0,6.0,0.5)",
+        "Brick",
+        "Concrete1"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-19.000002,0.0,-20.000002)",
+        "(0.5,6.0,16.000002)",
+        "Brick",
+        "ArtisticBeige"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-19.0,0.0,-20.0)",
+        "(10.6,6.0,0.5)",
+        "Brick",
+        "ArtisticBeige"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(-18.0,0.0,-6.0)",
+        "90.0",
+        "WaterCooler"
+      ]
+    }
+  ]
+}

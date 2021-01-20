@@ -8,7 +8,7 @@ import com.phonelinecincinnati.game.Utility.VectorMaths;
 import java.util.ArrayList;
 
 public class SolidWall extends Wall implements Collidable {
-
+    //Todo: remove and fix
     public SolidWall(Vector3 position, Vector3 size, TextureName name) {
         super(position, size, name);
     }
