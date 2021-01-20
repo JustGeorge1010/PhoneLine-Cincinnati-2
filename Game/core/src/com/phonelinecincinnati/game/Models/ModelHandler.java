@@ -48,12 +48,58 @@ public class ModelHandler {
     }
 
     public void setupAllModels() {
-
         models.put(ModelName.nul, modelBuilder.createBox(1, 1, 1,
                 new Material(ColorAttribute.createDiffuse(Color.WHITE)),
                 Usage.Position| Usage.Normal
         ));
 
+        HouseholdItems();
+        TotallyRad();
+        KitchenItems();
+        BathroomItems();
+        Clothing();
+
+        //Misc
+        putModel("Misc", ModelName.GravelPieces);
+        putModel("Misc", ModelName.TrashPiece);
+
+        //Car
+        putModel("Vehicles/PlayerCar", ModelName.PlayerCar);
+        putModel("Vehicles/PlayerCar", ModelName.PlayerCarDoor);
+
+        putModel("Level1", ModelName.SubwayTracks);
+        putModel("Level1/SubwayBenches", ModelName.SubwayBench1);
+        putModel("Level1/SubwayBenches", ModelName.SubwayBench2);
+        putModel("Level1/SubwayBenches", ModelName.SubwayBench3);
+
+        addMafia();
+
+        //Structure
+        putModel("Wall/Passages", ModelName.Door);
+        putModel("Wall/Passages", ModelName.DoorFrame);
+        putModel("Wall/Corners", ModelName.Pillar);
+        putModel("Wall/Glass", ModelName.LargeWindow);
+        putModel("Wall/Glass", ModelName.FullWindow);
+        putModel("Misc", ModelName.Step);
+
+        //Weapons
+        putModel("Weapons", ModelName.Bat);
+        putModel("Weapons", ModelName.GolfClub);
+        putModel("Weapons", ModelName.M16);
+
+        putModel("Weapons", ModelName.Bullet);
+    }
+
+    private void putModel(String category, ModelName name) {
+        if(!category.equals("")) {
+            category = category+"/";
+        }
+        models.put(name, modelLoader.loadModel(Gdx.files.internal("Models/"+category+name.toString()+"/"+name.toString()+".obj")));
+    }
+
+    //Todo: remove
+    private void OldHome() {
+        /*
         //Bedroom
         putModel("PlayerHome", ModelName.Bed);
         putModel("PlayerHome", ModelName.Bed2);
@@ -91,47 +137,83 @@ public class ModelHandler {
         putModel("PlayerHome/PlayerStairs", ModelName.PlayerStairsP2);
         putModel("PlayerHome/PlayerStairs", ModelName.PlayerStairsP3);
         putModel("PlayerHome/PlayerStairs", ModelName.PlayerStairsP4);
-
-        //Structure
-        putModel("Wall/Passages", ModelName.Door);
-        putModel("Wall/Passages", ModelName.DoorFrame);
-        putModel("Wall/Glass", ModelName.LargeWindow);
-        putModel("Wall/Corners", ModelName.Pillar);
-
-        //Misc
-        putModel("Misc", ModelName.GravelPieces);
-        putModel("Misc", ModelName.TrashPiece);
-
-        //Car
-        putModel("Vehicles/PlayerCar", ModelName.PlayerCar);
-        putModel("Vehicles/PlayerCar", ModelName.PlayerCarDoor);
-
-        putModel("Level1", ModelName.SubwayTracks);
-        putModel("Level1/SubwayBenches", ModelName.SubwayBench1);
-        putModel("Level1/SubwayBenches", ModelName.SubwayBench2);
-        putModel("Level1/SubwayBenches", ModelName.SubwayBench3);
-
-        addMafia();
-
-        //Structure
-        putModel("Wall/Passages", ModelName.Door);
-        putModel("Wall/Passages", ModelName.DoorFrame);
-        putModel("Wall/Corners", ModelName.Pillar);
-        putModel("Misc", ModelName.Step);
-
-        //Weapons
-        putModel("Weapons", ModelName.Bat);
-        putModel("Weapons", ModelName.GolfClub);
-        putModel("Weapons", ModelName.M16);
-
-        putModel("Weapons", ModelName.Bullet);
+         */
     }
 
-    private void putModel(String category, ModelName name) {
-        if(!category.equals("")) {
-            category = category+"/";
-        }
-        models.put(name, modelLoader.loadModel(Gdx.files.internal("Models/"+category+name.toString()+"/"+name.toString()+".obj")));
+    private void HouseholdItems() {
+        //Bedroom
+        putModel("HouseholdItems", ModelName.MasterBed);
+        putModel("HouseholdItems", ModelName.SingleBed);
+        putModel("HouseholdItems", ModelName.Crib);
+        putModel("HouseholdItems", ModelName.MobileBase);
+        putModel("HouseholdItems", ModelName.MobilePart);
+        putModel("HouseholdItems", ModelName.TableLamp);
+        putModel("HouseholdItems", ModelName.Wardrobe);
+        putModel("HouseholdItems", ModelName.Drawers);
+        putModel("HouseholdItems", ModelName.WoodenChair);
+        putModel("HouseholdItems", ModelName.Shelf);
+        putModel("HouseholdItems", ModelName.Radiator);
+        putModel("HouseholdItems", ModelName.LongMirror);
+        putModel("HouseholdItems", ModelName.WideMirror);
+        putModel("HouseholdItems", ModelName.VanityTable);
+        putModel("HouseholdItems", ModelName.BlackSofa);
+        putModel("HouseholdItems", ModelName.GreenSofa);
+        putModel("HouseholdItems", ModelName.GreenArmchair);
+        putModel("HouseholdItems", ModelName.WritingTable);
+        putModel("HouseholdItems", ModelName.Bookshelf);
+        putModel("HouseholdItems", ModelName.TrophyCase);
+        putModel("HouseholdItems", ModelName.Noteboard);
+        putModel("HouseholdItems", ModelName.WhiskeyShelf);
+        putModel("HouseholdItems", ModelName.DoorMat);
+        putModel("HouseholdItems", ModelName.LivingRoomTable);
+        putModel("HouseholdItems", ModelName.MaroonCarpet);
+        putModel("HouseholdItems", ModelName.Divider);
+
+        putModel("HouseholdItems/PhoneTable", ModelName.PhoneTable1);
+        putModel("HouseholdItems/PhoneTable", ModelName.PhoneTable2);
+        putModel("HouseholdItems/PhoneTable", ModelName.PhoneTable3);
+    }
+
+    private void TotallyRad() {
+        putModel("TotallyRad", ModelName.TV);
+        putModel("TotallyRad", ModelName.LargeTV);
+        putModel("TotallyRad", ModelName.NES);
+        putModel("TotallyRad", ModelName.PlayMat);
+        putModel("TotallyRad", ModelName.Stereo);
+    }
+
+    private void KitchenItems() {
+        putModel("KitchenItems", ModelName.Fridge);
+        putModel("KitchenItems", ModelName.KitchenSink);
+        putModel("KitchenItems", ModelName.KitchenCabinet);
+        putModel("KitchenItems", ModelName.KitchenCabinetOverhead);
+        putModel("KitchenItems", ModelName.KitchenCabinetCorner);
+        putModel("KitchenItems", ModelName.Oven);
+        putModel("KitchenItems", ModelName.ExtractorCabinet);
+        putModel("KitchenItems", ModelName.CoffeeMachine);
+        putModel("KitchenItems", ModelName.Kettle);
+        putModel("KitchenItems", ModelName.DiningTable);
+        putModel("KitchenItems", ModelName.WaterCooler);
+    }
+
+    private void BathroomItems() {
+        putModel("BathroomItems", ModelName.Shower);
+        putModel("BathroomItems", ModelName.ShowerDoor);
+        putModel("BathroomItems", ModelName.WallShower);
+        putModel("BathroomItems", ModelName.BathTub);
+        putModel("BathroomItems", ModelName.Sink);
+        putModel("BathroomItems", ModelName.Toilet);
+        putModel("BathroomItems", ModelName.ToiletRoll);
+        putModel("BathroomItems", ModelName.WashingMachine);
+        putModel("BathroomItems", ModelName.BathroomShelf);
+    }
+
+    private void Clothing() {
+        putModel("Clothing", ModelName.MiamiShirt);
+        putModel("Clothing", ModelName.BloodyShirt);
+        putModel("Clothing", ModelName.PinkShirt);
+        putModel("Clothing", ModelName.BlueShirt);
+        putModel("Clothing", ModelName.WhiteShirt);
     }
 
     private void addMafia() {
@@ -167,17 +249,29 @@ public class ModelHandler {
 
         addWrappedTexture("Wall", TextureName.Concrete1);
         addWrappedTexture("Wall", TextureName.Brick);
+        addWrappedTexture("Wall", TextureName.FloralBeige);
+        addWrappedTexture("Wall", TextureName.ArtisticBeige);
+        addWrappedTexture("Wall", TextureName.Cool);
 
         addWrappedTexture("Roof", TextureName.Concrete);
 
         textures.put(TextureName.Dirt1, new Texture(Gdx.files.internal("Textures/Decals/Dirt/Dirt1.png")));
         textures.put(TextureName.Dirt2, new Texture(Gdx.files.internal("Textures/Decals/Dirt/Dirt2.png")));
         textures.put(TextureName.Dirt3, new Texture(Gdx.files.internal("Textures/Decals/Dirt/Dirt3.png")));
+        addWrappedTexture("Decals", TextureName.Glass);
+        addWrappedTexture("Decals", TextureName.DarkGlass);
 
         textures.put(TextureName.BloodPool, new Texture(Gdx.files.internal("Textures/Decals/Gore/BloodPool.png")));
 
         textures.put(TextureName.ShowerDrain, new Texture(Gdx.files.internal("Textures/Decals/Decor/ShowerDrain.png")));
         textures.put(TextureName.MidnightAnimal, new Texture(Gdx.files.internal("Textures/Decals/Posters/MidnightAnimal.png")));
+        textures.put(TextureName.MVCalendar, new Texture(Gdx.files.internal("Textures/Decals/Posters/MVCalendar.png")));
+        textures.put(TextureName.NeverendingStory, new Texture(Gdx.files.internal("Textures/Decals/Posters/NeverendingStory.png")));
+        textures.put(TextureName.DarkCrystal, new Texture(Gdx.files.internal("Textures/Decals/Posters/DarKCrystal.png")));
+        textures.put(TextureName.BatteriesNotIncluded, new Texture(Gdx.files.internal("Textures/Decals/Posters/BatteriesNotIncluded.png")));
+        textures.put(TextureName.CouplePhoto, new Texture(Gdx.files.internal("Textures/Decals/Posters/CouplePhoto.png")));
+
+        textures.put(TextureName.Miami, new Texture(Gdx.files.internal("Textures/Decals/TV/Miami.png")));
 
         textures.put(TextureName.MaskLetter, new Texture(Gdx.files.internal("Textures/Misc/MaskLetter.png")));
         textures.put(TextureName.Ammo, new Texture(Gdx.files.internal("Textures/Misc/Ammo.png")));
@@ -192,7 +286,7 @@ public class ModelHandler {
     }
 
     public ModelInstance getModel(ModelName name) {
-        if(models.keySet().contains(name)) {
+        if(models.containsKey(name)) {
             return new ModelInstance(models.get(name));
         } else {
             return new ModelInstance(models.get(ModelName.nul));
@@ -200,7 +294,8 @@ public class ModelHandler {
     }
 
     public ModelInstance getBox(float x, float y, float z, float width, float height, float depth, TextureName name) {
-        Material material = new Material(TextureAttribute.createDiffuse(textures.get(name)), ColorAttribute.createSpecular(1, 1, 1, 1), FloatAttribute.createShininess(8f));
+        Material material = new Material(TextureAttribute.createDiffuse(textures.get(name)),
+                ColorAttribute.createSpecular(1, 1, 1, 1), FloatAttribute.createShininess(8f));
         long attributes = Usage.Position | Usage.Normal | Usage.TextureCoordinates;
 
         modelBuilder.begin();

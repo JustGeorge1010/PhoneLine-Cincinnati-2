@@ -16,6 +16,7 @@ public class GameDecal extends GameObject{
     private final TextureName textureType;
 
     public GameDecal(Vector3 position, float width, float height, Vector3 rotation, TextureName textureType) {
+        this.position = position;
         this.rotation = rotation;
         this.textureType = textureType;
         TextureRegion textureRegion = new TextureRegion(Main.modelHandler.textures.get(textureType));
@@ -25,6 +26,7 @@ public class GameDecal extends GameObject{
     }
 
     public GameDecal(ArrayList<String> params) {
+        this.position = VectorMaths.constructFromString(params.get(0));
         this.rotation = VectorMaths.constructFromString(params.get(3));
         this.textureType = TextureName.valueOf(params.get(4));
         TextureRegion textureRegion = new TextureRegion(Main.modelHandler.textures.get(textureType));

@@ -11,15 +11,16 @@ import com.phonelinecincinnati.game.Utility.VectorMaths;
 import java.util.ArrayList;
 
 public class Wall extends GameObject{
-    private final Vector3 spawnPostion;
+    private final Vector3 spawnPosition;
     private final Vector3 size;
     private final TextureName textureName;
     private ModelInstance modelInstance = null;
     BoundingBox boundingBox;
 
+    //Todo: remove and fix
     public Wall(Vector3 position, Vector3 size, TextureName name) {
         this.position = position;
-        this.spawnPostion = position.cpy();
+        this.spawnPosition = position.cpy();
         this.size = size;
         this.textureName = name;
 
@@ -28,7 +29,7 @@ public class Wall extends GameObject{
 
     public Wall(ArrayList<String> params) {
         this.position = VectorMaths.constructFromString(params.get(0));
-        this.spawnPostion = position.cpy();
+        this.spawnPosition = position.cpy();
         this.size = VectorMaths.constructFromString(params.get(1));
         this.textureName = TextureName.valueOf(params.get(2));
 
@@ -70,7 +71,7 @@ public class Wall extends GameObject{
     @Override
     public ArrayList<String> getConstructParams() {
         ArrayList<String> params = new ArrayList<String>();
-        params.add(spawnPostion.toString());
+        params.add(spawnPosition.toString());
         params.add(size.toString());
         params.add(textureName.toString());
         return params;

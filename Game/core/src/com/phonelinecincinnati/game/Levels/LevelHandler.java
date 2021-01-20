@@ -5,7 +5,9 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.phonelinecincinnati.game.GameObjects.Objects.GameObject;
 import com.phonelinecincinnati.game.GameObjects.Objects.Misc.BuilderWidget;
+import com.phonelinecincinnati.game.GameObjects.Objects.Misc.SoundSource;
 import com.phonelinecincinnati.game.GameObjects.Objects.Player.Player;
+import com.phonelinecincinnati.game.GameObjects.Objects.Weapons.Ranged.M16;
 import com.phonelinecincinnati.game.Main;
 import javafx.util.Pair;
 
@@ -16,7 +18,7 @@ import java.util.ArrayList;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class LevelHandler {
-    private CopyOnWriteArrayList<GameObject> activeObjects;
+    private final CopyOnWriteArrayList<GameObject> activeObjects;
     private int progression = 1; //TODO: Change this to 0 to reset progress
     public Level currentLevel;
     public Player player = null;
@@ -55,7 +57,6 @@ public class LevelHandler {
         }
     }
 
-    @SuppressWarnings({"rawtypes", "unchecked"})
     public void loadFromJson(String levelFileName) {
         Gson gson = new Gson();
         LevelJson level = null;
@@ -104,14 +105,14 @@ public class LevelHandler {
     public void loadLevelEditor(String levelName) {
         clearActiveObjects();
 
-        Main.backgroundColor.set(1, 0, 1, 1);
+        Main.backgroundColor.set(0.043137256f, 0.043137256f, 0.19215687f, 1f);
 
         if(!levelName.equals("")) {
             loadFromJson(levelName);
         }
 
         final Player player =
-                Level.createPlayer(new Vector3(0, 1, -5), new Vector3(0, 0, 1), null,
+                Level.createPlayer(new Vector3(0, 3.6f, -5), new Vector3(0, 0, 1), null,
                         false, false);
         player.giveControl();
         activeObjects.add(player);

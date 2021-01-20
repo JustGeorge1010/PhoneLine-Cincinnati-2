@@ -24,6 +24,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 class House extends Level{
 
     House(final CopyOnWriteArrayList<GameObject> list, int currentProgression) {
+        /*
         final SoundSource soundSource = SoundSource.buildSoundSource(1).setMusic("DeepCover.mp3").playMusic();
         list.add(soundSource);
         Main.backgroundColor.set(1, 0, 1, 1);
@@ -356,6 +357,7 @@ class House extends Level{
                         for(GameObject object : list) {
                             object.dispose();
                         }
+                        Main.controlHandler.resetPlayer();
                         Main.levelHandler.loadLevel1();
                     }
                 }, 0.008f));
@@ -382,7 +384,6 @@ class House extends Level{
                                 player.lookAt(-14, 30,0);
                             }
                         }
-
                     }
                 });
             }
@@ -410,6 +411,7 @@ class House extends Level{
         list.add(player);
         list.add(new Fade(true, null, 0.005f));
         list.add(new PauseMenuHandler(true));
+         */
     }
 
     @Override

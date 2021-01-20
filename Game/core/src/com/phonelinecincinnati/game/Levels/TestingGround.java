@@ -5,6 +5,7 @@ import com.phonelinecincinnati.game.GameObjects.Objects.Enemies.Mafia.MafiaMob;
 import com.phonelinecincinnati.game.GameObjects.Objects.Enemies.PathFinding.AStar;
 import com.phonelinecincinnati.game.GameObjects.Objects.GameObject;
 import com.phonelinecincinnati.game.GameObjects.Objects.MenuObjects.PauseMenuHandler;
+import com.phonelinecincinnati.game.GameObjects.Objects.Plane;
 import com.phonelinecincinnati.game.GameObjects.Objects.Player.Player;
 import com.phonelinecincinnati.game.GameObjects.Objects.Weapons.Melee.BaseballBat;
 import com.phonelinecincinnati.game.GameObjects.Objects.SolidWall;
@@ -29,6 +30,7 @@ public class TestingGround extends Level {
 
         Main.camera.lookAt(25, 3.6f, 1);
 
+        activeObjects.add(new Plane(new Vector3(15f, -0.05f, 0), new Vector3(25f, 0.1f, 14.2f), TextureName.Wood));
         activeObjects.add(new SolidWall(new Vector3(20f, -6f, 5f), new Vector3(10f, 12, 0.5f), TextureName.Concrete1));
         activeObjects.add(new SolidWall(new Vector3(20f, -6f, 5f), new Vector3(0.5f, 12, 5f), TextureName.Concrete1));
 

@@ -207,7 +207,7 @@ public class AStar {
         return gScore;
     }
 
-    class SortByF implements Comparator<Node> {
+    static class SortByF implements Comparator<Node> {
         public int compare(Node a, Node b)
         {
             return (int)((a.F - b.F)*100000);

@@ -8,16 +8,19 @@ import java.awt.*;
 
 public class DesktopLauncher {
     @SuppressWarnings("FieldCanBeLocal")
-    private static boolean fullscreen = true;
+    private static final boolean fullscreen = false;
 
     public static void main(String[] arg) {
-        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
 
-        //config.width = 1000;
-        //config.height = 800;
+        //old code here: config.width = 1000;
+        //old code also: config.height = 800;
         config.width = LwjglApplicationConfiguration.getDesktopDisplayMode().width;
-        config.height = LwjglApplicationConfiguration.getDesktopDisplayMode().height;
+        if(fullscreen) {
+            config.height = LwjglApplicationConfiguration.getDesktopDisplayMode().height;
+        } else {
+            config.height = LwjglApplicationConfiguration.getDesktopDisplayMode().height-60;
+        }
 
         config.samples = 50;
 

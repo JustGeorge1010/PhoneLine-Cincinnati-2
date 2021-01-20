@@ -17,6 +17,9 @@ public enum TextureName {
     //Wall
     Concrete1,
     Brick,
+    FloralBeige,
+    ArtisticBeige,
+    Cool,
 
     //Roof
     Concrete,
@@ -26,6 +29,8 @@ public enum TextureName {
     Dirt1,
     Dirt2,
     Dirt3,
+    Glass,
+    DarkGlass,
     //Gore
     BloodPool,
 
@@ -34,6 +39,15 @@ public enum TextureName {
 
     //Posters
     MidnightAnimal,
+    MVCalendar,
+    NeverendingStory,
+    DarkCrystal,
+    BatteriesNotIncluded,
+    CouplePhoto,
+    //</editor-fold>
+
+    //TV
+    Miami,
     //</editor-fold>
 
     //Misc
