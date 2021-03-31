@@ -7,19 +7,19 @@ import com.phonelinecincinnati.game.GameObjects.Objects.Weapons.Weapon;
 import com.phonelinecincinnati.game.Main;
 import com.phonelinecincinnati.game.Models.TextureName;
 import com.phonelinecincinnati.game.Renderer;
+import com.phonelinecincinnati.game.Utility.MovingText;
 
 public class Hud {
     String pickupText = "";
     String interactionText = "";
 
     private Weapon weapon;
-    private float offset = 0;
-    private float direction = 1;
-
     private Sprite ammo;
+    private MovingText movingText;
 
     Hud() {
         ammo = new Sprite(Main.modelHandler.textures.get(TextureName.Ammo));
+        movingText = new MovingText();
     }
 
     void update(Weapon weapon) {
@@ -30,23 +30,7 @@ public class Hud {
         if(weapon != this.weapon) {
             this.weapon = weapon;
         }
-
-        float maxOffset = 8;
-        float speed = maxOffset/50;
-
-        if(direction == 1) {
-            if(offset < maxOffset) {
-                offset += speed;
-            } else {
-                direction = -1;
-            }
-        } else {
-            if(offset > 0) {
-                offset -= speed;
-            } else {
-                direction = 1;
-            }
-        }
+        movingText.update();
     }
 
     void render(Renderer renderer) {
@@ -57,7 +41,6 @@ public class Hud {
             text = interactionText;
         }
         renderer.renderText(10, Gdx.graphics.getHeight()-10, text, renderer.scriptFont);
-        //renderer.renderText(10-offset, Gdx.graphics.getHeight()-10+offset, text, renderer.hudTopFont);
 
         if(weapon == null)
             return;
@@ -65,8 +48,7 @@ public class Hud {
         if(Ranged.class.isAssignableFrom(weapon.getClass())) {
             Ranged ranged = (Ranged)weapon;
             renderer.renderSprite(10, 5, Gdx.graphics.getWidth()/18, Gdx.graphics.getWidth()/18, ammo);
-            renderer.renderText(110, 100, String.valueOf(ranged.rounds), renderer.hudBottomFont);
-            renderer.renderText(110-offset, 100+offset, String.valueOf(ranged.rounds), renderer.hudTopFont);
+            movingText.render(renderer, 110, 100, String.valueOf(ranged.rounds));
         }
     }
 }

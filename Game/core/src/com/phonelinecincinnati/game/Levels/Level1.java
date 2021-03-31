@@ -12,7 +12,7 @@ import com.phonelinecincinnati.game.Main;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class Level1 extends Level {
-    public Level1(final CopyOnWriteArrayList<GameObject> activeObjects) {
+    Level1(final CopyOnWriteArrayList<GameObject> activeObjects) {
         this.activeObjects = activeObjects;
         load(false, false);
     }
@@ -139,7 +139,7 @@ public class Level1 extends Level {
 //        activeObjects.add(new SolidWall(new Vector3(0, 0, 48), new Vector3(52f, 12, 0.5f), TextureName.Brick));
         //</editor-fold>
 
-        AStar.generateAStar();
+        //AStar.generateAStar();
 
         activeObjects.add(player);
         final PauseMenuHandler pauseMenuHandler = new PauseMenuHandler(true);

@@ -1,5 +1,6 @@
 package com.phonelinecincinnati.game.GameObjects.Objects;
 
+import com.badlogic.gdx.graphics.g3d.ModelInstance;
 import com.badlogic.gdx.math.Vector3;
 import com.phonelinecincinnati.game.Renderer;
 
@@ -9,6 +10,7 @@ import java.util.ArrayList;
 
 public abstract class GameObject {
     public Vector3 position;
+    protected ArrayList<ModelInstance> boundLines;
 
     @SuppressWarnings("unchecked")
     public static GameObject constructFromClassName(String name, ArrayList<String> params)
@@ -38,5 +40,10 @@ public abstract class GameObject {
     }
     public Vector3 getPosition() {
         return position;
+    }
+    protected void drawBoundingBox(Renderer renderer) {
+        for(ModelInstance line : boundLines) {
+            renderer.renderModel(line);
+        }
     }
 }

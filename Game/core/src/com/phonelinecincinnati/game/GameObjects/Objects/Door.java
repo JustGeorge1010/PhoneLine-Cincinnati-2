@@ -51,11 +51,10 @@ public class Door extends GameObject implements Collidable{
         bounds = new BoundingBox();
         if(horizontal) {
             baseRotation = -90;
-            Main.levelHandler.getActiveObjects().add(new Model(new Vector3(position.x+1.56f, position.y, position.z), -90, ModelName.DoorFrame));
         } else {
             baseRotation = 0;
-            Main.levelHandler.getActiveObjects().add(new Model(new Vector3(position.x, position.y, position.z - 1.56f), 0, ModelName.DoorFrame));
         }
+        //Main.levelHandler.getActiveObjects().add(new Model(new Vector3(position.x, position.y, position.z), baseRotation, ModelName.DoorFrame));
 
         rotation = baseRotation;
         targetRotation = rotation;
@@ -143,7 +142,13 @@ public class Door extends GameObject implements Collidable{
 
             }
 
-            modelInstance.transform.setToTranslation(position.x, position.y, position.z);
+            if(horizontal) {
+                modelInstance.transform.setToTranslation(position.x - 1.56f, position.y, position.z);
+            }
+            else {
+                modelInstance.transform.setToTranslation(position.x, position.y, position.z - 1.56f);
+            }
+
             modelInstance.transform.rotate(0, 1, 0, rotation);
         }
     }
@@ -188,15 +193,15 @@ public class Door extends GameObject implements Collidable{
         float upperZ;
         float lowerZ;
         if(horizontal) {
-            upperX = this.position.x+bounds.getDepth();
-            lowerX = this.position.x;
+            upperX = this.position.x+bounds.getDepth()/2;
+            lowerX = this.position.x-bounds.getDepth()/2;
             upperZ = (this.position.z+bounds.getWidth()/2)+0.5f;
             lowerZ = (this.position.z-bounds.getWidth()/2)-0.5f;
         } else {
             upperX = (this.position.x+bounds.getWidth()/2)+0.5f;
             lowerX = (this.position.x-bounds.getWidth()/2)-0.5f;
-            upperZ = this.position.z;
-            lowerZ = this.position.z-bounds.getDepth();
+            upperZ = this.position.z+bounds.getDepth()/2;
+            lowerZ = this.position.z-bounds.getDepth()/2;
         }
 
         if(position.x < upperX && position.x > lowerX) {

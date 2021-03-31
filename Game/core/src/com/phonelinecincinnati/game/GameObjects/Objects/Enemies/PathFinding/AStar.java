@@ -24,11 +24,14 @@ public class AStar {
     private Stack<Vector3> path;
     private HashMap<Vector3, Node> allNodes;
 
-    private AStar() {
+    private AStar(float floorLevel) {
         nodes = new HashMap<Vector3, Node>();
         CopyOnWriteArrayList<Node> allNodes = new CopyOnWriteArrayList<Node>();
 
         for(GameObject object : Main.levelHandler.getActiveObjects()) {
+            if(object.position != null && (object.position.y < floorLevel-1 || object.position.y > floorLevel+1)) {
+                continue;
+            }
             if(Collidable.class.isInstance(object)) {
                 Collidable collidable = (Collidable)object;
                 ArrayList<Vector3> nodePoints = new ArrayList<Vector3>();
@@ -38,25 +41,25 @@ public class AStar {
                     float wallDepth = collidable.maxZ() - collidable.minZ();
 
                     if(wallLength < wallDepth) {
-                        nodePoints.add(new Vector3(collidable.minX()+wallLength/2, 0, collidable.minZ()+0.5f));
-                        nodePoints.add(new Vector3(collidable.minX()+wallLength/2, 0, collidable.maxZ()-0.5f));
+                        nodePoints.add(new Vector3(collidable.minX()+wallLength/2, floorLevel, collidable.minZ()+0.5f));
+                        nodePoints.add(new Vector3(collidable.minX()+wallLength/2, floorLevel, collidable.maxZ()-0.5f));
                     } else {
-                        nodePoints.add(new Vector3(collidable.minX()+0.5f, 0, collidable.minZ()+wallDepth/2));
-                        nodePoints.add(new Vector3(collidable.maxX()-0.5f, 0, collidable.minZ()+wallDepth/2));
+                        nodePoints.add(new Vector3(collidable.minX()+0.5f, floorLevel, collidable.minZ()+wallDepth/2));
+                        nodePoints.add(new Vector3(collidable.maxX()-0.5f, floorLevel, collidable.minZ()+wallDepth/2));
                     }
                 } else {
-                    nodePoints.add(new Vector3(collidable.minX(), 0, collidable.minZ()));
-                    nodePoints.add(new Vector3(collidable.maxX(), 0, collidable.minZ()));
-                    nodePoints.add(new Vector3(collidable.minX(), 0, collidable.maxZ()));
-                    nodePoints.add(new Vector3(collidable.maxX(), 0, collidable.maxZ()));
+                    nodePoints.add(new Vector3(collidable.minX(), floorLevel, collidable.minZ()));
+                    nodePoints.add(new Vector3(collidable.maxX(), floorLevel, collidable.minZ()));
+                    nodePoints.add(new Vector3(collidable.minX(), floorLevel, collidable.maxZ()));
+                    nodePoints.add(new Vector3(collidable.maxX(), floorLevel, collidable.maxZ()));
                 }
 
                 for(Vector3 point : nodePoints) {
                     ArrayList<Node> currentNodes = new ArrayList<Node>();
-                    currentNodes.add(new Node(new Vector3(point.x-spacingLength, 0, point.z-spacingLength)));
-                    currentNodes.add(new Node(new Vector3(point.x+spacingLength, 0, point.z-spacingLength)));
-                    currentNodes.add(new Node(new Vector3(point.x-spacingLength, 0, point.z+spacingLength)));
-                    currentNodes.add(new Node(new Vector3(point.x+spacingLength, 0, point.z+spacingLength)));
+                    currentNodes.add(new Node(new Vector3(point.x-spacingLength, floorLevel, point.z-spacingLength)));
+                    currentNodes.add(new Node(new Vector3(point.x+spacingLength, floorLevel, point.z-spacingLength)));
+                    currentNodes.add(new Node(new Vector3(point.x-spacingLength, floorLevel, point.z+spacingLength)));
+                    currentNodes.add(new Node(new Vector3(point.x+spacingLength, floorLevel, point.z+spacingLength)));
 
                     for(Node node : currentNodes) {
                         boolean alreadyExists = false;
@@ -97,8 +100,8 @@ public class AStar {
         return aStar;
     }
 
-    public static AStar generateAStar() {
-        aStar = new AStar();
+    public static AStar generateAStar(float floorLevel) {
+        aStar = new AStar(floorLevel);
         return aStar;
     }
 
@@ -208,8 +211,7 @@ public class AStar {
     }
 
     static class SortByF implements Comparator<Node> {
-        public int compare(Node a, Node b)
-        {
+        public int compare(Node a, Node b) {
             return (int)((a.F - b.F)*100000);
         }
     }

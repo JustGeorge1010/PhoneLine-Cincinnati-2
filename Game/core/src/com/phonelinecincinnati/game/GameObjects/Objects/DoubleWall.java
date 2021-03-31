@@ -106,7 +106,7 @@ public class DoubleWall extends GameObject implements Collidable {
 
         if(position.x < upperX && position.x > lowerX) {
             if(position.z < upperZ && position.z > lowerZ) {
-                if(position.y < this.position.y+boundingBox.getHeight() && position.y > this.position.y)
+                if(position.y < this.position.y+boundingBox.getHeight() && position.y > this.position.y-0.5f)
                     return true;
             }
         }

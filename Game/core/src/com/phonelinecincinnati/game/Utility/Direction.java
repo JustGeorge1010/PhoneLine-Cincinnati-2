@@ -1,4 +1,4 @@
-package com.phonelinecincinnati.game.GameObjects.Objects.Vertical;
+package com.phonelinecincinnati.game.Utility;
 
 public enum Direction {
     North,

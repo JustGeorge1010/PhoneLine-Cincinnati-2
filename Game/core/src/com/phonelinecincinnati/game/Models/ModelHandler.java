@@ -58,6 +58,7 @@ public class ModelHandler {
         KitchenItems();
         BathroomItems();
         Clothing();
+        OfficeItems();
 
         //Misc
         putModel("Misc", ModelName.GravelPieces);
@@ -75,12 +76,15 @@ public class ModelHandler {
         addMafia();
 
         //Structure
+        putModel("Wall/Passages", ModelName.OpeningFrame);
         putModel("Wall/Passages", ModelName.Door);
         putModel("Wall/Passages", ModelName.DoorFrame);
+        putModel("Wall/Passages", ModelName.DoubleDoorFrame);
         putModel("Wall/Corners", ModelName.Pillar);
         putModel("Wall/Glass", ModelName.LargeWindow);
         putModel("Wall/Glass", ModelName.FullWindow);
         putModel("Misc", ModelName.Step);
+        putModel("Misc", ModelName.StepCover);
 
         //Weapons
         putModel("Weapons", ModelName.Bat);
@@ -216,6 +220,17 @@ public class ModelHandler {
         putModel("Clothing", ModelName.WhiteShirt);
     }
 
+    private void OfficeItems() {
+        putModel("OfficeItems", ModelName.ElevatorDoor);
+        putModel("OfficeItems", ModelName.StandingLight);
+        putModel("OfficeItems", ModelName.CeilingLight);
+        putModel("OfficeItems", ModelName.OrnatePillar);
+        putModel("OfficeItems", ModelName.WorkCubicle1);
+        putModel("OfficeItems", ModelName.WorkCubicle2);
+        putModel("OfficeItems", ModelName.CubicleEnd);
+        putModel("OfficeItems", ModelName.FrontDesk);
+    }
+
     private void addMafia() {
         putModel("Enemies/Mafia", ModelName.EnemyBody);
         putModel("Enemies/Mafia", ModelName.EnemyHead);
@@ -239,6 +254,7 @@ public class ModelHandler {
         addWrappedTexture("Floor", TextureName.Wood);
         addWrappedTexture("Floor", TextureName.BrownGrayKitchenTile);
         addWrappedTexture("Floor", TextureName.GrayCarpet);
+        addWrappedTexture("Floor", TextureName.RedCarpet);
         addWrappedTexture("Floor", TextureName.DarkGreenCarpet);
         addWrappedTexture("Floor", TextureName.BrownSmallTiles);
         addWrappedTexture("Floor", TextureName.BrownTinyTiles);
@@ -246,6 +262,7 @@ public class ModelHandler {
         addWrappedTexture("Floor", TextureName.DarkBrownCheckeredTiles);
         addWrappedTexture("Floor", TextureName.BlackWhiteCheckeredTiles);
         addWrappedTexture("Floor", TextureName.DarkGreenDiamonds);
+        addWrappedTexture("Floor", TextureName.LargeWhiteTile);
 
         addWrappedTexture("Wall", TextureName.Concrete1);
         addWrappedTexture("Wall", TextureName.Brick);
@@ -254,6 +271,7 @@ public class ModelHandler {
         addWrappedTexture("Wall", TextureName.Cool);
 
         addWrappedTexture("Roof", TextureName.Concrete);
+        addWrappedTexture("Roof", TextureName.WhiteDiagonal);
 
         textures.put(TextureName.Dirt1, new Texture(Gdx.files.internal("Textures/Decals/Dirt/Dirt1.png")));
         textures.put(TextureName.Dirt2, new Texture(Gdx.files.internal("Textures/Decals/Dirt/Dirt2.png")));

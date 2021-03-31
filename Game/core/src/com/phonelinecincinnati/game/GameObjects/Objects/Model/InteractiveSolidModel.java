@@ -18,14 +18,18 @@ public class InteractiveSolidModel extends InteractiveModel implements Collidabl
     @SuppressWarnings({"Duplicates", "RedundantIfStatement"})
     @Override
     public boolean inBounds(Vector3 position, Class c) {
-        float upperX = (this.position.x+boundingBox.getWidth()/2);
-        float lowerX = (this.position.x-boundingBox.getWidth()/2);
-        float upperZ = (this.position.z+boundingBox.getDepth()/2);
-        float lowerZ = (this.position.z-boundingBox.getDepth()/2);
+        float upperY = this.position.y+boundingBox.getHeight();
+        float lowerY = this.position.y-0.5f;
+        float upperX = (this.position.x+boundingBox.getWidth()/2)+0.5f;
+        float lowerX = (this.position.x-boundingBox.getWidth()/2)-0.5f;
+        float upperZ = (this.position.z+boundingBox.getDepth()/2)+0.5f;
+        float lowerZ = (this.position.z-boundingBox.getDepth()/2)-0.5f;
 
-        if(position.x < upperX && position.x > lowerX) {
-            if(position.z < upperZ && position.z > lowerZ) {
-                return true;
+        if(position.y > lowerY && position.y < upperY ) {
+            if(position.x < upperX && position.x > lowerX) {
+                if(position.z < upperZ && position.z > lowerZ) {
+                    return true;
+                }
             }
         }
         return false;

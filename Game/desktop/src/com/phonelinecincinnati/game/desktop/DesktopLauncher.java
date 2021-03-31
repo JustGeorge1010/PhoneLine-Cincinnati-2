@@ -8,7 +8,7 @@ import java.awt.*;
 
 public class DesktopLauncher {
     @SuppressWarnings("FieldCanBeLocal")
-    private static final boolean fullscreen = false;
+    private static final boolean fullscreen = true;
 
     public static void main(String[] arg) {
         LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();

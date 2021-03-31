@@ -36,8 +36,8 @@ import static com.phonelinecincinnati.game.Models.ModelName.EnemyWall;
 
 public class MafiaMob extends GameObject{
     public Vector3 rotation;
+    public MafiaMobBody body;
     private Vector3 baseRotation;
-    private MafiaMobBody body;
     private HumanoidAnimation stand, walk, run, swingingWeapon;
     private Weapon weapon;
 
@@ -71,6 +71,16 @@ public class MafiaMob extends GameObject{
         setup();
     }
 
+    public MafiaMob(Vector3 position, Vector3 rotation, ArrayList<Vector3> patrolRoute, Weapon weapon) {
+        this.position = position;
+        this.baseRotation = new Vector3(rotation);
+        this.rotation = new Vector3(rotation);
+        this.weapon = weapon;
+        playerRef = Main.levelHandler.player;
+
+        setup(patrolRoute);
+    }
+
     public MafiaMob(ArrayList<String> params) {
         try {
             this.position = VectorMaths.constructFromString(params.get(0));
@@ -86,9 +96,11 @@ public class MafiaMob extends GameObject{
     }
 
     private void setup() {
-        patrolRoute = new ArrayList<Vector3>();
-        patrolRoute.add(new Vector3(position));
+        setup(new ArrayList<Vector3>());
+    }
 
+    private void setup(ArrayList<Vector3> patrolRoute) {
+        this.patrolRoute = patrolRoute;
         currentPath = patrolRoute;
 
         body = new MafiaMobBody(position, rotation, true, weapon.name);
@@ -181,10 +193,8 @@ public class MafiaMob extends GameObject{
                 else {
                     position = position.add(unitVector.scl(speed));
                 }
-
                 float angle = MathUtils.atan2(newPosition.z-body.position.z, newPosition.x-body.position.x);
                 rotation.y = (angle*(360/MathUtils.PI2));
-                body.rotation = new Vector3(0, rotation.y, 0);
             }
             else {
                 index++;
@@ -197,6 +207,9 @@ public class MafiaMob extends GameObject{
             wait--;
         }
 
+        float angle = MathUtils.atan2(newPosition.z-body.position.z, newPosition.x-body.position.x);
+        rotation.y = (angle*(360/MathUtils.PI2));
+        body.rotation = new Vector3(0, rotation.y, 0);
         return isMoving;
     }
 
@@ -225,6 +238,7 @@ public class MafiaMob extends GameObject{
 
             dead = true;
             deathSound.playSound();
+            Main.levelHandler.currentLevel.stageController.currentKills++;
 
             if(againstWall) {
                 knockedOverModel = Main.modelHandler.getModel(ModelName.EnemyWallDead);
@@ -254,10 +268,6 @@ public class MafiaMob extends GameObject{
     }
 
     private void knockOverUpdate() {
-        if(fallVelocity == 0f) {
-            position.y = 0;
-            return;
-        }
         Vector3 unitVector = new Vector3(0, 0, fallVelocity);
         unitVector.rotate(rotation.y, 0, 1, 0);
         Vector3 newPos = position.cpy().add(unitVector);
@@ -266,7 +276,6 @@ public class MafiaMob extends GameObject{
 
         if(fallVelocity != 0) {
             position.set(newPos);
-            position.y = 0;
         }
 
         if(fallVelocity > 0) {
@@ -331,7 +340,7 @@ public class MafiaMob extends GameObject{
 
     public void mount(Player player) {
         mounted = true;
-        Vector3 sitPos = new Vector3(position);
+        Vector3 sitPos = position.cpy().sub(0, 3, 0);
         Vector3 directionVector = new Vector3(0, 0, 1f);
         directionVector.rotate(rotation.y, 0, 1, 0);
         sitPos.add(directionVector);
@@ -359,6 +368,7 @@ public class MafiaMob extends GameObject{
             } else {
                 deathSound.playSound();
                 dead = true;
+                Main.levelHandler.currentLevel.stageController.currentKills++;
             }
         }
     }

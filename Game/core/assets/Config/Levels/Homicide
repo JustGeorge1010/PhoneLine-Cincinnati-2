@@ -1,0 +1,3053 @@
+{
+  "json": [
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(0.0,6.0,6.0)",
+        "0.0",
+        "CeilingLight"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(0.0,9.0,14.0)",
+        "90.0",
+        "WorkCubicle1"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(0.0,9.0,22.0)",
+        "90.0",
+        "WorkCubicle1"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(5.9,9.0,22.0)",
+        "90.0",
+        "WorkCubicle1"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(-5.9,9.0,22.0)",
+        "90.0",
+        "WorkCubicle1"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(-5.9,9.0,14.0)",
+        "90.0",
+        "WorkCubicle1"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(5.9,9.0,14.0)",
+        "90.0",
+        "WorkCubicle1"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(8.8,9.0,13.6)",
+        "90.0",
+        "CubicleEnd"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(8.8,9.0,21.6)",
+        "90.0",
+        "CubicleEnd"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(3.95,9.0,19.5)",
+        "90.0",
+        "WorkCubicle2"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(-1.95,9.0,19.5)",
+        "90.0",
+        "WorkCubicle2"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(-7.85,9.0,19.5)",
+        "90.0",
+        "WorkCubicle2"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(-7.85,9.0,11.5)",
+        "90.0",
+        "WorkCubicle2"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(-1.95,9.0,11.5)",
+        "90.0",
+        "WorkCubicle2"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(3.95,9.0,11.5)",
+        "90.0",
+        "WorkCubicle2"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(-8.0,0.0,6.0)",
+        "90.0",
+        "OrnatePillar"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(-8.0,0.0,15.0)",
+        "90.0",
+        "OrnatePillar"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(0.0,6.0,15.0)",
+        "90.0",
+        "CeilingLight"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(-15.0,0.0,21.0)",
+        "90.0",
+        "StandingLight"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(-15.0,0.0,-1.0)",
+        "90.0",
+        "StandingLight"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-16.0,0.0,-2.0)",
+        "(14.3,9.0,0.5)",
+        "Brick",
+        "Concrete1"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-16.0,0.0,28.0)",
+        "(2.0,9.0,0.5)",
+        "Concrete1",
+        "Concrete1"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(0.0,0.0,-2.0)",
+        "270.0",
+        "DoorFrame"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(1.7,0.0,-2.0)",
+        "(14.3,9.0,0.5)",
+        "Brick",
+        "Concrete1"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-1.7,6.0,-2.0)",
+        "(3.4,3.0,0.5)",
+        "Brick",
+        "Concrete1"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Plane",
+      "value": [
+        "(-16.0,0.0,-2.0)",
+        "(32.0,0.1,30.0)",
+        "LargeWhiteTile"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Plane",
+      "value": [
+        "(-16.0,9.0,-2.0)",
+        "(32.0,0.1,30.0)",
+        "GrayCarpet"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Plane",
+      "value": [
+        "(-16.0,8.0,-2.0)",
+        "(32.0,0.1,30.0)",
+        "WhiteDiagonal"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(15.0,0.0,-1.0)",
+        "90.0",
+        "StandingLight"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(9.0,0.0,15.0)",
+        "90.0",
+        "OrnatePillar"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(9.0,0.0,6.0)",
+        "90.0",
+        "OrnatePillar"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(11.3,0.0,28.0)",
+        "180.0",
+        "OpeningFrame"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-11.3,0.0,28.0)",
+        "180.0",
+        "OpeningFrame"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-8.6,0.0,28.0)",
+        "(17.2,9.0,0.5)",
+        "Concrete1",
+        "Concrete1"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(-27.800001,0.0,34.0)",
+        "0.0",
+        "ElevatorDoor"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(-27.800001,0.0,28.9)",
+        "0.0",
+        "ElevatorDoor"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-28.000004,0.0,37.000004)",
+        "(56.000008,9.0,0.5)",
+        "Concrete1",
+        "Brick"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-28.0,0.0,35.5)",
+        "(0.5,9.0,1.5)",
+        "Brick",
+        "Concrete1"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-28.0,0.0,30.300001)",
+        "(0.5,5.0,1.5)",
+        "Brick",
+        "Concrete1"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-28.0,5.0,25.0)",
+        "(0.5,4.0,10.5)",
+        "Brick",
+        "Concrete1"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(27.800001,0.0,33.0)",
+        "180.0",
+        "ElevatorDoor"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(27.800001,0.0,27.9)",
+        "180.0",
+        "ElevatorDoor"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(28.0,0.0,30.300001)",
+        "(0.5,5.0,1.2)",
+        "Concrete1",
+        "Brick"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(28.0,0.0,35.4)",
+        "(0.5,5.0,1.6)",
+        "Concrete1",
+        "Brick"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(28.0,0.0,25.0)",
+        "(0.5,5.0,1.4)",
+        "Concrete1",
+        "Brick"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(28.0,5.0,25.0)",
+        "(0.5,4.0,12.0)",
+        "Concrete1",
+        "Brick"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-28.0,0.0,25.0)",
+        "(0.5,5.0,1.5)",
+        "Brick",
+        "Concrete1"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Plane",
+      "value": [
+        "(-16.0,7.0,28.0)",
+        "(32.0,0.1,9.0)",
+        "WhiteDiagonal"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Plane",
+      "value": [
+        "(-16.0,0.0,28.0)",
+        "(32.0,0.1,9.0)",
+        "LargeWhiteTile"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Vertical.Stairs",
+      "value": [
+        "true",
+        "North",
+        "(-27.800001,0.2,24.0)",
+        "12",
+        "0.4"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Vertical.Stairs",
+      "value": [
+        "true",
+        "South",
+        "(-16.2,4.7000003,15.8)",
+        "12",
+        "0.4"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Plane",
+      "value": [
+        "(-28.0,9.0,24.0)",
+        "(12.0,0.1,13.0)",
+        "GrayCarpet"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-16.0,0.0,9.0)",
+        "(0.5,9.0,19.0)",
+        "Concrete1",
+        "Concrete1"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Vertical.Stairs",
+      "value": [
+        "true",
+        "North",
+        "(-27.800001,9.1,24.0)",
+        "12",
+        "0.4"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-24.0,0.0,15.0)",
+        "(0.5,27.0,10.0)",
+        "Concrete1",
+        "Concrete1"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-20.0,0.0,15.0)",
+        "(0.5,27.0,10.0)",
+        "Concrete1",
+        "Concrete1"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-24.0,0.0,25.0)",
+        "(4.0,27.0,0.5)",
+        "Concrete1",
+        "Concrete1"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-24.0,0.0,15.0)",
+        "(4.0,27.0,0.5)",
+        "Concrete1",
+        "Concrete1"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-20.0,0.0,25.0)",
+        "(4.0,7.0,0.5)",
+        "Concrete1",
+        "Concrete1"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-28.0,0.0,9.0)",
+        "(0.5,27.0,16.0)",
+        "Brick",
+        "Concrete1"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-28.0,0.0,9.0)",
+        "(12.0,27.0,0.5)",
+        "Brick",
+        "Concrete1"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Plane",
+      "value": [
+        "(-28.0,4.5,9.0)",
+        "(12.0,0.1,6.5)",
+        "Wood"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Plane",
+      "value": [
+        "(-28.0,0.0,25.0)",
+        "(12.0,0.1,12.0)",
+        "LargeWhiteTile"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Plane",
+      "value": [
+        "(-28.0,0.0,24.5)",
+        "(12.0,0.1,0.5)",
+        "LargeWhiteTile"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Plane",
+      "value": [
+        "(-28.0,13.400001,9.0)",
+        "(12.0,0.1,6.2000003)",
+        "Wood"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Vertical.Stairs",
+      "value": [
+        "true",
+        "South",
+        "(-16.0,13.5,15.79)",
+        "12",
+        "0.42"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-18.0,11.900001,16.2)",
+        "90.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-18.0,12.3,17.0)",
+        "90.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-18.0,12.7,17.800001)",
+        "90.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-18.0,13.1,18.6)",
+        "90.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-18.0,13.5,19.4)",
+        "90.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-18.0,14.0,20.2)",
+        "90.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-18.0,14.400001,21.0)",
+        "90.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-18.0,14.8,21.800001)",
+        "90.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-18.0,15.2,22.6)",
+        "90.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-18.0,15.6,23.4)",
+        "90.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-18.0,16.1,24.2)",
+        "90.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Plane",
+      "value": [
+        "(16.0,9.0,24.0)",
+        "(12.0,0.1,13.0)",
+        "GrayCarpet"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Plane",
+      "value": [
+        "(16.0,7.0,24.0)",
+        "(12.0,0.1,13.0)",
+        "WhiteDiagonal"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Plane",
+      "value": [
+        "(16.0,0.0,24.2)",
+        "(12.0,0.1,0.90000004)",
+        "LargeWhiteTile"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Plane",
+      "value": [
+        "(16.0,4.5,9.0)",
+        "(12.0,0.1,6.5)",
+        "Wood"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(16.0,0.0,9.0)",
+        "(12.0,27.0,0.5)",
+        "Brick",
+        "Concrete1"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Plane",
+      "value": [
+        "(16.0,13.400001,9.0)",
+        "(12.0,0.1,6.3)",
+        "Wood"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(16.0,0.0,25.0)",
+        "(4.0,8.0,0.5)",
+        "Concrete1",
+        "Concrete1"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(14.0,0.0,28.0)",
+        "(2.0,8.0,0.5)",
+        "Concrete1",
+        "Concrete1"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(20.0,0.0,25.0)",
+        "(4.0,27.0,0.5)",
+        "Concrete1",
+        "Concrete1"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(20.0,0.0,15.0)",
+        "(0.5,27.0,10.0)",
+        "Concrete1",
+        "Concrete1"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(24.0,0.0,15.0)",
+        "(0.5,27.0,10.0)",
+        "Concrete1",
+        "Concrete1"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(28.0,0.0,9.0)",
+        "(0.5,27.0,16.0)",
+        "Concrete1",
+        "Brick"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Plane",
+      "value": [
+        "(16.0,0.0,25.0)",
+        "(12.0,0.1,12.0)",
+        "LargeWhiteTile"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Vertical.Stairs",
+      "value": [
+        "true",
+        "North",
+        "(24.0,0.2,24.0)",
+        "12",
+        "0.4"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Vertical.Stairs",
+      "value": [
+        "true",
+        "North",
+        "(24.0,9.1,24.0)",
+        "12",
+        "0.4"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Vertical.Stairs",
+      "value": [
+        "true",
+        "South",
+        "(20.0,13.5,15.799999)",
+        "12",
+        "0.42"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(18.0,11.400001,15.400001)",
+        "90.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(18.0,11.900001,16.2)",
+        "90.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(18.0,12.3,17.0)",
+        "90.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(18.0,12.7,17.800001)",
+        "90.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(18.0,13.1,18.6)",
+        "90.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(18.0,13.5,19.4)",
+        "90.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(18.0,14.0,20.2)",
+        "90.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(18.0,14.400001,21.0)",
+        "90.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(18.0,14.8,21.800001)",
+        "90.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(18.0,15.2,22.6)",
+        "90.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(18.0,15.6,23.4)",
+        "90.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(18.0,16.1,24.2)",
+        "90.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(15.0,0.0,21.0)",
+        "90.0",
+        "StandingLight"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Plane",
+      "value": [
+        "(-28.0,11.45,9.0)",
+        "(12.0,0.1,6.0)",
+        "Concrete"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Plane",
+      "value": [
+        "(-28.0,11.45,14.99)",
+        "(4.0,0.1,4.0)",
+        "Concrete"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-26.1,11.0,16.800001)",
+        "270.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-26.1,10.6,17.6)",
+        "270.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-26.1,10.2,18.4)",
+        "270.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-26.1,9.8,19.2)",
+        "270.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-26.1,9.400001,19.9)",
+        "270.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Plane",
+      "value": [
+        "(-28.0,7.0,24.0)",
+        "(12.0,0.1,13.0)",
+        "WhiteDiagonal"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-26.0,6.9,24.0)",
+        "270.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-26.0,7.6,23.2)",
+        "270.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-26.0,8.1,22.300001)",
+        "270.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-26.0,8.6,21.5)",
+        "270.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-26.0,9.0,20.7)",
+        "270.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Plane",
+      "value": [
+        "(16.0,11.5,9.0)",
+        "(12.0,0.1,6.1)",
+        "Concrete"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Plane",
+      "value": [
+        "(24.0,11.5,15.1)",
+        "(4.0,0.1,1.5)",
+        "Concrete"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(26.0,7.3,23.9)",
+        "270.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(26.0,7.7000003,23.2)",
+        "270.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(26.0,8.1,22.4)",
+        "270.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(26.0,8.5,21.6)",
+        "270.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(26.0,8.900001,20.800001)",
+        "270.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(26.0,9.3,20.0)",
+        "270.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(26.0,9.7,19.2)",
+        "270.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(26.0,10.1,18.4)",
+        "270.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(26.0,10.5,17.6)",
+        "270.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(26.0,10.900001,16.800001)",
+        "270.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(26.1,6.9,24.300001)",
+        "270.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(24.1,0.1,25.1)",
+        "270.0",
+        "Pillar"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(24.1,6.1,25.1)",
+        "270.0",
+        "Pillar"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(19.9,18.1,25.1)",
+        "270.0",
+        "Pillar"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(19.9,12.1,25.1)",
+        "270.0",
+        "Pillar"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(19.9,7.0,25.1)",
+        "270.0",
+        "Pillar"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(24.1,0.0,14.900001)",
+        "270.0",
+        "Pillar"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(24.1,6.0,14.900001)",
+        "270.0",
+        "Pillar"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(24.1,12.0,14.900001)",
+        "270.0",
+        "Pillar"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(24.1,18.0,14.900001)",
+        "270.0",
+        "Pillar"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(19.9,18.0,14.900001)",
+        "270.0",
+        "Pillar"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(19.9,12.0,14.900001)",
+        "270.0",
+        "Pillar"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(19.9,6.0,14.900001)",
+        "270.0",
+        "Pillar"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(19.9,0.0,14.900001)",
+        "270.0",
+        "Pillar"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-24.1,0.0,25.1)",
+        "270.0",
+        "Pillar"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-24.1,6.0,25.1)",
+        "270.0",
+        "Pillar"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-24.1,12.0,25.1)",
+        "270.0",
+        "Pillar"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-24.1,18.0,14.900001)",
+        "270.0",
+        "Pillar"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-24.1,12.0,14.900001)",
+        "270.0",
+        "Pillar"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-24.1,6.0,14.900001)",
+        "270.0",
+        "Pillar"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-24.1,0.0,14.900001)",
+        "270.0",
+        "Pillar"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-19.9,0.0,14.900001)",
+        "270.0",
+        "Pillar"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-19.9,6.0,14.900001)",
+        "270.0",
+        "Pillar"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-19.9,12.0,14.900001)",
+        "270.0",
+        "Pillar"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-19.9,18.0,14.900001)",
+        "270.0",
+        "Pillar"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-19.9,18.0,25.1)",
+        "270.0",
+        "Pillar"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-19.9,12.0,25.1)",
+        "270.0",
+        "Pillar"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-19.9,7.0,25.1)",
+        "270.0",
+        "Pillar"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-16.1,0.0,28.1)",
+        "270.0",
+        "Pillar"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-16.1,3.0,28.1)",
+        "270.0",
+        "Pillar"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(16.1,3.0,28.1)",
+        "270.0",
+        "Pillar"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(16.1,0.0,28.1)",
+        "270.0",
+        "Pillar"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(11.3,9.0,28.0)",
+        "0.0",
+        "OpeningFrame"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-10.3,9.0,-2.0)",
+        "(2.1000001,6.0,0.5)",
+        "Brick",
+        "Concrete1"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(8.2,9.0,-2.0)",
+        "(2.1000001,6.0,0.5)",
+        "Brick",
+        "Concrete1"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(13.0,9.0,-1.9)",
+        "0.0",
+        "FullWindow"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(5.5,9.0,-1.9)",
+        "0.0",
+        "FullWindow"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(0.0,9.0,-1.9)",
+        "0.0",
+        "FullWindow"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(-5.5,9.0,-1.9)",
+        "0.0",
+        "FullWindow"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(-13.0,9.0,-1.9)",
+        "0.0",
+        "FullWindow"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-16.0,0.0,-2.0)",
+        "(0.5,9.0,11.0)",
+        "Brick",
+        "Concrete1"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(16.0,0.0,-2.0)",
+        "(0.5,9.0,11.0)",
+        "Concrete1",
+        "Brick"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(16.0,9.0,0.95)",
+        "270.0",
+        "FullWindow"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(-15.95,9.0,1.0500001)",
+        "270.0",
+        "FullWindow"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(16.0,9.0,3.7)",
+        "(0.5,6.0,5.3)",
+        "Concrete1",
+        "Brick"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(14.0,9.0,28.0)",
+        "(2.0,6.0,0.5)",
+        "Concrete1",
+        "Concrete1"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-8.5,9.0,28.0)",
+        "(17.1,6.0,0.5)",
+        "Concrete1",
+        "Concrete1"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-16.0,9.0,28.0)",
+        "(2.1000001,6.0,0.5)",
+        "Concrete1",
+        "Concrete1"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-16.0,15.0,28.0)",
+        "(32.0,2.0,0.5)",
+        "Concrete1",
+        "Concrete1"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Plane",
+      "value": [
+        "(-16.0,9.0,28.0)",
+        "(32.0,0.1,9.0)",
+        "GrayCarpet"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Plane",
+      "value": [
+        "(-16.0,16.0,28.0)",
+        "(32.0,0.1,9.0)",
+        "WhiteDiagonal"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Plane",
+      "value": [
+        "(-28.0,16.0,25.0)",
+        "(12.0,0.1,12.0)",
+        "WhiteDiagonal"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Plane",
+      "value": [
+        "(-20.0,16.0,23.0)",
+        "(4.0,0.1,2.0)",
+        "WhiteDiagonal"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Plane",
+      "value": [
+        "(16.0,16.0,23.0)",
+        "(4.0,0.1,2.0)",
+        "WhiteDiagonal"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Plane",
+      "value": [
+        "(16.0,16.0,25.0)",
+        "(12.0,0.1,12.0)",
+        "WhiteDiagonal"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(-16.1,9.0,28.1)",
+        "0.0",
+        "Pillar"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(-27.800001,9.0,28.9)",
+        "0.0",
+        "ElevatorDoor"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-28.0,9.0,25.0)",
+        "(0.5,5.0,1.5)",
+        "Brick",
+        "Concrete1"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(-27.800001,9.0,34.0)",
+        "0.0",
+        "ElevatorDoor"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-28.0,9.0,30.4)",
+        "(0.5,5.0,1.2)",
+        "Brick",
+        "Concrete1"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-28.0,9.0,35.5)",
+        "(0.5,5.0,1.5)",
+        "Brick",
+        "Concrete1"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(27.800001,9.0,27.9)",
+        "180.0",
+        "ElevatorDoor"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(27.800001,9.0,33.0)",
+        "180.0",
+        "ElevatorDoor"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(28.0,9.0,30.300001)",
+        "(0.5,5.0,1.2)",
+        "Concrete1",
+        "Brick"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(28.0,9.0,25.0)",
+        "(0.5,5.0,1.4)",
+        "Concrete1",
+        "Brick"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(28.0,9.0,35.4)",
+        "(0.5,5.0,1.6)",
+        "Concrete1",
+        "Brick"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-28.0,9.0,37.0)",
+        "(56.0,9.0,0.5)",
+        "Concrete1",
+        "Brick"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-28.0,14.0,25.0)",
+        "(0.5,4.0,12.0)",
+        "Brick",
+        "Concrete1"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(28.0,14.0,25.0)",
+        "(0.5,4.0,12.0)",
+        "Concrete1",
+        "Brick"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(16.0,0.0,9.0)",
+        "(0.5,9.0,19.0)",
+        "Concrete1",
+        "Concrete1"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Plane",
+      "value": [
+        "(-16.0,17.0,-2.0)",
+        "(32.0,0.1,30.0)",
+        "Concrete"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Plane",
+      "value": [
+        "(-28.0,18.0,24.0)",
+        "(12.0,0.1,3.0)",
+        "Wood"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Plane",
+      "value": [
+        "(-18.0,18.0,27.0)",
+        "(2.0,0.1,1.0)",
+        "Wood"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Plane",
+      "value": [
+        "(-18.0,18.0,28.0)",
+        "(36.0,0.1,2.0)",
+        "Wood"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Plane",
+      "value": [
+        "(16.0,18.0,24.0)",
+        "(12.0,0.1,3.0)",
+        "Wood"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Plane",
+      "value": [
+        "(16.0,18.0,27.0)",
+        "(2.0,0.1,1.0)",
+        "Wood"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Plane",
+      "value": [
+        "(26.0,18.0,27.0)",
+        "(2.0,0.1,8.0)",
+        "Wood"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Plane",
+      "value": [
+        "(-28.0,18.0,35.0)",
+        "(56.0,0.1,2.0)",
+        "Wood"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Plane",
+      "value": [
+        "(-28.0,18.0,27.0)",
+        "(2.0,0.1,8.0)",
+        "Wood"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(-27.800001,18.0,28.9)",
+        "0.0",
+        "ElevatorDoor"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(-27.800001,18.0,34.0)",
+        "0.0",
+        "ElevatorDoor"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(27.800001,18.0,33.0)",
+        "180.0",
+        "ElevatorDoor"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(27.800001,18.0,27.9)",
+        "180.0",
+        "ElevatorDoor"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(28.0,23.0,25.0)",
+        "(0.5,4.0,12.0)",
+        "Concrete1",
+        "Brick"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-28.0,23.0,25.0)",
+        "(0.5,4.0,12.0)",
+        "Brick",
+        "Concrete1"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-28.0,18.0,37.0)",
+        "(12.0,9.0,0.5)",
+        "Concrete1",
+        "Brick"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(16.0,18.0,37.0)",
+        "(12.0,9.0,0.5)",
+        "Concrete1",
+        "Brick"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(4.0,18.0,37.0)",
+        "180.0",
+        "FullWindow"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(-4.0,18.0,37.0)",
+        "180.0",
+        "FullWindow"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(-12.0,18.0,37.0)",
+        "180.0",
+        "FullWindow"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(12.0,18.0,37.0)",
+        "180.0",
+        "FullWindow"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(6.75,18.0,37.0)",
+        "(2.5,6.0,0.5)",
+        "Concrete1",
+        "Brick"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-1.25,18.0,37.0)",
+        "(2.5,6.0,0.5)",
+        "Concrete1",
+        "Brick"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-9.25,18.0,37.0)",
+        "(2.5,6.0,0.5)",
+        "Concrete1",
+        "Brick"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-16.0,18.0,37.0)",
+        "(1.25,6.0,0.5)",
+        "Concrete1",
+        "Brick"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(14.75,18.0,37.0)",
+        "(1.25,6.0,0.5)",
+        "Concrete1",
+        "Brick"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-16.0,24.0,37.0)",
+        "(32.0,3.0,0.5)",
+        "Concrete1",
+        "Brick"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(28.0,18.0,25.0)",
+        "(0.5,5.0,1.4)",
+        "Concrete1",
+        "Brick"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(28.0,18.0,30.2)",
+        "(0.5,5.0,1.4)",
+        "Concrete1",
+        "Brick"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(28.0,18.0,35.2)",
+        "(0.5,5.0,1.8000001)",
+        "Concrete1",
+        "Brick"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-28.0,18.0,35.5)",
+        "(0.5,5.0,1.5)",
+        "Brick",
+        "Concrete1"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-28.0,18.0,30.4)",
+        "(0.5,5.0,1.2)",
+        "Brick",
+        "Concrete1"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-28.0,18.0,25.0)",
+        "(0.5,5.0,1.5)",
+        "Brick",
+        "Concrete1"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-16.0,15.0,-2.0)",
+        "(32.0,3.0,0.5)",
+        "Brick",
+        "Concrete1"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-16.0,15.0,-2.0)",
+        "(0.5,3.0,11.0)",
+        "Brick",
+        "Concrete1"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(16.0,15.0,-2.0)",
+        "(0.5,3.0,11.0)",
+        "Concrete1",
+        "Brick"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(16.0,9.0,9.0)",
+        "(0.5,9.0,19.0)",
+        "Concrete1",
+        "Concrete1"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-16.0,9.0,9.0)",
+        "(0.5,9.0,19.0)",
+        "Concrete1",
+        "Concrete1"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-16.0,9.0,3.8)",
+        "(0.5,6.0,5.2000003)",
+        "Brick",
+        "Concrete1"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(-18.1,11.400001,15.400001)",
+        "90.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Plane",
+      "value": [
+        "(-18.0,18.0,30.0)",
+        "(36.0,0.1,5.0)",
+        "RedCarpet"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Plane",
+      "value": [
+        "(-26.0,18.0,27.0)",
+        "(8.0,0.1,8.0)",
+        "RedCarpet"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Plane",
+      "value": [
+        "(18.0,18.0,27.0)",
+        "(8.0,0.1,8.0)",
+        "RedCarpet"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Plane",
+      "value": [
+        "(-16.0,18.0,25.0)",
+        "(32.0,0.1,3.0)",
+        "Wood"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Plane",
+      "value": [
+        "(-16.0,18.0,-2.0)",
+        "(32.0,0.1,3.0)",
+        "Wood"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Plane",
+      "value": [
+        "(-16.0,18.0,1.0)",
+        "(3.0,0.1,24.0)",
+        "Wood"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Plane",
+      "value": [
+        "(13.0,18.0,1.0)",
+        "(3.0,0.1,24.0)",
+        "Wood"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Plane",
+      "value": [
+        "(-13.0,18.0,1.0)",
+        "(26.0,0.1,24.0)",
+        "RedCarpet"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-16.0,18.0,28.0)",
+        "(12.7,9.0,0.5)",
+        "Brick",
+        "Concrete1"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(3.2,18.0,28.0)",
+        "(12.900001,9.0,0.5)",
+        "Brick",
+        "Concrete1"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(14.0,18.0,-2.0)",
+        "(2.0,9.0,0.5)",
+        "Brick",
+        "Brick"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-16.0,18.0,-2.0)",
+        "(0.5,9.0,2.0)",
+        "Brick",
+        "Brick"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-16.0,18.0,-2.0)",
+        "(2.0,9.0,0.5)",
+        "Brick",
+        "Brick"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-14.0,25.0,-2.0)",
+        "(28.0,2.0,0.5)",
+        "Brick",
+        "Brick"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-16.0,25.0,0.0)",
+        "(0.5,2.0,9.0)",
+        "Brick",
+        "Brick"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(16.0,18.0,8.7)",
+        "(0.5,9.0,19.300001)",
+        "Brick",
+        "Concrete1"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(16.0,25.0,-0.1)",
+        "(0.5,2.0,8.8)",
+        "Brick",
+        "Brick"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(16.0,18.0,-2.0)",
+        "(0.5,9.0,2.0)",
+        "Brick",
+        "Brick"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Plane",
+      "value": [
+        "(-16.0,27.0,-2.0)",
+        "(32.0,0.1,30.0)",
+        "Concrete"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(-15.199997,17.999996,25.599995)",
+        "90.0",
+        "Bookshelf"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(-15.199997,17.999996,21.199995)",
+        "90.0",
+        "Bookshelf"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(-15.199997,17.999996,16.799997)",
+        "90.0",
+        "Bookshelf"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(-15.199997,17.999996,12.399998)",
+        "90.0",
+        "Bookshelf"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(15.199997,17.999996,12.399998)",
+        "270.0",
+        "Bookshelf"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(15.199997,17.999996,16.799997)",
+        "270.0",
+        "Bookshelf"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(15.199997,17.999996,21.199995)",
+        "270.0",
+        "Bookshelf"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(15.199997,17.999996,25.599995)",
+        "270.0",
+        "Bookshelf"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(0.0,25.0,12.0)",
+        "270.0",
+        "CeilingLight"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(0.0,18.0,-0.6)",
+        "0.0",
+        "WritingTable"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(-0.90000004,18.0,1.1)",
+        "42.0",
+        "WoodenChair"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.GameDecal",
+      "value": [
+        "(0.0,21.0,-2.0)",
+        "29.0",
+        "8.0",
+        "(0.0,180.0,0.0)",
+        "Glass"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.GameDecal",
+      "value": [
+        "(-16.0,21.0,4.0)",
+        "11.0",
+        "8.0",
+        "(0.0,270.0,0.0)",
+        "Glass"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.GameDecal",
+      "value": [
+        "(16.0,21.0,4.0)",
+        "11.0",
+        "8.0",
+        "(0.0,270.0,0.0)",
+        "Glass"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.GameDecal",
+      "value": [
+        "(16.0,12.0,1.0)",
+        "6.0",
+        "8.0",
+        "(0.0,270.0,0.0)",
+        "Glass"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.GameDecal",
+      "value": [
+        "(13.0,12.0,-1.9)",
+        "5.6",
+        "7.7000003",
+        "(0.0,0.0,0.0)",
+        "Glass"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.GameDecal",
+      "value": [
+        "(0.0,12.0,-1.9)",
+        "16.1",
+        "9.1",
+        "(0.0,0.0,0.0)",
+        "Glass"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.GameDecal",
+      "value": [
+        "(-13.1,12.0,-1.9)",
+        "5.7000003",
+        "9.1",
+        "(0.0,0.0,0.0)",
+        "Glass"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.GameDecal",
+      "value": [
+        "(-16.0,12.0,1.0)",
+        "6.0",
+        "7.0",
+        "(0.0,90.0,0.0)",
+        "Glass"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-16.1,0.0,-2.1000001)",
+        "90.0",
+        "Pillar"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-16.1,6.0,-2.1000001)",
+        "90.0",
+        "Pillar"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-16.1,12.0,-2.1000001)",
+        "90.0",
+        "Pillar"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-16.1,18.0,-2.1000001)",
+        "90.0",
+        "Pillar"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-16.1,21.0,-2.1000001)",
+        "90.0",
+        "Pillar"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(16.1,21.0,-2.1000001)",
+        "90.0",
+        "Pillar"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(16.1,15.0,-2.1000001)",
+        "90.0",
+        "Pillar"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(16.1,9.0,-2.1000001)",
+        "90.0",
+        "Pillar"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(16.1,3.0,-2.1000001)",
+        "90.0",
+        "Pillar"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(16.1,0.0,-2.1000001)",
+        "90.0",
+        "Pillar"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-16.0,18.0,9.0)",
+        "(0.5,9.0,19.0)",
+        "Concrete1",
+        "Brick"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-16.1,15.0,28.1)",
+        "90.0",
+        "Pillar"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-16.1,21.0,28.1)",
+        "90.0",
+        "Pillar"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-19.9,21.0,25.1)",
+        "90.0",
+        "Pillar"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(16.1,9.0,28.1)",
+        "90.0",
+        "Pillar"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(16.1,15.0,28.1)",
+        "90.0",
+        "Pillar"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(16.1,21.0,28.1)",
+        "90.0",
+        "Pillar"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(19.9,21.0,25.1)",
+        "90.0",
+        "Pillar"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(24.1,12.0,25.1)",
+        "90.0",
+        "Pillar"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(26.2,15.900001,24.9)",
+        "270.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(26.2,16.300001,24.1)",
+        "270.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(26.2,16.7,23.300001)",
+        "270.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(26.2,17.1,22.5)",
+        "270.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(26.2,17.5,21.7)",
+        "270.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(26.2,17.9,20.9)",
+        "270.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(26.2,18.300001,20.1)",
+        "270.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(26.2,18.7,19.300001)",
+        "270.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(26.2,19.1,18.5)",
+        "270.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(26.2,19.5,17.7)",
+        "270.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(26.2,19.9,16.9)",
+        "270.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(26.2,20.300001,16.1)",
+        "270.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(26.2,20.7,15.3)",
+        "270.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Plane",
+      "value": [
+        "(16.0,21.0,9.0)",
+        "(12.0,0.1,6.0)",
+        "Concrete"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(18.0,20.9,15.1)",
+        "90.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(18.0,21.300001,15.900001)",
+        "90.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(18.0,21.7,16.7)",
+        "90.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(18.0,22.1,17.5)",
+        "90.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(18.0,22.5,18.2)",
+        "90.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(18.0,22.9,19.0)",
+        "90.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(18.0,23.300001,19.800001)",
+        "90.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(18.0,23.7,20.6)",
+        "90.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(18.0,24.1,21.4)",
+        "90.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(18.0,24.5,22.2)",
+        "90.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(18.0,24.9,23.0)",
+        "90.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(18.0,25.300001,23.800001)",
+        "90.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(18.0,25.7,24.6)",
+        "90.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Plane",
+      "value": [
+        "(16.0,26.0,9.0)",
+        "(12.0,0.1,28.0)",
+        "Concrete"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Plane",
+      "value": [
+        "(-28.0,26.0,9.0)",
+        "(12.0,0.1,28.0)",
+        "Concrete"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Plane",
+      "value": [
+        "(-16.0,26.0,28.0)",
+        "(32.0,0.1,9.0)",
+        "Concrete"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-26.0,15.900001,24.9)",
+        "270.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-26.0,16.300001,24.1)",
+        "270.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-26.0,16.7,23.300001)",
+        "270.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-26.0,17.1,22.5)",
+        "270.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-26.0,17.5,21.7)",
+        "270.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-26.0,17.9,20.9)",
+        "270.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-26.0,18.300001,20.1)",
+        "270.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-26.0,18.7,19.300001)",
+        "270.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-26.0,19.1,18.5)",
+        "270.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-26.0,19.5,17.7)",
+        "270.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-26.0,19.9,16.9)",
+        "270.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-26.0,20.300001,16.1)",
+        "270.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-26.0,20.7,15.3)",
+        "270.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Plane",
+      "value": [
+        "(-28.0,21.0,9.0)",
+        "(12.0,0.1,6.0)",
+        "Concrete"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-18.0,20.9,15.1)",
+        "90.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-18.0,21.300001,15.900001)",
+        "90.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-18.0,21.7,16.7)",
+        "90.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-18.0,22.1,17.5)",
+        "90.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-18.0,22.5,18.300001)",
+        "90.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-18.0,22.9,19.1)",
+        "90.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-18.0,23.300001,19.9)",
+        "90.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-18.0,23.7,20.7)",
+        "90.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-18.0,24.1,21.5)",
+        "90.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-18.0,24.5,22.300001)",
+        "90.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-18.0,24.9,23.1)",
+        "90.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-18.0,25.300001,23.9)",
+        "90.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-18.0,25.7,24.7)",
+        "90.0",
+        "StepCover"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-28.0,18.0,25.0)",
+        "(4.0,9.0,0.5)",
+        "Concrete1",
+        "Concrete1"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(24.0,18.0,25.0)",
+        "(4.0,9.0,0.5)",
+        "Concrete1",
+        "Concrete1"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.GameDecal",
+      "value": [
+        "(0.0,21.0,37.0)",
+        "30.0",
+        "6.0",
+        "(0.0,180.0,0.0)",
+        "Glass"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel",
+      "value": [
+        "(0.0,0.0,22.0)",
+        "90.0",
+        "FrontDesk"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-3.3,24.0,28.0)",
+        "(6.5,3.0,0.5)",
+        "Brick",
+        "Concrete1"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(20.0,0.0,15.0)",
+        "(4.0,27.0,0.5)",
+        "Concrete1",
+        "Concrete1"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-0.05,17.95,28.0)",
+        "90.0",
+        "DoubleDoorFrame"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(8.6,6.0,28.0)",
+        "(5.4,2.0,0.5)",
+        "Concrete1",
+        "Concrete1"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-14.0,6.0,28.0)",
+        "(5.4,2.0,0.5)",
+        "Concrete1",
+        "Concrete1"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Model.Model",
+      "value": [
+        "(-11.2,9.0,28.0)",
+        "180.0",
+        "OpeningFrame"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.Vertical.Stairs",
+      "value": [
+        "true",
+        "South",
+        "(19.9,4.7000003,15.8)",
+        "12",
+        "0.4"
+      ]
+    }
+  ]
+}
