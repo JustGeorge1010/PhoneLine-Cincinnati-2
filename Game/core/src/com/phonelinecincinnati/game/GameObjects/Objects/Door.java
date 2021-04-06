@@ -133,7 +133,7 @@ public class Door extends GameObject implements Collidable{
                         if(horizontal) {
                             if(mob.getPosition().x > position.x && mob.position.x < position.x+bounds.getDepth()) {
                                 if(mob.getPosition().z < position.z+hitBoxDepth) {
-                                    mob.knockOver(center, hitBoxDepth/12);
+                                    mob.knockOver(center, hitBoxDepth/12, true, false);
                                 }
                             } //TODO: change for different door rotations
                         }

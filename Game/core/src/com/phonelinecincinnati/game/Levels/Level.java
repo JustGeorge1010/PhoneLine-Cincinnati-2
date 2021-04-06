@@ -9,6 +9,7 @@ import com.phonelinecincinnati.game.Main;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public abstract class Level {
+    public String name = "";
     public StageController stageController;
     CopyOnWriteArrayList<GameObject> activeObjects;
 

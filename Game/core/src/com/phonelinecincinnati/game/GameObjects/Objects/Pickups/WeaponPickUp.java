@@ -124,7 +124,7 @@ public class WeaponPickUp extends GameObject{
                 MafiaMob mob = (MafiaMob)object;
                 if(tempPosition.dst(new Vector3(mob.position.x, position.y, mob.position.z)) < 3) {
                     if(!mob.knockedOver) {
-                        mob.knockOver(position, 0.4f);
+                        mob.knockOver(position, 0.4f, false, true);
                         direction = new Vector3(-(direction.x/2), direction.y, -(direction.z/2));
                         tempPosition.add(direction);
                     }

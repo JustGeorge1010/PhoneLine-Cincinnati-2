@@ -22,10 +22,12 @@ public class LevelHandler {
     private int progression = 1; //TODO: Change this to 0 to reset progress
     public Level currentLevel;
     public Player player = null;
+    public Score score;
 
     public LevelHandler() {
         Main.modelHandler.setupAllModels();
         activeObjects = new CopyOnWriteArrayList<GameObject>();
+        score = new Score();
     }
 
     public CopyOnWriteArrayList<GameObject> getActiveObjects() {
