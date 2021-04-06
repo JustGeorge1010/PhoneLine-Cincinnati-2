@@ -35,7 +35,7 @@ public class TestingGround extends Level {
         activeObjects.add(new SolidWall(new Vector3(20f, -6f, 5f), new Vector3(0.5f, 12, 5f), TextureName.Concrete1));
 
         MafiaMob mob = new MafiaMob(new Vector3(25, 0, 11), new Vector3(0, 25, 0), new BaseballBat());
-        AStar.generateAStar();
+        AStar.generateAStar(0);
 
         activeObjects.add(mob);
         activeObjects.add(player);

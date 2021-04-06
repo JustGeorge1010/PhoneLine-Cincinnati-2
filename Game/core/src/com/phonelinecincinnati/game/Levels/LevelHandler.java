@@ -112,7 +112,7 @@ public class LevelHandler {
         }
 
         final Player player =
-                Level.createPlayer(new Vector3(0, 3.6f, -5), new Vector3(0, 0, 1), null,
+                Level.createPlayer(new Vector3(0, 0f, -5), new Vector3(0, 0, 1), null,
                         false, false);
         player.giveControl();
         activeObjects.add(player);
@@ -134,7 +134,8 @@ public class LevelHandler {
 
     public void loadLevel1() {
         clearActiveObjects();
-        currentLevel = new Level1(activeObjects);
+        currentLevel = new Homicide(activeObjects);
+        //currentLevel = new Level1(activeObjects);
     }
 
     public void dispose() {

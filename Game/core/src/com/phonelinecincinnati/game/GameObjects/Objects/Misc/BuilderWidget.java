@@ -8,10 +8,12 @@ import com.phonelinecincinnati.game.GameObjects.Objects.*;
 import com.phonelinecincinnati.game.GameObjects.Objects.Model.Model;
 import com.phonelinecincinnati.game.GameObjects.Objects.Model.SolidModel;
 import com.phonelinecincinnati.game.GameObjects.Objects.Player.Player;
+import com.phonelinecincinnati.game.GameObjects.Objects.Vertical.Stairs;
 import com.phonelinecincinnati.game.Main;
 import com.phonelinecincinnati.game.Models.ModelName;
 import com.phonelinecincinnati.game.Models.TextureName;
 import com.phonelinecincinnati.game.Renderer;
+import com.phonelinecincinnati.game.Utility.Direction;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -32,14 +34,8 @@ enum BuildMode {
 enum BrushMode {
     Base,
     Model,
-    Decal
-}
-
-enum Direction {
-    North,
-    South,
-    East,
-    West
+    Decal,
+    Stairs
 }
 
 public class BuilderWidget extends GameObject{
@@ -197,6 +193,7 @@ public class BuilderWidget extends GameObject{
             try {
                 String levelName = commandParts[1];
                 Main.levelHandler.SaveToJson(levelName);
+                System.out.println("Successfully saved level to '"+levelName+"'");
             } catch (Exception e) {
                 System.out.println("Command is used like: Save [LevelName]");
                 System.out.println("Type help (h) for more details");
@@ -261,6 +258,9 @@ public class BuilderWidget extends GameObject{
             }
             else if(brushMode == BrushMode.Model) {
                 brushMode = BrushMode.Decal;
+            }
+            else if(brushMode == BrushMode.Decal) {
+                brushMode = BrushMode.Stairs;
             }
             else {
                 brushMode = BrushMode.Base;
@@ -559,6 +559,21 @@ public class BuilderWidget extends GameObject{
         else if(brushMode == BrushMode.Decal) {
             Vector3 rot = new Vector3(rotationX, rotationY, rotationZ);
             currentObject = new GameDecal(position.cpy(), size.x, size.z, rot, textureName);
+        }
+        else if(brushMode == BrushMode.Stairs) {
+            Direction direction = Direction.North;
+            if(rotationY == 90) {
+                direction = Direction.East;
+            }
+            else if(rotationY == 180) {
+                direction = Direction.South;
+            }
+            else if(rotationY == 270) {
+                direction = Direction.West;
+            }
+
+            //noinspection SuspiciousNameCombination
+            currentObject = new Stairs(true, direction, position.cpy(), (int)size.y, size.x);
         }
     }
 

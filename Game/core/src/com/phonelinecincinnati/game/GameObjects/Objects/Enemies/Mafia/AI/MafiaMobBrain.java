@@ -1,7 +1,9 @@
 package com.phonelinecincinnati.game.GameObjects.Objects.Enemies.Mafia.AI;
 
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.math.Vector3;
 import com.phonelinecincinnati.game.GameObjects.Objects.Enemies.Mafia.MafiaMob;
 import com.phonelinecincinnati.game.GameObjects.Objects.Player.Player;
 import com.phonelinecincinnati.game.Main;
@@ -12,6 +14,7 @@ import static com.phonelinecincinnati.game.GameObjects.Objects.Enemies.Mafia.AI.
 public class MafiaMobBrain {
     public enum State {
         Patrolling,
+        MovingTo,
         Following,
         Tracking,
         Returning
@@ -23,7 +26,6 @@ public class MafiaMobBrain {
     private Player player;
 
     public MafiaMobBrain(MafiaMob mob, Player player) {
-        //currentState = Following;
         currentState = Patrolling;
         pathfinder = new Pathfinder();
         this.mob = mob;
@@ -33,13 +35,23 @@ public class MafiaMobBrain {
     public void update() {
         pathfinder.currentPosition = mob.position;
         if(!mob.currentPath.isEmpty()) pathfinder.goalPosition = mob.currentPath.get(mob.currentPath.size()-1);
-        if(canSeePlayer() && !Main.debugBlindEnemies) {
-            currentState = Following;
+        if(CollisionMaths.lineOfSightClear(player.position.cpy(), mob.position.cpy().add(mob.body.head.getPosition()))
+                && !Main.debugBlindEnemies) {
+            if(canSeePlayer()) {
+                if(canReachPlayer()) {
+                    currentState = Following;
+                } else {
+                    currentState = MovingTo;
+                }
+            }
+            if(currentState == MovingTo) {
+                pathfinder.moveTo(mob, player.position.cpy());
+            }
         }
         else {
-            if(currentState == Following) {
+            if(currentState == MovingTo || currentState == Following) {
                 currentState = Tracking;
-                pathfinder.track(mob, player.position);
+                pathfinder.track(mob, player.position.cpy());
             }
             else if(currentState == Tracking && !pathfinder.isTracking()) {
                 currentState = Returning;
@@ -52,17 +64,22 @@ public class MafiaMobBrain {
     }
 
     private boolean canSeePlayer() {
+        return Math.abs(player.position.y - mob.position.y) < 1 &&
+                lineOfSightFromPoint(mob.position.cpy().add(mob.body.head.getPosition()));
+    }
+
+    public boolean canReachPlayer() {
+        return lineOfSightFromPoint(mob.position);
+    }
+
+    private boolean lineOfSightFromPoint(Vector3 point) {
         float FOV = 40;
 
-        Vector2 facingDir = new Vector2( (float)Math.cos(mob.rotation.y*MathUtils.degreesToRadians),(float)Math.sin(mob.rotation.y*MathUtils.degreesToRadians));
-        Vector2 playerDir = new Vector2(player.position.x-mob.position.x, player.position.z-mob.position.z).nor();
+        Vector2 facingDir = new Vector2((float) Math.cos(mob.rotation.y * MathUtils.degreesToRadians), (float) Math.sin(mob.rotation.y * MathUtils.degreesToRadians));
+        Vector2 playerDir = new Vector2(player.position.x - mob.position.x, player.position.z - mob.position.z).nor();
 
-        float diff = (float)Math.abs(Math.acos(facingDir.dot(playerDir)/facingDir.len()*playerDir.len())) * MathUtils.radiansToDegrees;
+        float diff = (float) Math.abs(Math.acos(facingDir.dot(playerDir) / facingDir.len() * playerDir.len())) * MathUtils.radiansToDegrees;
 
-        if(diff > FOV) {
-            return false;
-        }
-
-        return CollisionMaths.lineOfSightClear(player.position, mob.position);
+        return !(diff > FOV) && CollisionMaths.lineOfSightClear(player.position, point);
     }
 }

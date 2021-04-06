@@ -13,10 +13,12 @@ import java.util.List;
 
 public class Main extends ApplicationAdapter {
     //todo debugVariables
-    public static boolean levelEditor = true;
+    public static boolean levelEditor = false;
     public static boolean debug = false;
     public static boolean debugBlindEnemies = false;
     public static boolean debugDrawPaths = false;
+    public static boolean debugDrawBounds = false;
+    public static boolean debugShowPosition = true;
 
     public static Color backgroundColor;
 
@@ -87,6 +89,9 @@ public class Main extends ApplicationAdapter {
         Gdx.gl20.glClear(GL20.GL_DEPTH_BUFFER_BIT);
         for(GameObject object : levelHandler.getActiveObjects()) {
             object.postRender(renderer);
+        }
+        if(debugShowPosition && levelHandler.player != null && levelHandler.player.position != null) {
+            renderer.renderText(10, Gdx.graphics.getHeight()-10, "X/Y/Z:"+levelHandler.player.position, renderer.scriptFont);
         }
 
         for(Action action : postUpdateSchedule) {

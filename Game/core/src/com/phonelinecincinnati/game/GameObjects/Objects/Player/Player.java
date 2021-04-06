@@ -63,7 +63,7 @@ public class Player extends GameObject {
     }
 
     public void setFloorY(float y, float ySpeed) {
-        floorY = y+3.6f;
+        floorY = y;
         this.ySpeed = ySpeed;
     }
 
@@ -148,6 +148,7 @@ public class Player extends GameObject {
             return;
         }
 
+
         hud.update(weapon);
 
         if(!PauseMenuHandler.isPaused) {
@@ -161,7 +162,7 @@ public class Player extends GameObject {
                     }
                 }
                 textBox.update();
-                mainCam.position.set(position);
+                mainCam.position.set(position.x, position.y+3.5f, position.z);
             } else {
                 if(forcedController != null) forcedController.update();
             }
@@ -306,7 +307,7 @@ public class Player extends GameObject {
     private void switchWeapon() {
         if(weapon != null) {
             throwSound.playSound();
-            Main.levelHandler.addObjectToCurrentLevel(new WeaponPickUp(new Vector3(position), weapon, new Vector3(mainCam.direction)));
+            Main.levelHandler.addObjectToCurrentLevel(new WeaponPickUp(mainCam.position.cpy(), weapon, mainCam.direction.cpy()));
         }
         if(currentPickUp != null) {
             pickupSound.playSound();
@@ -319,7 +320,7 @@ public class Player extends GameObject {
 
     private void useWeapon() {
         if(!PauseMenuHandler.isPaused) {
-            weapon.use(position, mainCam.direction.cpy());
+            weapon.use(mainCam.position.cpy().sub(0 ,0.1f, 0), mainCam.direction.cpy());
         }
     }
 

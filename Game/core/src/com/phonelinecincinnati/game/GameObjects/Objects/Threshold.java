@@ -10,7 +10,7 @@ import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
 
 public class Threshold extends GameObject implements Collidable {
-    Vector3 position, size;
+    public Vector3 position, size;
 
     public Threshold(Vector3 position, Vector3 size) {
         this.position = position;

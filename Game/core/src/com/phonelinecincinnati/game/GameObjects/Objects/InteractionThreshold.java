@@ -7,8 +7,9 @@ import com.phonelinecincinnati.game.Renderer;
 import java.util.ArrayList;
 
 public class InteractionThreshold extends Threshold {
+    public boolean unlocked;
+
     private GameObject listeningObject;
-    private boolean unlocked;
     private Action action;
 
     public InteractionThreshold(GameObject listeningObject, Vector3 position, Vector3 size, Action action) {

@@ -6,6 +6,7 @@ public enum TextureName {
     Wood,
     BrownGrayKitchenTile,
     GrayCarpet,
+    RedCarpet,
     DarkGreenCarpet,
     BrownSmallTiles,
     BrownTinyTiles,
@@ -13,6 +14,7 @@ public enum TextureName {
     DarkBrownCheckeredTiles,
     BlackWhiteCheckeredTiles,
     DarkGreenDiamonds,
+    LargeWhiteTile,
 
     //Wall
     Concrete1,
@@ -23,6 +25,7 @@ public enum TextureName {
 
     //Roof
     Concrete,
+    WhiteDiagonal,
 
     //<editor-fold desc="Decals">
     //Dirt

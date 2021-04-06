@@ -12,10 +12,12 @@ public class Step{
     private BoundingBox box;
 
     private Vector3 position;
+    private float rotation;
     private float y;
 
     public Step(Vector3 position, float rotation) {
         this.position = new Vector3(position);
+        this.rotation = rotation;
 
         box = new BoundingBox();
         y = position.y;
@@ -41,8 +43,15 @@ public class Step{
     }
 
     boolean inBounds(Vector3 position) {
-        if(position.x > this.position.x && position.z > this.position.z) {
-            if(position.x < this.position.x+box.getDepth() && position.z < this.position.z+box.getWidth()) {
+        float x = this.position.x;
+        float z = this.position.z;
+
+        if(rotation == 90) {
+            x = x-box.getDepth();
+        }
+
+        if(position.x > x && position.z > z) {
+            if(position.x < x+box.getDepth() && position.z < z+box.getWidth()) {
                 return true;
             }
         }

@@ -14,12 +14,14 @@ import com.phonelinecincinnati.game.Utility.VectorMaths;
 import java.util.ArrayList;
 
 public class Model extends GameObject {
+    public ModelName name;
+
     private Vector3 offset;
 
     protected ModelInstance modelInstance;
-    protected ModelName name;
     protected float rotation;
-    protected BoundingBox boundingBox;
+
+    BoundingBox boundingBox;
 
     public Model(Vector3 position, float rotation, ModelName name) {
         this.position = position;

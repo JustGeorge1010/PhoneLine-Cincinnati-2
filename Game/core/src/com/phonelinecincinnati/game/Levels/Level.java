@@ -9,22 +9,18 @@ import com.phonelinecincinnati.game.Main;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public abstract class Level {
+    public StageController stageController;
     CopyOnWriteArrayList<GameObject> activeObjects;
 
     public static Player createPlayer(Vector3 position, Vector3 lookDirection, Weapon weapon, boolean reloading, boolean retainPlayer) {
         Player player;
         if(!retainPlayer) {
-            player = new Player(position.x, position.y, position.z);
+            player = new Player(position.x, position.y+0.1f, position.z);
             Main.levelHandler.player = player;
         } else {
             player = Main.levelHandler.player;
         }
-        if(!retainPlayer) {
-            player.weapon = weapon;
-        }
-        else {
-            player.weapon = weapon; //new Melee(player.weapon.type);
-        }
+        player.weapon = weapon;
         if(reloading) {
             player.giveControl();
         } else {

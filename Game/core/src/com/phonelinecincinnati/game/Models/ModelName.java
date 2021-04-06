@@ -77,6 +77,17 @@ public enum ModelName {
     WhiteShirt,
     //</editor-fold>
 
+    //<editor-fold desc="Office Items">
+    ElevatorDoor,
+    StandingLight,
+    CeilingLight,
+    OrnatePillar,
+    WorkCubicle1,
+    WorkCubicle2,
+    CubicleEnd,
+    FrontDesk,
+    //</editor-fold>
+
     /* old
     Bed,
     Bed2,
@@ -114,12 +125,15 @@ public enum ModelName {
     //</editor-fold>
 
     //Structure
+    OpeningFrame,
     Door,
     DoorFrame,
+    DoubleDoorFrame,
     Pillar,
     LargeWindow,
     FullWindow,
     Step,
+    StepCover,
 
     //Misc
     GravelPieces,
