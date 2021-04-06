@@ -15,6 +15,7 @@ import com.phonelinecincinnati.game.GameObjects.Objects.MenuObjects.PauseMenuHan
 import com.phonelinecincinnati.game.GameObjects.Objects.Pickups.WeaponPickUp;
 import com.phonelinecincinnati.game.GameObjects.Objects.Player.Player;
 import com.phonelinecincinnati.game.GameObjects.Objects.Weapons.Melee.Melee;
+import com.phonelinecincinnati.game.GameObjects.Objects.Weapons.Ranged.Ranged;
 import com.phonelinecincinnati.game.GameObjects.Objects.Weapons.Weapon;
 import com.phonelinecincinnati.game.GameObjects.Objects.Weapons.WeaponType;
 import com.phonelinecincinnati.game.GameObjects.Objects.Misc.SoundSource;
@@ -48,8 +49,8 @@ public class MafiaMob extends GameObject{
     private float walkSpeed = 0.05f;
     private float runSpeed = 0.2f;
 
-    public boolean knockedOver = false, againstWall = false;
-    private boolean mounted = false, dead = false, bloodPooled = false;
+    public boolean knockedOver = false, dead = false;
+    private boolean mounted = false, bloodPooled = false, againstWall = false;
     private ModelInstance knockedOverModel;
     private float fallVelocity;
     private SoundSource impactSound, deathSound;
@@ -59,7 +60,7 @@ public class MafiaMob extends GameObject{
     private Player playerRef;
     private boolean isSwinging = false;
 
-    private MafiaMobBrain brain;
+    public MafiaMobBrain brain;
 
     public MafiaMob(Vector3 position, Vector3 rotation, Weapon weapon) {
         this.position = position;
@@ -234,7 +235,7 @@ public class MafiaMob extends GameObject{
 
     public void hit(WeaponType type, Vector3 locationHitFrom, float fallVelocity) {
         if(!dead && (!knockedOver || againstWall)) {
-            knockOver(locationHitFrom, fallVelocity);
+            knockOver(locationHitFrom, fallVelocity, false, false);
 
             dead = true;
             deathSound.playSound();
@@ -247,10 +248,28 @@ public class MafiaMob extends GameObject{
             }
             knockedOverModel.transform.setToTranslation(position);
             knockedOverModel.transform.rotate(0, 1, 0, rotation.y);
+
+            if(againstWall) {
+                Main.levelHandler.score.addScore(1000, 400, "Execution");
+            }
+            if(weapon == null) {
+                if(type == WeaponType.Automatic || type == WeaponType.SemiAutomatic) {
+                    Main.levelHandler.score.addScore(140, 140, "");
+                } else {
+                    Main.levelHandler.score.addScore(200, 100, "");
+                }
+            }
+            else {
+                if(type == WeaponType.Automatic || type == WeaponType.SemiAutomatic) {
+                    Main.levelHandler.score.addScore(180, 180, "");
+                } else {
+                    Main.levelHandler.score.addScore(400, 200, "");
+                }
+            }
         }
     }
 
-    public void knockOver(Vector3 locationHitFrom, float fallVelocity) {
+    public void knockOver(Vector3 locationHitFrom, float fallVelocity, boolean door, boolean thrown) {
         if(!knockedOver) {
             impactSound.playSound();
             float angle = MathUtils.atan2(locationHitFrom.x-position.x, locationHitFrom.z-position.z);
@@ -264,6 +283,12 @@ public class MafiaMob extends GameObject{
             knockedOverModel.transform.rotate(0, 1, 0, rotation.y);
             Main.levelHandler.addObjectToCurrentLevel(new WeaponPickUp(position.cpy(), weapon));
             this.fallVelocity = fallVelocity;
+
+            if(door) {
+                Main.levelHandler.score.addScore(480, 300, "Door Slam");
+            } else if(thrown) {
+                Main.levelHandler.score.addScore(300, 0, "");
+            }
         }
     }
 
@@ -368,6 +393,7 @@ public class MafiaMob extends GameObject{
             } else {
                 deathSound.playSound();
                 dead = true;
+                Main.levelHandler.score.addScore(1000, 400, "Execution");
                 Main.levelHandler.currentLevel.stageController.currentKills++;
             }
         }

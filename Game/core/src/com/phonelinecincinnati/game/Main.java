@@ -68,6 +68,7 @@ public class Main extends ApplicationAdapter {
 	private void update() {
         camera.update();
         weaponCamera.update();
+        levelHandler.score.update();
         for(GameObject object : levelHandler.getActiveObjects()) {
             object.update();
         }

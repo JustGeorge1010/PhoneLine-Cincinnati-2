@@ -24,6 +24,7 @@ import java.util.Collections;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class Homicide extends Level{
+
     Homicide(final CopyOnWriteArrayList<GameObject> activeObjects) {
         this.activeObjects = activeObjects;
         load(false, false);
@@ -32,6 +33,7 @@ public class Homicide extends Level{
     @SuppressWarnings("Duplicates")
     @Override
     public void load(boolean reloading, boolean retainPlayer) {
+        name = "Homicide";
         Main.backgroundColor.set(0.043137256f, 0.043137256f, 0.19215687f, 1f);
 
         activeObjects.add(SoundSource.buildSoundSource(0).setMusic("Blondie - Call me.mp3").playMusic());
@@ -206,6 +208,7 @@ public class Homicide extends Level{
                         activeObjects.remove(thresholdR);
                         activeObjects.add(iThresholdL);
                         activeObjects.add(iThresholdR);
+                        Main.levelHandler.score.levelReadout();
                     }
                 },
                 "Return to car"
@@ -216,10 +219,11 @@ public class Homicide extends Level{
         final PauseMenuHandler pauseMenuHandler = new PauseMenuHandler(true);
 
         if(!reloading) {
-            final LevelTitleCard titleCard = new LevelTitleCard("LEVEL 1", "HOMICIDE", 400);//todo set duration to 400
+            final LevelTitleCard titleCard = new LevelTitleCard("LEVEL 1", name, 400);//todo set duration to 400
             titleCard.addAction(new Action() {
                 @Override
                 public void activate() {
+                    Main.levelHandler.score.reset();
                     activeObjects.add(new Fade(false, new Action() {
                         @Override
                         public void activate() {
@@ -229,7 +233,6 @@ public class Homicide extends Level{
                             activeObjects.add(new Fade(true, null, 0.04f));
                         }
                     }, 0.02f));
-                    //activeObjects.add(new MaskSelect());
                     activeObjects.add(pauseMenuHandler);
                 }
             });
