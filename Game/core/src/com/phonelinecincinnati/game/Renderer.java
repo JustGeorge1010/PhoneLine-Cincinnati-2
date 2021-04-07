@@ -25,7 +25,7 @@ public class Renderer {
 
     public DecalBatch decalBatch;
 
-    public BitmapFont defaultFont, scriptFont, hudTopFont, hudBottomFont;
+    public static BitmapFont defaultFont, scriptFont, hudTopFont, hudBottomFont, hudLargeTopFont, hudLargeBottomFont;
 
     Renderer(PerspectiveCamera camera, PerspectiveCamera weaponCamera) {
         this.camera = camera;
@@ -56,6 +56,14 @@ public class Renderer {
         hudBottomFont = new BitmapFont(Gdx.files.internal("Fonts/InGame/HudBottom.fnt"));
         hudBottomFont.setColor(Color.WHITE);
         hudBottomFont.getData().scale(2f);
+
+        hudLargeTopFont = new BitmapFont(Gdx.files.internal("Fonts/InGame/HudTop.fnt"));
+        hudLargeTopFont.setColor(Color.WHITE);
+        hudLargeTopFont.getData().scale(4f);
+
+        hudLargeBottomFont = new BitmapFont(Gdx.files.internal("Fonts/InGame/HudBottom.fnt"));
+        hudLargeBottomFont.setColor(Color.WHITE);
+        hudLargeBottomFont.getData().scale(4f);
     }
 
     public void setBackgroundColor(float r, float g, float b, float a) {

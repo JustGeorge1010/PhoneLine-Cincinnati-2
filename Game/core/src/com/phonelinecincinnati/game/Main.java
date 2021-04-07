@@ -18,7 +18,7 @@ public class Main extends ApplicationAdapter {
     public static boolean debugBlindEnemies = false;
     public static boolean debugDrawPaths = false;
     public static boolean debugDrawBounds = false;
-    public static boolean debugShowPosition = true;
+    public static boolean debugShowPosition = false;
 
     public static Color backgroundColor;
 

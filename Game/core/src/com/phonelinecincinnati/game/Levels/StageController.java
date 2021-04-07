@@ -2,12 +2,12 @@ package com.phonelinecincinnati.game.Levels;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.GlyphLayout;
-import com.badlogic.gdx.math.collision.BoundingBox;
 import com.phonelinecincinnati.game.GameObjects.Objects.GameObject;
 import com.phonelinecincinnati.game.GameObjects.Objects.Misc.Action;
 import com.phonelinecincinnati.game.GameObjects.Objects.Misc.Condition;
+import com.phonelinecincinnati.game.Main;
 import com.phonelinecincinnati.game.Renderer;
-import com.phonelinecincinnati.game.Utility.MovingText;
+import com.phonelinecincinnati.game.GameObjects.Objects.MenuObjects.MovingText;
 
 import java.util.ArrayList;
 
@@ -24,7 +24,7 @@ public class StageController extends GameObject {
     StageController(String objectiveText) {
         stages = new ArrayList<Stage>();
         this.objectiveText = objectiveText;
-        movingText = new MovingText();
+        movingText = new MovingText(Renderer.hudTopFont, Renderer.hudBottomFont);
     }
 
     public void addStage(Condition condition, Action doOnComplete, String objectiveText){
@@ -58,9 +58,7 @@ public class StageController extends GameObject {
     public void postRender(Renderer renderer) {
         glyphLayout.setText(renderer.hudBottomFont, objectiveText);
         float width = glyphLayout.width;
-        float height = glyphLayout.height;
-        movingText.render(renderer, (Gdx.graphics.getWidth()-width)-10,
-                Gdx.graphics.getHeight()-10, objectiveText);
+        movingText.render(renderer, (Gdx.graphics.getWidth()-width)-10, 100, objectiveText);
     }
 
     @Override

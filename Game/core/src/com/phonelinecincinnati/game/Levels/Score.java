@@ -1,79 +1,101 @@
 package com.phonelinecincinnati.game.Levels;
 
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.g2d.GlyphLayout;
 import com.phonelinecincinnati.game.GameObjects.Objects.Enemies.Mafia.AI.MafiaMobBrain;
 import com.phonelinecincinnati.game.GameObjects.Objects.Enemies.Mafia.MafiaMob;
 import com.phonelinecincinnati.game.GameObjects.Objects.GameObject;
 import com.phonelinecincinnati.game.Main;
+import com.phonelinecincinnati.game.Renderer;
+import com.phonelinecincinnati.game.GameObjects.Objects.MenuObjects.MovingText;
+
 
 import java.util.ArrayList;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 
 public class Score {
     private int total = 0;
     private int comboNumber = 0;
-    private float timeComboStarted = -1;
-    private float timeLevelStarted = 0;
+    private long timeComboStarted = -1;
+    private long timeLevelStarted = 0;
     private ArrayList<String> actions = new ArrayList<String>();
 
+    private int displayedTotal = 0;
+    private MovingText movingText = new MovingText(Renderer.hudTopFont, Renderer.hudBottomFont);
+    private static GlyphLayout glyphLayout = new GlyphLayout();
+    private CopyOnWriteArrayList<String> currentActions = new CopyOnWriteArrayList<String>();
+    private float offset = 0;
+
+    @SuppressWarnings("FieldCanBeLocal")
     private final int comboTimeSec = 2;
+
 
     public void reset() {
         total = 0;
         comboNumber = 0;
         timeComboStarted = -1;
-        timeLevelStarted = System.nanoTime();
+        timeLevelStarted = System.currentTimeMillis();
         actions = new ArrayList<String>();
     }
 
     public void addScore(int score, int alertedBonus, String action) {
         comboNumber += 1;
-        timeComboStarted = System.nanoTime();
+        timeComboStarted = System.currentTimeMillis();
 
         int alertedEnemies = 0;
         for(GameObject object : Main.levelHandler.getActiveObjects()) {
             if(object.getClass().isAssignableFrom(MafiaMob.class)) {
                 MafiaMob enemy = (MafiaMob)object;
                 if(enemy.brain.currentState != MafiaMobBrain.State.Patrolling &&
-                        enemy.brain.currentState != MafiaMobBrain.State.Returning && !enemy.dead) {
+                        enemy.brain.currentState != MafiaMobBrain.State.Returning &&
+                        !enemy.dead && !enemy.knockedOver) {
                     alertedEnemies++;
                 }
             }
         }
 
-        determineActions(alertedEnemies, action);
+        ArrayList<String> currentActions = determineActions(alertedEnemies, action);
+        actions.addAll(currentActions);
+        this.currentActions.addAll(currentActions);
 
         total += score + (alertedBonus * alertedEnemies);
     }
 
-    private void determineActions(int alertedEnemies, String action) {
+    private ArrayList<String> determineActions(int alertedEnemies, String action) {
+        ArrayList<String> currentActions = new ArrayList<String>();
         if(!action.equals("")) {
-            actions.add(action);
+            currentActions.add(action);
         }
 
-        if(action.equals("Execution")) return;
+        if(action.equals("Execution")) return currentActions;
 
         if(alertedEnemies == 1) {
-            actions.add("Exposure");
+            currentActions.add("Exposure");
         }
         else if(alertedEnemies == 2) {
-            actions.add("Double Exposure");
+            currentActions.add("Double Exposure");
         }
         else if(alertedEnemies == 3) {
-            actions.add("Triple Exposure");
+            currentActions.add("Triple Exposure");
         }
         else if (alertedEnemies >= 4) {
-            actions.add("Severe Exposure");
+            currentActions.add("Severe Exposure");
         }
 
-        if(comboNumber > 1) {
-            actions.add(comboNumber+"x Combo");
-        }
+        return currentActions;
     }
 
     public void update() {
+        movingText.update();
+
         // If the combo is active AND the time passed is longer than 'comboTimeSec'
-        if(timeComboStarted != -1 && (System.nanoTime() - timeComboStarted)*9 > comboTimeSec) {
-            total += 800*comboNumber;
+        if(timeComboStarted > 0 && (System.currentTimeMillis()-timeComboStarted)/1000 > comboTimeSec) {
+            if(comboNumber >= 2) {
+                total += 800*(comboNumber-1);
+                currentActions.add(comboNumber+"x Combo");
+                actions.add(comboNumber+"x Combo");
+            }
             comboNumber = 0;
         }
     }
@@ -82,12 +104,12 @@ public class Score {
         return total;
     }
 
-    public void levelReadout() {
-        // TODO: change this to return object used in ending card
-        System.out.println("Level: "+Main.levelHandler.currentLevel.name);
-        System.out.println("Time: "+ (System.nanoTime()-timeLevelStarted)*9 +" seconds");
-        System.out.println("Score: "+total);
-        System.out.println("\nActions:");
+    public ArrayList<String> levelResults() {
+        ArrayList<String> results = new ArrayList<String>();
+
+        results.add("Level: "+Main.levelHandler.currentLevel.name);
+        results.add("Time: "+ (System.currentTimeMillis()-timeLevelStarted)/1000 +" seconds");
+        results.add("Score: "+total);
 
         int numExposures = 0;
         int numCombos = 0;
@@ -107,7 +129,7 @@ public class Score {
                 numExecutions += 1;
             }
 
-            System.out.println(action);
+            results.add(action);
         }
 
         String playStyle = "Generic";
@@ -129,6 +151,42 @@ public class Score {
         if(numExposures == 0) {
             playStyle = "Invisible Man";
         }
-        System.out.println("\nPlay style: "+playStyle);
+        results.add(playStyle);
+
+        return results;
+    }
+
+    public void renderHudElement(Renderer renderer) {
+        glyphLayout.setText(renderer.hudBottomFont, "G");
+        float offsetBase = glyphLayout.height + 10;
+        if(currentActions.isEmpty()) {
+            offset = offsetBase;
+        } else {
+            for(String action : currentActions) {
+                glyphLayout.setText(renderer.hudBottomFont, action);
+                float x = (Gdx.graphics.getWidth()-glyphLayout.width)-10;
+                float y = (Gdx.graphics.getHeight()-10)-offset;
+                if(currentActions.indexOf(action) > 0) {
+                    y -= (offsetBase+10)*currentActions.indexOf(action);
+                }
+                renderer.renderText(x, y, action, renderer.hudBottomFont);
+            }
+            offset -= 1;
+            if(offset <= 0) {
+                currentActions.remove(0);
+                offset = offsetBase;
+            }
+        }
+
+        if(displayedTotal < total) {
+            displayedTotal += 5;
+        } else {
+            displayedTotal = total;
+        }
+        String totalStr = Integer.toString(displayedTotal)+" pts";
+
+        glyphLayout.setText(renderer.hudBottomFont, totalStr);
+        float width = glyphLayout.width;
+        movingText.render(renderer, (Gdx.graphics.getWidth()-width)-10, Gdx.graphics.getHeight()-10, totalStr);
     }
 }

@@ -7,7 +7,7 @@ import com.phonelinecincinnati.game.GameObjects.Objects.Weapons.Weapon;
 import com.phonelinecincinnati.game.Main;
 import com.phonelinecincinnati.game.Models.TextureName;
 import com.phonelinecincinnati.game.Renderer;
-import com.phonelinecincinnati.game.Utility.MovingText;
+import com.phonelinecincinnati.game.GameObjects.Objects.MenuObjects.MovingText;
 
 public class Hud {
     String pickupText = "";
@@ -19,7 +19,7 @@ public class Hud {
 
     Hud() {
         ammo = new Sprite(Main.modelHandler.textures.get(TextureName.Ammo));
-        movingText = new MovingText();
+        movingText = new MovingText(Renderer.hudTopFont, Renderer.hudBottomFont);
     }
 
     void update(Weapon weapon) {
@@ -40,8 +40,9 @@ public class Hud {
         } else {
             text = interactionText;
         }
-        renderer.renderText(10, Gdx.graphics.getHeight()-10, text, renderer.scriptFont);
+        renderer.renderText(10, Gdx.graphics.getHeight()-10, text, Renderer.scriptFont);
 
+        Main.levelHandler.score.renderHudElement(renderer);
         if(weapon == null)
             return;
 
