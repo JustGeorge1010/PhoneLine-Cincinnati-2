@@ -129,6 +129,11 @@ public class LevelHandler {
         //currentLevel = new Level1(activeObjects);
     }
 
+    public void loadEndCard(ArrayList<String> results) {
+        clearActiveObjects();
+        currentLevel = new EndCard(activeObjects, results);
+    }
+
     public void loadHouse() {
         clearActiveObjects();
         currentLevel = new House(activeObjects, progression);

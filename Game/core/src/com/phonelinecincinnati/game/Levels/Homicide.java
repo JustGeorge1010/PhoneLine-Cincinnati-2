@@ -36,7 +36,7 @@ public class Homicide extends Level{
         name = "Homicide";
         Main.backgroundColor.set(0.043137256f, 0.043137256f, 0.19215687f, 1f);
 
-        activeObjects.add(SoundSource.buildSoundSource(0).setMusic("Blondie - Call me.mp3").playMusic());
+        activeObjects.add(SoundSource.buildSoundSource(0).setMusic("Miami Vice.mp3").playMusic());
 
         final Player player =
                 createPlayer(new Vector3(0, 0, -10), new Vector3(0, 0, 1), new M16(),
@@ -208,7 +208,9 @@ public class Homicide extends Level{
                         activeObjects.remove(thresholdR);
                         activeObjects.add(iThresholdL);
                         activeObjects.add(iThresholdR);
-                        Main.levelHandler.score.levelReadout();
+
+                        //TODO: remove this when car is implemented
+                        Main.levelHandler.loadEndCard(Main.levelHandler.score.levelResults());
                     }
                 },
                 "Return to car"

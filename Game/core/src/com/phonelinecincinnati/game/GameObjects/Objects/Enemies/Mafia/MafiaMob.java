@@ -249,9 +249,6 @@ public class MafiaMob extends GameObject{
             knockedOverModel.transform.setToTranslation(position);
             knockedOverModel.transform.rotate(0, 1, 0, rotation.y);
 
-            if(againstWall) {
-                Main.levelHandler.score.addScore(1000, 400, "Execution");
-            }
             if(weapon == null) {
                 if(type == WeaponType.Automatic || type == WeaponType.SemiAutomatic) {
                     Main.levelHandler.score.addScore(140, 140, "");

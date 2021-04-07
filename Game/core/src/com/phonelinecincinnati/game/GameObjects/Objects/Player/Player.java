@@ -38,7 +38,7 @@ public class Player extends GameObject {
     private boolean inControl = true;
     private ForcedController forcedController;
 
-    public TextBox textBox;
+    private TextBox textBox;
     private Hud hud;
 
     private float floorY;
