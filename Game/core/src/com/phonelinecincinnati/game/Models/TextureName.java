@@ -15,6 +15,8 @@ public enum TextureName {
     BlackWhiteCheckeredTiles,
     DarkGreenDiamonds,
     LargeWhiteTile,
+    LargeGreyTile,
+    Road,
 
     //Wall
     Concrete1,
@@ -28,6 +30,9 @@ public enum TextureName {
     WhiteDiagonal,
 
     //<editor-fold desc="Decals">
+    //Road
+    RoadFade1,
+    RoadFade2,
     //Dirt
     Dirt1,
     Dirt2,

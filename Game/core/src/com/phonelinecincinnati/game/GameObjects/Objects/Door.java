@@ -14,6 +14,7 @@ import com.phonelinecincinnati.game.Models.ModelName;
 import com.phonelinecincinnati.game.Renderer;
 import com.phonelinecincinnati.game.Utility.VectorMaths;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Door extends GameObject implements Collidable{
@@ -54,7 +55,6 @@ public class Door extends GameObject implements Collidable{
         } else {
             baseRotation = 0;
         }
-        //Main.levelHandler.getActiveObjects().add(new Model(new Vector3(position.x, position.y, position.z), baseRotation, ModelName.DoorFrame));
 
         rotation = baseRotation;
         targetRotation = rotation;
@@ -64,12 +64,50 @@ public class Door extends GameObject implements Collidable{
         modelInstance = Main.modelHandler.getModel(modelName);
         modelInstance.calculateBoundingBox(bounds);
         center = new Vector3(position);
-        center.add(-bounds.getCenterX(), 0, -bounds.getCenterY());
+        center.add(-bounds.getCenterX(), 0, -bounds.getCenterZ());
         modelInstance.transform.translate(position.x, position.y, position.z);
         modelInstance.transform.rotate(0, 1, 0, rotation);
 
         openSound = SoundSource.buildSoundSource(1).setSound("Misc/DoorOpen.wav");
         knockOverSound = SoundSource.buildSoundSource(0).setSound("Combat/EnemyDoorHit.wav");
+
+        createBoundLines();
+    }
+
+    private void createBoundLines() {
+        boundLines = new ArrayList<ModelInstance>();
+
+        Vector3 p1 = new Vector3(minX(), minY(), minZ());
+        Vector3 p2 = new Vector3(minX(), minY(), maxZ());
+        Vector3 p3 = new Vector3(minX(), maxY(), minZ());
+        Vector3 p4 = new Vector3(maxX(), minY(), minZ());
+
+        Vector3 p5 = new Vector3(maxX(), maxY(), minZ());
+        Vector3 p6 = new Vector3(maxX(), minY(), maxZ());
+        Vector3 p7 = new Vector3(minX(), maxY(), maxZ());
+        Vector3 p8 = new Vector3(maxX(), maxY(), maxZ());
+
+        //corner 1 lower
+        boundLines.add(Main.modelHandler.getLine(p1, p2));
+        boundLines.add(Main.modelHandler.getLine(p1, p3));
+        boundLines.add(Main.modelHandler.getLine(p1, p4));
+
+        //corner 2 upper
+        boundLines.add(Main.modelHandler.getLine(p5, p8));
+        boundLines.add(Main.modelHandler.getLine(p6, p8));
+        boundLines.add(Main.modelHandler.getLine(p7, p8));
+
+        //corner 3 lower xz upper y
+        boundLines.add(Main.modelHandler.getLine(p3, p5));
+        boundLines.add(Main.modelHandler.getLine(p3, p7));
+
+        //corner 4 upper xz lower y
+        boundLines.add(Main.modelHandler.getLine(p6, p2));
+        boundLines.add(Main.modelHandler.getLine(p6, p4));
+
+        //Remaining lines
+        boundLines.add(Main.modelHandler.getLine(p2, p7));
+        boundLines.add(Main.modelHandler.getLine(p4, p5));
     }
 
     @Override
@@ -85,19 +123,19 @@ public class Door extends GameObject implements Collidable{
             if(targetRotation == baseRotation) {
                 open = false;
                 if(horizontal) {
-                    if(player.getPosition().x > position.x && player.getPosition().x < position.x+bounds.getDepth()) {
-                        if(player.getPosition().z > position.z-(bounds.getWidth()*2) && player.getPosition().z < position.z) {
+                    if(player.getPosition().x > minX() && player.getPosition().x < maxX()) {
+                        if(player.getPosition().z > minZ() && player.getPosition().z < position.z) {
                             targetRotation = maxRotation;
-                        } else if(player.getPosition().z < position.z+(bounds.getWidth()*2) && player.getPosition().z > position.z) {
+                        } else if(player.getPosition().z < maxZ() && player.getPosition().z > position.z) {
                             targetRotation = minRotation;
                         }
                     }
                 } else {
-                    if(player.getPosition().z > position.z-bounds.getDepth() && player.getPosition().z < position.z) {
-                        if(player.getPosition().x > position.x-(bounds.getWidth()*2) && player.getPosition().x < position.x) {
+                    if(player.getPosition().z > minZ() && player.getPosition().z < maxZ()) {
+                        if(player.getPosition().x > minX() && player.getPosition().x < position.x) {
                             targetRotation = maxRotation;
                         }
-                        if(player.getPosition().x < position.x+bounds.getWidth()*2 && player.getPosition().x > position.x) {
+                        if(player.getPosition().x < maxX() && player.getPosition().x > position.x) {
                             targetRotation = minRotation;
                         }
                     }
@@ -161,7 +199,9 @@ public class Door extends GameObject implements Collidable{
 
     @Override
     public void postRender(Renderer renderer) {
-
+        if(Main.debugDrawBounds) {
+            drawBoundingBox(renderer);
+        }
     }
 
     @Override
@@ -189,21 +229,10 @@ public class Door extends GameObject implements Collidable{
     public boolean inBounds(Vector3 position, Class c) {
         if(open) return false;
 
-        float upperX;
-        float lowerX;
-        float upperZ;
-        float lowerZ;
-        if(horizontal) {
-            upperX = this.position.x+bounds.getDepth()/2;
-            lowerX = this.position.x-bounds.getDepth()/2;
-            upperZ = (this.position.z+bounds.getWidth()/2)+0.5f;
-            lowerZ = (this.position.z-bounds.getWidth()/2)-0.5f;
-        } else {
-            upperX = (this.position.x+bounds.getWidth()/2)+0.5f;
-            lowerX = (this.position.x-bounds.getWidth()/2)-0.5f;
-            upperZ = this.position.z+bounds.getDepth()/2;
-            lowerZ = this.position.z-bounds.getDepth()/2;
-        }
+        float upperX = maxX();
+        float lowerX = minX();
+        float upperZ = maxZ();
+        float lowerZ = minZ();
 
         if(position.x < upperX && position.x > lowerX) {
             if(position.z < upperZ && position.z > lowerZ) {
@@ -215,13 +244,13 @@ public class Door extends GameObject implements Collidable{
 
     @Override
     public float minX() {
-        if(horizontal) return this.position.x;
+        if(horizontal) return this.position.x-bounds.getDepth()/2;
         return (this.position.x-bounds.getWidth()/2)-0.5f;
     }
 
     @Override
     public float maxX() {
-        if(horizontal) return this.position.x+bounds.getDepth();
+        if(horizontal) return this.position.x+bounds.getDepth()/2;
         return (this.position.x+bounds.getWidth()/2)+0.5f;
     }
 

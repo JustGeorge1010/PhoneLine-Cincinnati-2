@@ -263,6 +263,8 @@ public class ModelHandler {
         addWrappedTexture("Floor", TextureName.BlackWhiteCheckeredTiles);
         addWrappedTexture("Floor", TextureName.DarkGreenDiamonds);
         addWrappedTexture("Floor", TextureName.LargeWhiteTile);
+        addWrappedTexture("Floor", TextureName.LargeGreyTile);
+        addWrappedTexture("Floor", TextureName.Road);
 
         addWrappedTexture("Wall", TextureName.Concrete1);
         addWrappedTexture("Wall", TextureName.Brick);
@@ -273,6 +275,8 @@ public class ModelHandler {
         addWrappedTexture("Roof", TextureName.Concrete);
         addWrappedTexture("Roof", TextureName.WhiteDiagonal);
 
+        textures.put(TextureName.RoadFade1, new Texture(Gdx.files.internal("Textures/Decals/RoadFade1.png")));
+        textures.put(TextureName.RoadFade2, new Texture(Gdx.files.internal("Textures/Decals/RoadFade2.png")));
         textures.put(TextureName.Dirt1, new Texture(Gdx.files.internal("Textures/Decals/Dirt/Dirt1.png")));
         textures.put(TextureName.Dirt2, new Texture(Gdx.files.internal("Textures/Decals/Dirt/Dirt2.png")));
         textures.put(TextureName.Dirt3, new Texture(Gdx.files.internal("Textures/Decals/Dirt/Dirt3.png")));

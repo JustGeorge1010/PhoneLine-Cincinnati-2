@@ -218,8 +218,8 @@ public class MafiaMob extends GameObject{
         if(Main.debugBlindEnemies) {
             return;
         }
-        if(weapon.getClass() == Melee.class) {
-            float distance = 17;
+        if(Melee.class.isAssignableFrom(weapon.getClass())) {
+            float distance = 4;
 
             if(playerRef.position.dst2(this.position) <= distance && !playerRef.dead) {
                 float angle = MathUtils.atan2(playerRef.position.z-body.position.z, playerRef.position.x-body.position.x);
@@ -241,7 +241,9 @@ public class MafiaMob extends GameObject{
             deathSound.playSound();
             Main.levelHandler.currentLevel.stageController.currentKills++;
 
+            String action = "";
             if(againstWall) {
+                action = "Execution";
                 knockedOverModel = Main.modelHandler.getModel(ModelName.EnemyWallDead);
             } else {
                 knockedOverModel = Main.modelHandler.getModel(ModelName.EnemyBluntKill3);
@@ -251,16 +253,16 @@ public class MafiaMob extends GameObject{
 
             if(weapon == null) {
                 if(type == WeaponType.Automatic || type == WeaponType.SemiAutomatic) {
-                    Main.levelHandler.score.addScore(140, 140, "");
+                    Main.levelHandler.score.addScore(140, 140, action);
                 } else {
-                    Main.levelHandler.score.addScore(200, 100, "");
+                    Main.levelHandler.score.addScore(200, 100, action);
                 }
             }
             else {
                 if(type == WeaponType.Automatic || type == WeaponType.SemiAutomatic) {
-                    Main.levelHandler.score.addScore(180, 180, "");
+                    Main.levelHandler.score.addScore(180, 180, action);
                 } else {
-                    Main.levelHandler.score.addScore(400, 200, "");
+                    Main.levelHandler.score.addScore(400, 200, action);
                 }
             }
         }
@@ -284,7 +286,7 @@ public class MafiaMob extends GameObject{
             if(door) {
                 Main.levelHandler.score.addScore(480, 300, "Door Slam");
             } else if(thrown) {
-                Main.levelHandler.score.addScore(300, 0, "");
+                Main.levelHandler.score.addScore(300, 0, "Thrown");
             }
         }
     }
