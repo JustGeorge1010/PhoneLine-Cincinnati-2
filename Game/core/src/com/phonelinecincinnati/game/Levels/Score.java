@@ -41,7 +41,9 @@ public class Score {
     }
 
     public void addScore(int score, int alertedBonus, String action) {
-        comboNumber += 1;
+        if(!action.equals("Thrown")) {
+            comboNumber += 1;
+        }
         timeComboStarted = System.currentTimeMillis();
 
         int alertedEnemies = 0;
@@ -67,7 +69,7 @@ public class Score {
 
     private ArrayList<String> determineActions(int alertedEnemies, String action) {
         ArrayList<String> currentActions = new ArrayList<String>();
-        if(!action.equals("")) {
+        if(!action.equals("") && !action.equals("Thrown")) {
             currentActions.add(action);
         }
 

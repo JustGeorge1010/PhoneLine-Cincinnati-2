@@ -69,7 +69,7 @@ public class Stairs extends GameObject implements Collidable{
 
             end = new Vector3(start.x + first.getDepth(), endY, endZ);
 
-        } else { //TODO redo similar to above if needed
+        } else {
             if(direction == Direction.East) {
                 rotation = 180;
             } else {

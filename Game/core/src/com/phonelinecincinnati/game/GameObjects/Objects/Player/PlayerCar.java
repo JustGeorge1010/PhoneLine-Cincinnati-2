@@ -22,8 +22,10 @@ public class PlayerCar extends InteractiveSolidModel {
 
         if(rotation == -90) {
             doorPosition = new Vector3(position.x+0.46f, position.y+3.35f, position.z+0.61f);
-        } else if(rotation == 0 || rotation == 180){
+        } else if(rotation == 0){
             doorPosition = new Vector3(position.x+0.61f, position.y+3.35f, position.z+0.46f);
+        } else if(rotation == 180 || rotation == -180) {
+            doorPosition = new Vector3(position.x-0.61f, position.y+3.35f, position.z+0.46f);
         }
 
         yRotation = rotation;
@@ -61,7 +63,7 @@ public class PlayerCar extends InteractiveSolidModel {
             }
         }
 
-        if(targetRotation == maxRotation) {
+        if(targetRotation == maxRotation && unlocked) {
             if(rotation == baseRotation) doorOpen.playSound();
             if(rotation < maxRotation) {
                 rotation += 4f;

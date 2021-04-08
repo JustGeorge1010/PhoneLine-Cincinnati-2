@@ -148,7 +148,6 @@ public class Player extends GameObject {
             return;
         }
 
-
         hud.update(weapon);
 
         if(!PauseMenuHandler.isPaused) {

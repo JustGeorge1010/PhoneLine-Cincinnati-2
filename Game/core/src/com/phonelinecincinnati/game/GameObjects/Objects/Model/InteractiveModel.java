@@ -5,10 +5,13 @@ import com.phonelinecincinnati.game.GameObjects.Objects.GameObject;
 import com.phonelinecincinnati.game.GameObjects.Objects.Misc.Action;
 import com.phonelinecincinnati.game.Models.ModelName;
 import com.phonelinecincinnati.game.Renderer;
+import javafx.util.Pair;
 
 import java.util.ArrayList;
 
 public class InteractiveModel extends Model{
+    public boolean unlocked = true;
+
     private String interactionText;
     private Action action;
 
@@ -50,7 +53,7 @@ public class InteractiveModel extends Model{
             range += boundingBox.getDepth()/2;
         }
         Vector3 pos = new Vector3(object.getPosition().x, 0, object.getPosition().z);
-        return pos.dst(position.x, position.y, position.z) < range;
+        return pos.dst(position.x, position.y, position.z) < range && unlocked;
     }
 
     public void interact() {

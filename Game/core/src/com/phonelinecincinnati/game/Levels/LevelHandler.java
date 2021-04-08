@@ -125,9 +125,6 @@ public class LevelHandler {
     public void loadMenu() {
         clearActiveObjects();
         currentLevel = new Menu(activeObjects, progression);
-        //currentLevel = new TestingGround(activeObjects);
-        //currentLevel = new House(activeObjects, progression);
-        //currentLevel = new Level1(activeObjects);
     }
 
     public void loadEndCard(ArrayList<String> results) {

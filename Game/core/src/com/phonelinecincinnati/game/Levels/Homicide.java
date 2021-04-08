@@ -10,6 +10,7 @@ import com.phonelinecincinnati.game.GameObjects.Objects.MenuObjects.PauseMenuHan
 import com.phonelinecincinnati.game.GameObjects.Objects.Misc.*;
 import com.phonelinecincinnati.game.GameObjects.Objects.Model.Model;
 import com.phonelinecincinnati.game.GameObjects.Objects.Player.Player;
+import com.phonelinecincinnati.game.GameObjects.Objects.Player.PlayerCar;
 import com.phonelinecincinnati.game.GameObjects.Objects.Threshold;
 import com.phonelinecincinnati.game.GameObjects.Objects.Vertical.Stairs;
 import com.phonelinecincinnati.game.GameObjects.Objects.Weapons.Melee.BaseballBat;
@@ -38,10 +39,11 @@ public class Homicide extends Level{
 
         Main.backgroundColor.set(0.043137256f, 0.043137256f, 0.19215687f, 1f);
 
-        activeObjects.add(SoundSource.buildSoundSource(0).setMusic("Miami Vice.mp3").playMusic());
+        final SoundSource soundSource = SoundSource.buildSoundSource(0).setMusic("Miami Vice.mp3").playMusic();
+        activeObjects.add(soundSource);
 
         final Player player =
-                createPlayer(new Vector3(0, 0, -10), new Vector3(0, 0, 1), new M16(),
+                createPlayer(new Vector3(0, 0, -10), new Vector3(0, 0, 1), new BaseballBat(),
                         reloading, retainPlayer);
 
         String levelFileName = "Homicide";
@@ -127,7 +129,7 @@ public class Homicide extends Level{
                         activeObjects.add(new MafiaMob(new Vector3(0, 9.1f, 32), new Vector3(0, 0, 0), new BaseballBat()));
                         path.add(new Vector3(8, 9.1f, 16.5f));
                         path.add(new Vector3(-8, 9.1f, 16.5f));
-                        activeObjects.add(new MafiaMob(new Vector3(-8, 9.1f, 16.5f), new Vector3(0, 0, 0), path, new BaseballBat()));
+                        activeObjects.add(new MafiaMob(new Vector3(-8, 9.1f, 16.5f), new Vector3(0, 0, 0), path, new GolfClub()));
                         path = new ArrayList<Vector3>();
                         path.add(new Vector3(-12, 9.1f, 25));
                         path.add(new Vector3(-12, 9.1f, 5));
@@ -139,7 +141,7 @@ public class Homicide extends Level{
                         path.add(new Vector3(12, 9.1f, 25));
                         path.add(new Vector3(-12, 9.1f, 25));
                         path.add(new Vector3(-12, 9.1f, 5));
-                        activeObjects.add(new MafiaMob(new Vector3(-12, 9.1f, 5f), new Vector3(0, 0, 0), path, new BaseballBat()));
+                        activeObjects.add(new MafiaMob(new Vector3(-12, 9.1f, 5f), new Vector3(0, 0, 0), path, new GolfClub()));
                     }
                 },
                 "Kill everyone"
@@ -185,10 +187,10 @@ public class Homicide extends Level{
                         AStar.generateAStar(18);
                         path.add(new Vector3(12, 18, 32));
                         path.add(new Vector3(-12, 18, 32));
-                        activeObjects.add(new MafiaMob(new Vector3(12, 18.1f, 32), new Vector3(0, -90, 0), path, new BaseballBat()));
+                        activeObjects.add(new MafiaMob(new Vector3(12, 18.1f, 32), new Vector3(0, -90, 0), path, new GolfClub()));
                         Collections.reverse(path);
                         activeObjects.add(new MafiaMob(new Vector3(-12, 18.1f, 32), new Vector3(0, -90, 0), path, new BaseballBat()));
-                        activeObjects.add(new MafiaMob(new Vector3(8, 18.1f, 14), new Vector3(0, 110, 0), new BaseballBat()));
+                        activeObjects.add(new MafiaMob(new Vector3(8, 18.1f, 14), new Vector3(0, 110, 0), new GolfClub()));
                         activeObjects.add(new MafiaMob(new Vector3(-8, 18.1f, 14), new Vector3(0, 70, 0), new BaseballBat()));
                         activeObjects.add(new MafiaMob(new Vector3(0, 18.1f, 4), new Vector3(0, 90, 0), new BaseballBat()));
                     }
@@ -196,6 +198,8 @@ public class Homicide extends Level{
                 "Kill everyone"
         );
 
+        final PlayerCar car = new PlayerCar(new Vector3(0f, -0.1f, -14), 180, player);
+        car.unlocked = false;
         stageController.addStage(
                 new Condition() {
                     @Override
@@ -211,19 +215,63 @@ public class Homicide extends Level{
                         activeObjects.add(iThresholdL);
                         activeObjects.add(iThresholdR);
 
-                        //TODO: remove this when car is implemented
-                        Main.levelHandler.loadEndCard(Main.levelHandler.score.levelResults());
+                        car.unlocked = true;
+                        soundSource.stopMusic();
+                        soundSource.setMusic("El Huervo - Crush.mp3");
+                        soundSource.playMusic();
                     }
                 },
                 "Return to car"
         );
+
+        car.setAction(new Action() {
+            @Override
+            public void activate() {
+                player.position.set(player.position.x, player.position.y+3.5f, car.position.z+4);
+                activeObjects.add(new Fade(false, new Action() {
+                    @Override
+                    public void activate() {
+                        for(GameObject object : activeObjects) {
+                            object.dispose();
+                        }
+                        Main.controlHandler.resetPlayer();
+                        Main.levelHandler.loadEndCard(Main.levelHandler.score.levelResults());
+                    }
+                }, 0.008f));
+                player.takeControl(new ForcedController() {
+                    @Override
+                    public void update() {
+                        if(player.position.z > car.position.z+1) {
+                            player.position.add(0, 0, -0.05f);
+                        } else {
+                            player.position.set(player.position.x, player.position.y, car.position.z + 1);
+                        }
+                        if(player.position.y > car.position.y+2.7f) {
+                            player.position.add(0, -0.02f, 0);
+                        } else {
+                            player.position.set( player.position.x, car.position.y+2.7f, player.position.z);
+                        }
+
+                        if(player.position.z == car.position.z+1 && car.unlocked) {
+                            player.position.set(0,  player.position.y, car.position.z);
+                            car.unlocked = false;
+                            SoundSource.buildSoundSource(1).setSound("Misc/CarEngine.wav").playSound();
+                        } else {
+                            Main.camera.position.set(player.position);
+                            player.lookAt(car.position.x-10, car.position.z ,car.position.y);
+                        }
+                    }
+                });
+            }
+        }, "Leave the scene");
+        activeObjects.add(car);
 
         activeObjects.add(player);
         activeObjects.add(stageController);
         final PauseMenuHandler pauseMenuHandler = new PauseMenuHandler(true);
 
         if(!reloading) {
-            final LevelTitleCard titleCard = new LevelTitleCard("LEVEL 1", name, 400);//todo set duration to 400
+            final LevelTitleCard titleCard = new LevelTitleCard("LEVEL 1", name, 400);
             titleCard.addAction(new Action() {
                 @Override
                 public void activate() {
