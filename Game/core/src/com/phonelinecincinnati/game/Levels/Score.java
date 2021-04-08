@@ -22,6 +22,7 @@ public class Score {
     private ArrayList<String> actions = new ArrayList<String>();
 
     private int displayedTotal = 0;
+    private int displayedTotalRaiseAmount = 5;
     private MovingText movingText = new MovingText(Renderer.hudTopFont, Renderer.hudBottomFont);
     private static GlyphLayout glyphLayout = new GlyphLayout();
     private CopyOnWriteArrayList<String> currentActions = new CopyOnWriteArrayList<String>();
@@ -60,6 +61,8 @@ public class Score {
         this.currentActions.addAll(currentActions);
 
         total += score + (alertedBonus * alertedEnemies);
+        //TODO: change this to affect the hud total rollup speed;
+        displayedTotalRaiseAmount = (total-displayedTotal)/100;
     }
 
     private ArrayList<String> determineActions(int alertedEnemies, String action) {
@@ -93,6 +96,8 @@ public class Score {
         if(timeComboStarted > 0 && (System.currentTimeMillis()-timeComboStarted)/1000 > comboTimeSec) {
             if(comboNumber >= 2) {
                 total += 800*(comboNumber-1);
+                //TODO: change this to affect the hud total rollup speed;
+                displayedTotalRaiseAmount = (total-displayedTotal)/100;
                 currentActions.add(comboNumber+"x Combo");
                 actions.add(comboNumber+"x Combo");
             }
@@ -157,19 +162,19 @@ public class Score {
     }
 
     public void renderHudElement(Renderer renderer) {
-        glyphLayout.setText(renderer.hudBottomFont, "G");
+        glyphLayout.setText(Renderer.hudBottomFont, "G");
         float offsetBase = glyphLayout.height + 10;
         if(currentActions.isEmpty()) {
             offset = offsetBase;
         } else {
             for(String action : currentActions) {
-                glyphLayout.setText(renderer.hudBottomFont, action);
+                glyphLayout.setText(Renderer.hudBottomFont, action);
                 float x = (Gdx.graphics.getWidth()-glyphLayout.width)-10;
                 float y = (Gdx.graphics.getHeight()-10)-offset;
                 if(currentActions.indexOf(action) > 0) {
                     y -= (offsetBase+10)*currentActions.indexOf(action);
                 }
-                renderer.renderText(x, y, action, renderer.hudBottomFont);
+                renderer.renderText(x, y, action, Renderer.hudBottomFont);
             }
             offset -= 1;
             if(offset <= 0) {
@@ -178,14 +183,13 @@ public class Score {
             }
         }
 
-        if(displayedTotal < total) {
-            displayedTotal += 5;
-        } else {
+        displayedTotal += displayedTotalRaiseAmount;
+        if(displayedTotal > total) {
             displayedTotal = total;
         }
         String totalStr = Integer.toString(displayedTotal)+" pts";
 
-        glyphLayout.setText(renderer.hudBottomFont, totalStr);
+        glyphLayout.setText(Renderer.hudBottomFont, totalStr);
         float width = glyphLayout.width;
         movingText.render(renderer, (Gdx.graphics.getWidth()-width)-10, Gdx.graphics.getHeight()-10, totalStr);
     }
