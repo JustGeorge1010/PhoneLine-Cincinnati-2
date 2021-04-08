@@ -21,6 +21,7 @@ public class LevelHandler {
     private final CopyOnWriteArrayList<GameObject> activeObjects;
     private int progression = 1; //TODO: Change this to 0 to reset progress
     public Level currentLevel;
+    public String levelName;
     public Player player = null;
     public Score score;
 

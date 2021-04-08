@@ -34,6 +34,8 @@ public class Homicide extends Level{
     @Override
     public void load(boolean reloading, boolean retainPlayer) {
         name = "Homicide";
+        Main.levelHandler.levelName = name;
+
         Main.backgroundColor.set(0.043137256f, 0.043137256f, 0.19215687f, 1f);
 
         activeObjects.add(SoundSource.buildSoundSource(0).setMusic("Miami Vice.mp3").playMusic());

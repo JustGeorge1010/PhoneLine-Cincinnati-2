@@ -8,13 +8,14 @@ import com.phonelinecincinnati.game.GameObjects.Objects.SolidWall;
 import com.phonelinecincinnati.game.Main;
 import com.phonelinecincinnati.game.Models.TextureName;
 
+import java.io.File;
 import java.util.*;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class AStar {
     private static AStar aStar;
 
-    private static float spacingLength = 1.5f;
+    private static float spacing = 1.5f;
     private HashMap<Vector3, Node> nodes;
 
     private Vector3 startPosition, endPosition;
@@ -28,53 +29,70 @@ public class AStar {
         nodes = new HashMap<Vector3, Node>();
         CopyOnWriteArrayList<Node> allNodes = new CopyOnWriteArrayList<Node>();
 
-        for(GameObject object : Main.levelHandler.getActiveObjects()) {
-            if(object.position != null && (object.position.y < floorLevel-1 || object.position.y > floorLevel+1)) {
-                continue;
-            }
-            if(Collidable.class.isInstance(object)) {
-                Collidable collidable = (Collidable)object;
-                ArrayList<Vector3> nodePoints = new ArrayList<Vector3>();
+        String levelName = Main.levelHandler.levelName.toLowerCase();
+        String floorId = Float.toString(floorLevel).replace('.', '_');
+        File aStarSaveFile = new File("Config/Levels/Pathfinding/"+levelName+"-path-"+floorId);
 
-                if(SolidWall.class.isInstance(object)) {
-                    float wallLength = collidable.maxX() - collidable.minX();
-                    float wallDepth = collidable.maxZ() - collidable.minZ();
-
-                    if(wallLength < wallDepth) {
-                        nodePoints.add(new Vector3(collidable.minX()+wallLength/2, floorLevel, collidable.minZ()+0.5f));
-                        nodePoints.add(new Vector3(collidable.minX()+wallLength/2, floorLevel, collidable.maxZ()-0.5f));
-                    } else {
-                        nodePoints.add(new Vector3(collidable.minX()+0.5f, floorLevel, collidable.minZ()+wallDepth/2));
-                        nodePoints.add(new Vector3(collidable.maxX()-0.5f, floorLevel, collidable.minZ()+wallDepth/2));
-                    }
-                } else {
-                    nodePoints.add(new Vector3(collidable.minX(), floorLevel, collidable.minZ()));
-                    nodePoints.add(new Vector3(collidable.maxX(), floorLevel, collidable.minZ()));
-                    nodePoints.add(new Vector3(collidable.minX(), floorLevel, collidable.maxZ()));
-                    nodePoints.add(new Vector3(collidable.maxX(), floorLevel, collidable.maxZ()));
+        if(!aStarSaveFile.exists()) {
+            for (GameObject object : Main.levelHandler.getActiveObjects()) {
+                if (object.position != null &&
+                        (object.position.y < floorLevel - 1 || object.position.y > floorLevel + 1)) {
+                    continue;
                 }
+                if (Collidable.class.isInstance(object)) {
+                    Collidable collidable = (Collidable) object;
+                    ArrayList<Vector3> nodePoints = new ArrayList<Vector3>();
 
-                for(Vector3 point : nodePoints) {
-                    ArrayList<Node> currentNodes = new ArrayList<Node>();
-                    currentNodes.add(new Node(new Vector3(point.x-spacingLength, floorLevel, point.z-spacingLength)));
-                    currentNodes.add(new Node(new Vector3(point.x+spacingLength, floorLevel, point.z-spacingLength)));
-                    currentNodes.add(new Node(new Vector3(point.x-spacingLength, floorLevel, point.z+spacingLength)));
-                    currentNodes.add(new Node(new Vector3(point.x+spacingLength, floorLevel, point.z+spacingLength)));
+                    if (SolidWall.class.isInstance(object)) {
+                        float wallLength = collidable.maxX() - collidable.minX();
+                        float wallDepth = collidable.maxZ() - collidable.minZ();
 
-                    for(Node node : currentNodes) {
-                        boolean alreadyExists = false;
-                        for(Node existingNode : allNodes) {
-                            if(node.position.epsilonEquals(existingNode.position)) alreadyExists = true;
+                        if (wallLength < wallDepth) {
+                            nodePoints.add(new Vector3(
+                                    collidable.minX() + wallLength / 2, floorLevel, collidable.minZ() + 0.5f));
+                            nodePoints.add(new Vector3(
+                                    collidable.minX() + wallLength / 2, floorLevel, collidable.maxZ() - 0.5f));
+                        } else {
+                            nodePoints.add(new Vector3(
+                                    collidable.minX() + 0.5f, floorLevel, collidable.minZ() + wallDepth / 2));
+                            nodePoints.add(new Vector3(
+                                    collidable.maxX() - 0.5f, floorLevel, collidable.minZ() + wallDepth / 2));
                         }
-                        if(!alreadyExists) allNodes.add(node);
+                    } else {
+                        nodePoints.add(new Vector3(collidable.minX(), floorLevel, collidable.minZ()));
+                        nodePoints.add(new Vector3(collidable.maxX(), floorLevel, collidable.minZ()));
+                        nodePoints.add(new Vector3(collidable.minX(), floorLevel, collidable.maxZ()));
+                        nodePoints.add(new Vector3(collidable.maxX(), floorLevel, collidable.maxZ()));
+                    }
+
+                    for (Vector3 point : nodePoints) {
+                        ArrayList<Node> currentNodes = new ArrayList<Node>();
+                        currentNodes.add(new Node(new Vector3(point.x - spacing, floorLevel, point.z - spacing)));
+                        currentNodes.add(new Node(new Vector3(point.x + spacing, floorLevel, point.z - spacing)));
+                        currentNodes.add(new Node(new Vector3(point.x - spacing, floorLevel, point.z + spacing)));
+                        currentNodes.add(new Node(new Vector3(point.x + spacing, floorLevel, point.z + spacing)));
+
+                        for (Node node : currentNodes) {
+                            boolean alreadyExists = false;
+                            for (Node existingNode : allNodes) {
+                                if (node.position.epsilonEquals(existingNode.position)) alreadyExists = true;
+                            }
+                            if (!alreadyExists) allNodes.add(node);
+                        }
                     }
                 }
             }
-        }
 
-        for(Node node : allNodes) {
-            node.findNeighbors(allNodes);
-            if(!node.neighbors.isEmpty()) nodes.put(node.position, node);
+            for (Node node : allNodes) {
+                node.findNeighbors(allNodes);
+                if (!node.neighbors.isEmpty()) nodes.put(node.position, node);
+            }
+
+            new AStarSave(aStarSaveFile).Save(nodes);
+        }
+        else {
+            // If save data exists already
+            nodes = new AStarSave(aStarSaveFile).Load();
         }
 
         if(Main.debugDrawPaths) {

@@ -30,10 +30,10 @@ public class SwayingText extends GameObject {
 
     @Override
     public void update() {
-        float minOffsetX = -20;
-        float maxOffsetX = 20;
+        float minOffsetX = -10;
+        float maxOffsetX = 10;
 
-        if(offsetX < minOffsetX || offsetX < maxOffsetX) {
+        if(offsetX < minOffsetX || offsetX > maxOffsetX) {
             direction *= -1;
         }
 
