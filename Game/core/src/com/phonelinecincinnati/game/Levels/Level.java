@@ -11,7 +11,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public abstract class Level {
     public String name = "";
     public StageController stageController;
-    CopyOnWriteArrayList<GameObject> activeObjects;
+    protected CopyOnWriteArrayList<GameObject> activeObjects;
 
     public static Player createPlayer(Vector3 position, Vector3 lookDirection, Weapon weapon, boolean reloading, boolean retainPlayer) {
         Main.controlHandler.resetPlayer();

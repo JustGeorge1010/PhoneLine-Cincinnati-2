@@ -33,7 +33,7 @@ public class MenuHandler extends GameObject {
         menuOptions = MenuOptions.buildMenuOptions(Gdx.graphics.getWidth()/2, Gdx.graphics.getHeight()/2.5f,"New Game", new Action() {
             @Override
             public void activate() {
-                Main.levelHandler.loadHouse();
+                Main.levelHandler.loadStory1();
             }
         }).addOption("Continue", new Action() {
             @Override

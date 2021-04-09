@@ -29,6 +29,7 @@ public class Hud {
     }
 
     void update(Weapon weapon) {
+        movingText.update();
         if(weapon == null) {
             this.weapon = null;
             return;
@@ -36,7 +37,6 @@ public class Hud {
         if(weapon != this.weapon) {
             this.weapon = weapon;
         }
-        movingText.update();
     }
 
     void render(Renderer renderer) {
@@ -49,6 +49,11 @@ public class Hud {
         renderer.renderText(10, Gdx.graphics.getHeight()-10, text, Renderer.scriptFont);
 
         Main.levelHandler.score.renderHudElement(renderer);
+
+        glyphLayout.setText(Renderer.hudBottomFont, objectiveText);
+        float width = glyphLayout.width;
+        movingText.render(renderer, (Gdx.graphics.getWidth()-width)-10, 100, objectiveText);
+
         if(weapon == null)
             return;
 
@@ -57,9 +62,5 @@ public class Hud {
             renderer.renderSprite(10, 5, Gdx.graphics.getWidth()/18, Gdx.graphics.getWidth()/18, ammo);
             movingText.render(renderer, 110, 100, String.valueOf(ranged.rounds));
         }
-
-        glyphLayout.setText(Renderer.hudBottomFont, objectiveText);
-        float width = glyphLayout.width;
-        movingText.render(renderer, (Gdx.graphics.getWidth()-width)-10, 100, objectiveText);
     }
 }

@@ -11,6 +11,7 @@ import java.util.ArrayList;
 
 public class SoundSource extends GameObject {
 
+    private boolean isMusic = false;
     private Music music;
     private Sound sound;
 
@@ -35,6 +36,7 @@ public class SoundSource extends GameObject {
         music = Gdx.audio.newMusic(Gdx.files.internal("Music/"+name));
         music.setVolume(globalMusicVolume);
         music.setLooping(true);
+        isMusic = true;
         return this;
     }
 
@@ -43,16 +45,29 @@ public class SoundSource extends GameObject {
         return this;
     }
 
-    public void pauseMusic() {
-        music.pause();
-    }
-
     public void stopMusic() {
         music.stop();
     }
 
+    public SoundSource setLoopingSound(String name) {
+        music = Gdx.audio.newMusic(Gdx.files.internal("SFX/"+name));
+        music.setVolume(globalSFXVolume);
+        music.setLooping(true);
+        isMusic = false;
+        return this;
+    }
+
+    public SoundSource playLoopingSound() {
+        return playMusic();
+    }
+
+    public void stopLoopingSound() {
+        stopMusic();
+    }
+
     public SoundSource setSound(String name) {
         sound = Gdx.audio.newSound(Gdx.files.internal("SFX/"+name));
+        isMusic = false;
         return this;
     }
 
@@ -85,8 +100,11 @@ public class SoundSource extends GameObject {
 
     @Override
     public void update() {
-        if(globalMusicVolume != music.getVolume()) {
+        if(isMusic && globalMusicVolume != music.getVolume()) {
             music.setVolume(globalMusicVolume);
+        }
+        else if(!isMusic && globalSFXVolume != music.getVolume()) {
+            music.setVolume(globalSFXVolume);
         }
     }
 

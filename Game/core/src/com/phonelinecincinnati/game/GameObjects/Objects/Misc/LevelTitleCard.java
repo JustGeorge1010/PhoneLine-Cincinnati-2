@@ -29,7 +29,6 @@ public class LevelTitleCard extends TitleCard {
     public LevelTitleCard(String textTop, String textBottom, int duration) {
         super(textTop, textBottom, duration);
 
-        rendering = true;
         backgroundColor = new Color(0.03f, 0.05f, 0.06f, 1f);
         fadeImage = new Texture(Gdx.files.internal("Textures/Misc/TitleCardFade.png"));
         fadeSprite = new Sprite(fadeImage);
@@ -49,7 +48,7 @@ public class LevelTitleCard extends TitleCard {
     }
 
     private void generateTip() {
-        int random = MathUtils.random(1, 13);
+        int random = MathUtils.random(1, 12);
         switch(random) {
             case 1:
                 tipText = "TIP: MELEE WEAPONS ARE SILENT";
@@ -85,9 +84,6 @@ public class LevelTitleCard extends TitleCard {
                 tipText = "TIP: BE FAST AND EFFICIENT";
                 break;
             case 12:
-                tipText = "TIP: YOU CAN SHOOT THROUGH SOME WALLS";
-                break;
-            case 13:
                 tipText = "TIP: FINISH OFF FALLEN ENEMIES";
                 break;
         }
@@ -95,12 +91,8 @@ public class LevelTitleCard extends TitleCard {
 
     @Override
     public void update() {
-        if(duration == 0 || (Main.debug && duration != -1)) {
-            action.activate();
-            duration = -1;
-        } else if (duration != -1){
-            duration--;
-        }
+        super.update();
+
         if(timer <= 0) {
             timer = MathUtils.random(50, 100);
             skyScrapers.add(new SkyScraper(Color.BLACK, 100));

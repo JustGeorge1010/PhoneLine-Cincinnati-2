@@ -3,10 +3,16 @@ package com.phonelinecincinnati.game.GameObjects.Objects.MenuObjects;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.GlyphLayout;
 import com.phonelinecincinnati.game.GameObjects.Objects.GameObject;
+import com.phonelinecincinnati.game.GameObjects.Objects.Misc.Action;
+import com.phonelinecincinnati.game.GameObjects.Objects.Misc.Fade;
 import com.phonelinecincinnati.game.GameObjects.Objects.Misc.SoundSource;
+import com.phonelinecincinnati.game.Levels.LevelHandler;
+import com.phonelinecincinnati.game.Main;
 import com.phonelinecincinnati.game.Renderer;
 
 import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class EndCardHandler extends GameObject {
@@ -49,6 +55,18 @@ public class EndCardHandler extends GameObject {
             if(timerBeforeStyleShown < 0) {
                 if(!showPlayStyle) {
                     styleShowSound.playSound();
+                    Timer timer = new Timer();
+                    timer.schedule(new TimerTask() {
+                        @Override
+                        public void run() {
+                            activeObjects.add(new Fade(false, new Action() {
+                                @Override
+                                public void activate() {
+                                    Main.levelHandler.loadNext();
+                                }
+                            }, 0.04f));
+                        }
+                    }, 5000);
                 }
                 showPlayStyle = true;
                 return;
