@@ -12,19 +12,17 @@ import com.phonelinecincinnati.game.GameObjects.Objects.Model.Model;
 import com.phonelinecincinnati.game.GameObjects.Objects.Player.Player;
 import com.phonelinecincinnati.game.GameObjects.Objects.Player.PlayerCar;
 import com.phonelinecincinnati.game.GameObjects.Objects.Threshold;
-import com.phonelinecincinnati.game.GameObjects.Objects.Vertical.Stairs;
 import com.phonelinecincinnati.game.GameObjects.Objects.Weapons.Melee.BaseballBat;
 import com.phonelinecincinnati.game.GameObjects.Objects.Weapons.Melee.GolfClub;
-import com.phonelinecincinnati.game.GameObjects.Objects.Weapons.Ranged.M16;
 import com.phonelinecincinnati.game.Main;
 import com.phonelinecincinnati.game.Models.ModelName;
-import com.phonelinecincinnati.game.Utility.Direction;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class Homicide extends Level{
+    private SoundSource music;
 
     Homicide(final CopyOnWriteArrayList<GameObject> activeObjects) {
         this.activeObjects = activeObjects;
@@ -39,8 +37,10 @@ public class Homicide extends Level{
 
         Main.backgroundColor.set(0.043137256f, 0.043137256f, 0.19215687f, 1f);
 
-        final SoundSource soundSource = SoundSource.buildSoundSource(0).setMusic("Miami Vice.mp3").playMusic();
-        activeObjects.add(soundSource);
+        if(!reloading) {
+            music = SoundSource.buildSoundSource(0).setMusic("Jan Hammer - Miami Vice.mp3").playMusic();
+            activeObjects.add(music);
+        }
 
         final Player player =
                 createPlayer(new Vector3(0, 0, -10), new Vector3(0, 0, 1), new BaseballBat(),
@@ -215,9 +215,9 @@ public class Homicide extends Level{
                         activeObjects.add(iThresholdR);
 
                         car.unlocked = true;
-                        soundSource.stopMusic();
-                        soundSource.setMusic("El Huervo - Crush.mp3");
-                        soundSource.playMusic();
+                        music.stopMusic();
+                        music.setMusic("El Huervo - Crush.mp3");
+                        music.playMusic();
                     }
                 },
                 "Return to car"
@@ -261,7 +261,7 @@ public class Homicide extends Level{
                     }
                 });
             }
-        }, "Leave the scene");
+        }, "(RMB) Leave the scene");
         activeObjects.add(car);
 
         //Random thresholds to stop player from leaving play area
@@ -276,8 +276,8 @@ public class Homicide extends Level{
         activeObjects.add(new Threshold(new Vector3(-18, 0, -12), new Vector3(40, 10, 2)));
 
         activeObjects.add(stageController);
+        final PauseMenuHandler pauseMenuHandler = new PauseMenuHandler(false);
         activeObjects.add(player);
-        final PauseMenuHandler pauseMenuHandler = new PauseMenuHandler(true);
 
         if(!reloading) {
             final LevelTitleCard titleCard = new LevelTitleCard("LEVEL 1", name, 400);
@@ -294,7 +294,6 @@ public class Homicide extends Level{
                             activeObjects.add(new Fade(true, null, 0.04f));
                         }
                     }, 0.02f));
-                    activeObjects.add(pauseMenuHandler);
                 }
             });
             activeObjects.add(titleCard);
@@ -302,11 +301,17 @@ public class Homicide extends Level{
             Main.levelHandler.score.reset();
             pauseMenuHandler.enablePausing();
         }
+        activeObjects.add(pauseMenuHandler);
     }
 
     @Override
     public void reload() {
-        Main.levelHandler.clearActiveObjects();
+        for(GameObject object : activeObjects) {
+            if(object != music) {
+                object.dispose();
+                activeObjects.remove(object);
+            }
+        }
         load(true, false);
     }
 }

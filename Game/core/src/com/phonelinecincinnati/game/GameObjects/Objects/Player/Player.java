@@ -42,7 +42,7 @@ public class Player extends GameObject {
     private boolean inControl = true;
     private ForcedController forcedController;
 
-    private TextBox textBox;
+    public TextBox textBox;
     public Hud hud;
 
     private float floorY;
@@ -54,9 +54,10 @@ public class Player extends GameObject {
 
     public Player(float x, float y, float z) {
         mainCam = Main.camera;
-        mainCam.position.set(x, y, z);
         position = new Vector3(x, y, z);
         tempForCam = new Vector3();
+
+        mainCam.position.set(position.x, position.y, position.z);
 
         pickupSound = SoundSource.buildSoundSource(1).setSound("Combat/PickupWeapon.wav");
         throwSound = SoundSource.buildSoundSource(2).setSound("Combat/Throw.wav");
@@ -169,8 +170,8 @@ public class Player extends GameObject {
                         detectInteraction();
                     }
                 }
-                textBox.update();
                 mainCam.position.set(position.x, position.y+3.5f, position.z);
+                textBox.update();
             } else {
                 if(forcedController != null) forcedController.update();
             }
@@ -315,7 +316,8 @@ public class Player extends GameObject {
     private void switchWeapon() {
         if(weapon != null) {
             throwSound.playSound();
-            Main.levelHandler.addObjectToCurrentLevel(new WeaponPickUp(mainCam.position.cpy(), weapon, mainCam.direction.cpy()));
+            Main.levelHandler.addObjectToCurrentLevel(new WeaponPickUp(mainCam.position.cpy(),
+                    weapon, mainCam.direction.cpy()));
         }
         if(currentPickUp != null) {
             pickupSound.playSound();
@@ -378,7 +380,7 @@ public class Player extends GameObject {
     }
 
     public void lookAt(float xPos, float zPos, float yRot) {
-        mainCam.lookAt(xPos, position.y, zPos);
+        mainCam.lookAt(xPos, mainCam.position.y, zPos);
         Vector3 tempForCam = new Vector3(Main.camera.direction).crs(Main.camera.up).nor();
         Main.camera.direction.rotate(tempForCam, yRot);
     }

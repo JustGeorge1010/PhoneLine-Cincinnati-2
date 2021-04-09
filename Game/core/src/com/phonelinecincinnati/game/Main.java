@@ -11,6 +11,7 @@ import com.phonelinecincinnati.game.Models.ModelHandler;
 import java.util.ArrayList;
 import java.util.List;
 
+@SuppressWarnings("WeakerAccess")
 public class Main extends ApplicationAdapter {
     //todo debugVariables
     public static boolean levelEditor = false;
@@ -92,7 +93,7 @@ public class Main extends ApplicationAdapter {
             object.postRender(renderer);
         }
         if(debugShowPosition && levelHandler.player != null && levelHandler.player.position != null) {
-            renderer.renderText(10, Gdx.graphics.getHeight()-10, "X/Y/Z:"+levelHandler.player.position, renderer.scriptFont);
+            renderer.renderText(10, Gdx.graphics.getHeight()-10, "X/Y/Z:"+levelHandler.player.position, Renderer.scriptFont);
         }
 
         for(Action action : postUpdateSchedule) {

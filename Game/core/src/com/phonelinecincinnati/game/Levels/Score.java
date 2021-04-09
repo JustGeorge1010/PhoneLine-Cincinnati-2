@@ -8,6 +8,7 @@ import com.phonelinecincinnati.game.GameObjects.Objects.GameObject;
 import com.phonelinecincinnati.game.Main;
 import com.phonelinecincinnati.game.Renderer;
 import com.phonelinecincinnati.game.GameObjects.Objects.MenuObjects.MovingText;
+import javafx.util.Pair;
 
 
 import java.util.ArrayList;
@@ -15,6 +16,8 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 
 public class Score {
+    public boolean display;
+
     private int total = 0;
     private int comboNumber = 0;
     private long timeComboStarted = -1;
@@ -31,13 +34,13 @@ public class Score {
     @SuppressWarnings("FieldCanBeLocal")
     private final int comboTimeSec = 2;
 
-
     public void reset() {
         total = 0;
         comboNumber = 0;
         timeComboStarted = -1;
         timeLevelStarted = System.currentTimeMillis();
         actions = new ArrayList<String>();
+        display = true;
     }
 
     public void addScore(int score, int alertedBonus, String action) {
@@ -164,6 +167,9 @@ public class Score {
     }
 
     public void renderHudElement(Renderer renderer) {
+        if(!display) {
+            return;
+        }
         glyphLayout.setText(Renderer.hudBottomFont, "G");
         float offsetBase = glyphLayout.height + 10;
         if(currentActions.isEmpty()) {

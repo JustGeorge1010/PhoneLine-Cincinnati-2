@@ -5,9 +5,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.phonelinecincinnati.game.GameObjects.Objects.GameObject;
 import com.phonelinecincinnati.game.GameObjects.Objects.Misc.BuilderWidget;
-import com.phonelinecincinnati.game.GameObjects.Objects.Misc.SoundSource;
 import com.phonelinecincinnati.game.GameObjects.Objects.Player.Player;
-import com.phonelinecincinnati.game.GameObjects.Objects.Weapons.Ranged.M16;
 import com.phonelinecincinnati.game.Main;
 import javafx.util.Pair;
 
@@ -19,7 +17,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 public class LevelHandler {
     private final CopyOnWriteArrayList<GameObject> activeObjects;
-    private int progression = 1; //TODO: Change this to 0 to reset progress
+    private int progression = 0;
     public Level currentLevel;
     public String levelName;
     public Player player = null;
@@ -54,10 +52,19 @@ public class LevelHandler {
 
     public void loadCurrent() {
         if(progression == 0) {
-            loadHouse();
+            loadStory1();
         } else if(progression == 1) {
             loadLevel1();
+        } else if(progression == 2) {
+            loadStory2();
+        } else if(progression == 3) {
+            loadLevel2();
         }
+    }
+
+    public void loadNext() {
+        progression++;
+        loadCurrent();
     }
 
     public void loadFromJson(String levelFileName) {
@@ -132,15 +139,26 @@ public class LevelHandler {
         currentLevel = new EndCard(activeObjects, results);
     }
 
-    public void loadHouse() {
+    public void loadStory1() {
+        progression = 0;
         clearActiveObjects();
-        currentLevel = new House(activeObjects, progression);
+        currentLevel = new StoryOne(activeObjects);
     }
 
-    public void loadLevel1() {
+    private void loadLevel1() {
         clearActiveObjects();
         currentLevel = new Homicide(activeObjects);
-        //currentLevel = new Level1(activeObjects);
+    }
+
+    private void loadStory2() {
+        clearActiveObjects();
+        currentLevel = new StoryTwo(activeObjects);
+    }
+
+    private void loadLevel2() {
+        clearActiveObjects();
+        currentLevel = new tbcScreen(activeObjects); //TODO: remove this and replace with real level
+        //currentLevel = new Alteration(activeObjects);
     }
 
     public void dispose() {
