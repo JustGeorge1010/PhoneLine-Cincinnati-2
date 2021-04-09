@@ -70,8 +70,10 @@ public class WeaponPickUp extends GameObject{
     }
 
     public boolean withinRange(Vector3 position) {
-        if(this.position.x+2 > position.x && this.position.x-2 < position.x) {
-            return this.position.z + 2 > position.z && this.position.z - 2 < position.z;
+        if (position.y-1 < this.position.y  && this.position.y < position.y+3.5f) {
+            if (position.x < this.position.x + 2 && this.position.x - 2 < position.x) {
+                return position.z < this.position.z + 2 && this.position.z - 2 < position.z;
+            }
         }
         return false;
     }
