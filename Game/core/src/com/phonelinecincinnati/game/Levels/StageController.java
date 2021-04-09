@@ -16,14 +16,11 @@ public class StageController extends GameObject {
 
     private ArrayList<Stage> stages;
     private Stage currentStage;
-    private String objectiveText;
     private MovingText movingText;
-
-    private static GlyphLayout glyphLayout = new GlyphLayout();
 
     StageController(String objectiveText) {
         stages = new ArrayList<Stage>();
-        this.objectiveText = objectiveText;
+        Main.levelHandler.player.hud.objectiveText = objectiveText;
         movingText = new MovingText(Renderer.hudTopFont, Renderer.hudBottomFont);
     }
 
@@ -41,7 +38,7 @@ public class StageController extends GameObject {
         }
         if(currentStage.condition.check()) {
             currentStage.doOnComplete.activate();
-            this.objectiveText = currentStage.objectiveText;
+            Main.levelHandler.player.hud.objectiveText = currentStage.objectiveText;
             stages.remove(currentStage);
             currentStage = null;
         }
@@ -56,9 +53,7 @@ public class StageController extends GameObject {
 
     @Override
     public void postRender(Renderer renderer) {
-        glyphLayout.setText(renderer.hudBottomFont, objectiveText);
-        float width = glyphLayout.width;
-        movingText.render(renderer, (Gdx.graphics.getWidth()-width)-10, 100, objectiveText);
+
     }
 
     @Override

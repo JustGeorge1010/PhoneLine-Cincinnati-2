@@ -2,12 +2,16 @@ package com.phonelinecincinnati.game.GameObjects.Objects.Player;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.PerspectiveCamera;
+import com.badlogic.gdx.graphics.g2d.GlyphLayout;
+import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
 import com.phonelinecincinnati.game.GameObjects.ObjectTraits.Collidable;
 import com.phonelinecincinnati.game.GameObjects.Objects.Enemies.Mafia.MafiaMob;
 import com.phonelinecincinnati.game.GameObjects.Objects.GameObject;
+import com.phonelinecincinnati.game.GameObjects.Objects.MenuObjects.MovingText;
 import com.phonelinecincinnati.game.GameObjects.Objects.MenuObjects.PauseMenuHandler;
 import com.phonelinecincinnati.game.GameObjects.Objects.Model.InteractiveModel;
 import com.phonelinecincinnati.game.GameObjects.Objects.Pickups.WeaponPickUp;
@@ -39,12 +43,14 @@ public class Player extends GameObject {
     private ForcedController forcedController;
 
     private TextBox textBox;
-    private Hud hud;
+    public Hud hud;
 
     private float floorY;
     private float ySpeed;
 
     public boolean dead = false;
+    private MovingText respawnText;
+    private GlyphLayout glyphLayout;
 
     public Player(float x, float y, float z) {
         mainCam = Main.camera;
@@ -60,6 +66,9 @@ public class Player extends GameObject {
 
         floorY = y;
         ySpeed = 0.08f;
+
+        respawnText = new MovingText(Renderer.hudLargeTopFont, Renderer.hudLargeBottomFont);
+        glyphLayout = new GlyphLayout();
     }
 
     public void setFloorY(float y, float ySpeed) {
@@ -394,6 +403,19 @@ public class Player extends GameObject {
         if(weapon != null) weapon.render(renderer);
         hud.render(renderer);
         textBox.render(renderer);
+
+        if(dead) {
+            renderer.renderTransparentRect(0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight(),
+                    ShapeRenderer.ShapeType.Filled, new Color(1, 0, 0, 0.5f));
+
+            String respawnStr = "Press R to respawn";
+            glyphLayout.setText(Renderer.hudLargeBottomFont, respawnStr);
+            float midX = (Gdx.graphics.getWidth()/2) - (glyphLayout.width/2);
+            float midY = (Gdx.graphics.getHeight()/2) + (glyphLayout.height/2);
+
+            respawnText.update();
+            respawnText.render(renderer, midX, midY, respawnStr);
+        }
     }
 
     @Override
