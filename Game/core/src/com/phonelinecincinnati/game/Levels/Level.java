@@ -14,6 +14,7 @@ public abstract class Level {
     CopyOnWriteArrayList<GameObject> activeObjects;
 
     public static Player createPlayer(Vector3 position, Vector3 lookDirection, Weapon weapon, boolean reloading, boolean retainPlayer) {
+        Main.controlHandler.resetPlayer();
         Player player;
         if(!retainPlayer) {
             player = new Player(position.x, position.y+0.1f, position.z);
@@ -26,8 +27,9 @@ public abstract class Level {
             player.giveControl();
         } else {
             player.takeControl(null);
-            Main.camera.lookAt(player.position.cpy().add(lookDirection));
         }
+        Main.camera.lookAt(player.position.cpy().add(lookDirection));
+
         return player;
     }
     public abstract void load(boolean reloading, boolean retainPlayer);

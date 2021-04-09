@@ -341,7 +341,7 @@ public class Player extends GameObject {
     }
 
     public void controlCamera() {
-        if(!(PauseMenuHandler.isPaused || textBox.isOpen() || !inControl || mounted)) {
+        if(!(PauseMenuHandler.isPaused || textBox.isOpen() || !inControl || mounted || dead)) {
             float mouseX = -Gdx.input.getDeltaX() * 0.1f;
             float mouseY = -Gdx.input.getDeltaY() * 0.1f;
 

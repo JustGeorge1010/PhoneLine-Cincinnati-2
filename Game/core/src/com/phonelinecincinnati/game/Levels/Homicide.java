@@ -46,8 +46,7 @@ public class Homicide extends Level{
                 createPlayer(new Vector3(0, 0, -10), new Vector3(0, 0, 1), new BaseballBat(),
                         reloading, retainPlayer);
 
-        String levelFileName = "Homicide";
-        Main.levelHandler.loadFromJson(levelFileName);
+        Main.levelHandler.loadFromJson(name);
         for(GameObject gameObject : Main.levelHandler.getActiveObjects()) {
             if(gameObject.getClass() == Model.class) {
                 Model model = (Model)gameObject;
@@ -234,7 +233,6 @@ public class Homicide extends Level{
                         for(GameObject object : activeObjects) {
                             object.dispose();
                         }
-                        Main.controlHandler.resetPlayer();
                         Main.levelHandler.loadEndCard(Main.levelHandler.score.levelResults());
                     }
                 }, 0.008f));
@@ -289,6 +287,9 @@ public class Homicide extends Level{
                 }
             });
             activeObjects.add(titleCard);
+        } else {
+            Main.levelHandler.score.reset();
+            pauseMenuHandler.enablePausing();
         }
     }
 
