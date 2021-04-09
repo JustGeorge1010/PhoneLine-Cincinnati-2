@@ -3939,15 +3939,6 @@
       ]
     },
     {
-      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
-      "value": [
-        "(-16.0,0.0,-2.0)",
-        "(0.5,9.0,12.0)",
-        "Brick",
-        "Concrete1"
-      ]
-    },
-    {
       "key": "com.phonelinecincinnati.game.GameObjects.Objects.GameDecal",
       "value": [
         "(-14.8,0.1,-7.0)",
@@ -4015,6 +4006,15 @@
         "1.2",
         "(90.0,0.0,270.0)",
         "Dirt1"
+      ]
+    },
+    {
+      "key": "com.phonelinecincinnati.game.GameObjects.Objects.DoubleWall",
+      "value": [
+        "(-16.0,0.0,-2.0)",
+        "(0.5,9.0,11.0)",
+        "Brick",
+        "Concrete1"
       ]
     }
   ]

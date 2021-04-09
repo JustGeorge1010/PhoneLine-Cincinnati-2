@@ -1,6 +1,7 @@
 package com.phonelinecincinnati.game.GameObjects.Objects.Player;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.g2d.GlyphLayout;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.phonelinecincinnati.game.GameObjects.Objects.Weapons.Ranged.Ranged;
 import com.phonelinecincinnati.game.GameObjects.Objects.Weapons.Weapon;
@@ -10,6 +11,8 @@ import com.phonelinecincinnati.game.Renderer;
 import com.phonelinecincinnati.game.GameObjects.Objects.MenuObjects.MovingText;
 
 public class Hud {
+    public String objectiveText = "";
+
     String pickupText = "";
     String interactionText = "";
 
@@ -17,9 +20,12 @@ public class Hud {
     private Sprite ammo;
     private MovingText movingText;
 
+    private GlyphLayout glyphLayout;
+
     Hud() {
         ammo = new Sprite(Main.modelHandler.textures.get(TextureName.Ammo));
         movingText = new MovingText(Renderer.hudTopFont, Renderer.hudBottomFont);
+        glyphLayout = new GlyphLayout();
     }
 
     void update(Weapon weapon) {
@@ -51,5 +57,9 @@ public class Hud {
             renderer.renderSprite(10, 5, Gdx.graphics.getWidth()/18, Gdx.graphics.getWidth()/18, ammo);
             movingText.render(renderer, 110, 100, String.valueOf(ranged.rounds));
         }
+
+        glyphLayout.setText(Renderer.hudBottomFont, objectiveText);
+        float width = glyphLayout.width;
+        movingText.render(renderer, (Gdx.graphics.getWidth()-width)-10, 100, objectiveText);
     }
 }

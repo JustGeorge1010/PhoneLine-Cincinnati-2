@@ -264,8 +264,19 @@ public class Homicide extends Level{
         }, "Leave the scene");
         activeObjects.add(car);
 
-        activeObjects.add(player);
+        //Random thresholds to stop player from leaving play area
+        //Front top window
+        activeObjects.add(new Threshold(new Vector3(-14, 16, -2), new Vector3(28 , 9, 0.5f)));
+
+        //Side top windows and sides of street
+        activeObjects.add(new Threshold(new Vector3(-16.5f, 0, -12), new Vector3(1, 24, 22)));
+        activeObjects.add(new Threshold(new Vector3(15.5f, 0, -12), new Vector3(1, 24, 22)));
+
+        //Inline with car to stop playing crossing road
+        activeObjects.add(new Threshold(new Vector3(-18, 0, -12), new Vector3(40, 10, 2)));
+
         activeObjects.add(stageController);
+        activeObjects.add(player);
         final PauseMenuHandler pauseMenuHandler = new PauseMenuHandler(true);
 
         if(!reloading) {
