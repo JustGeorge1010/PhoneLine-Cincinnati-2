@@ -212,6 +212,13 @@ public class ModelHandler {
         putModel("BathroomItems", ModelName.BathroomShelf);
     }
 
+    private void IndustrialItems() {
+        putModel("IndustrialItems", ModelName.ShippingCrateBlue);
+        putModel("IndustrialItems", ModelName.ShippingCrateGrey);
+        putModel("IndustrialItems", ModelName.ShippingCrateRed);
+        putModel("IndustrialItems", ModelName.ShippingCrateYellow);
+    }
+
     private void Clothing() {
         putModel("Clothing", ModelName.MiamiShirt);
         putModel("Clothing", ModelName.BloodyShirt);
