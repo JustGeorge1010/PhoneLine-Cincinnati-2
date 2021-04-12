@@ -88,6 +88,13 @@ public enum ModelName {
     FrontDesk,
     //</editor-fold>
 
+    //<editor-fold desc="Office Items">
+    ShippingCrateRed,
+    ShippingCrateGrey,
+    ShippingCrateYellow,
+    ShippingCrateBlue,
+    //</editor-fold>
+
     /* old
     Bed,
     Bed2,
