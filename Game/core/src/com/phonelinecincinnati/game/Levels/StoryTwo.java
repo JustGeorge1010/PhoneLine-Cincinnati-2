@@ -56,7 +56,9 @@ public class StoryTwo extends Level {
         activeObjects.add(titleCard);
 
         player.hud.objectiveText = "The phone is ringing...";
-        final InteractiveSolidModel phoneTable = new InteractiveSolidModel(new Vector3(6.5f, 0, -5.3f), 90, ModelName.PhoneTable1);
+        final InteractiveSolidModel phoneTable = new InteractiveSolidModel(new Vector3(6.5f, 0, -5.3f),
+                90, ModelName.PhoneTable1);
+
         phoneTable.setAction(new Action() {
             @Override
             public void activate() {
@@ -74,7 +76,7 @@ public class StoryTwo extends Level {
                 player.textBox.text.add("Hudds: I'm at the port, hiding behind one of the containers");
                 player.textBox.text.add("Hockett: Okay I'll be right there");
                 player.textBox.text.add("Hudds: Sonny...");
-                player.textBox.text.add("Hudds: They know about us. They know we want to take Rogerio down");
+                player.textBox.text.add("Hudds: They know about us. They know we want to take Rogerigo down");
                 player.textBox.text.add("Hockett: Don't worry about that now. Hold in there.");
                 player.textBox.text.add("*CLICK*");
                 player.textBox.setExitAction(new Action() {
@@ -85,7 +87,7 @@ public class StoryTwo extends Level {
                         phoneTable.removeAction();
                         player.hud.objectiveText = "Leave your home";
                         final InteractiveModel door = new InteractiveSolidModel(new Vector3(10.5f, 0, -21f),
-                                -90, ModelName.PhoneTable1);
+                            -90, ModelName.PhoneTable1);
                         door.setAction(new Action() {
                             @Override
                             public void activate() {
@@ -99,7 +101,7 @@ public class StoryTwo extends Level {
             }
         }, "(RMB) to answer phone");
         activeObjects.add(phoneTable);
-    }
+}
 
     @Override
     public void reload() {

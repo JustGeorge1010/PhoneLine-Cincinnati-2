@@ -15,6 +15,7 @@ import java.util.ArrayList;
 
 public class Model extends GameObject {
     public ModelName name;
+    public boolean rendering = true;
 
     private Vector3 offset;
 
@@ -110,7 +111,9 @@ public class Model extends GameObject {
 
     @Override
     public void render(Renderer renderer) {
-        renderer.renderModel(modelInstance);
+        if(rendering) {
+            renderer.renderModel(modelInstance);
+        }
     }
 
     @Override

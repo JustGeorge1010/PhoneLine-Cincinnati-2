@@ -59,10 +59,12 @@ public class ModelHandler {
         BathroomItems();
         Clothing();
         OfficeItems();
+        IndustrialItems();
 
         //Misc
         putModel("Misc", ModelName.GravelPieces);
         putModel("Misc", ModelName.TrashPiece);
+        putModel("Misc", ModelName.HuddsWall);
 
         //Car
         putModel("Vehicles/PlayerCar", ModelName.PlayerCar);
@@ -90,6 +92,7 @@ public class ModelHandler {
         putModel("Weapons", ModelName.Bat);
         putModel("Weapons", ModelName.GolfClub);
         putModel("Weapons", ModelName.M16);
+        putModel("Weapons", ModelName.M1911);
 
         putModel("Weapons", ModelName.Bullet);
     }

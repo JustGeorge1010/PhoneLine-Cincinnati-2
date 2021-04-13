@@ -72,7 +72,7 @@ public class MafiaMobBrain {
     }
 
     private boolean lineOfSightFromPoint(Vector3 point) {
-        float FOV = 40;
+        float FOV = 60;
 
         Vector2 facingDir = new Vector2((float) Math.cos(mob.rotation.y * MathUtils.degreesToRadians), (float) Math.sin(mob.rotation.y * MathUtils.degreesToRadians));
         Vector2 playerDir = new Vector2(player.position.x - mob.position.x, player.position.z - mob.position.z).nor();
