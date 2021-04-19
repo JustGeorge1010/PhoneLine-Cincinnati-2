@@ -5,6 +5,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.phonelinecincinnati.game.GameObjects.Objects.GameObject;
 import com.phonelinecincinnati.game.GameObjects.Objects.Misc.BuilderWidget;
+import com.phonelinecincinnati.game.GameObjects.Objects.Misc.SoundSource;
 import com.phonelinecincinnati.game.GameObjects.Objects.Player.Player;
 import com.phonelinecincinnati.game.Main;
 import javafx.util.Pair;
@@ -59,6 +60,8 @@ public class LevelHandler {
             loadStory2();
         } else if(progression == 3) {
             loadLevel2();
+        } else if(progression == 4) {
+            tbcScreen();
         }
     }
 
@@ -157,8 +160,12 @@ public class LevelHandler {
 
     private void loadLevel2() {
         clearActiveObjects();
-        currentLevel = new tbcScreen(activeObjects); //TODO: remove this and replace with real level
-        //currentLevel = new Alteration(activeObjects);
+        currentLevel = new Rescue(activeObjects);
+    }
+
+    private void tbcScreen() {
+        clearActiveObjects();
+        currentLevel = new tbcScreen(activeObjects);
     }
 
     public void dispose() {

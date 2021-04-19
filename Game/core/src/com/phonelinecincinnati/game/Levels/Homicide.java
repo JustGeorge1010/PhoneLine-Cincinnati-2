@@ -8,12 +8,14 @@ import com.phonelinecincinnati.game.GameObjects.Objects.GameObject;
 import com.phonelinecincinnati.game.GameObjects.Objects.InteractionThreshold;
 import com.phonelinecincinnati.game.GameObjects.Objects.MenuObjects.PauseMenuHandler;
 import com.phonelinecincinnati.game.GameObjects.Objects.Misc.*;
+import com.phonelinecincinnati.game.GameObjects.Objects.Model.InteractiveModel;
 import com.phonelinecincinnati.game.GameObjects.Objects.Model.Model;
 import com.phonelinecincinnati.game.GameObjects.Objects.Player.Player;
 import com.phonelinecincinnati.game.GameObjects.Objects.Player.PlayerCar;
 import com.phonelinecincinnati.game.GameObjects.Objects.Threshold;
 import com.phonelinecincinnati.game.GameObjects.Objects.Weapons.Melee.BaseballBat;
 import com.phonelinecincinnati.game.GameObjects.Objects.Weapons.Melee.GolfClub;
+import com.phonelinecincinnati.game.GameObjects.Objects.Weapons.Ranged.M1911;
 import com.phonelinecincinnati.game.Main;
 import com.phonelinecincinnati.game.Models.ModelName;
 
@@ -197,8 +199,9 @@ public class Homicide extends Level{
                 "Kill everyone"
         );
 
-        final PlayerCar car = new PlayerCar(new Vector3(0f, -0.1f, -14), 180, player);
-        car.unlocked = false;
+        final InteractiveModel documents = new InteractiveModel(new Vector3(-2, 18.12f,-0.5f), -90, ModelName.PhoneTable1);
+        documents.rendering = false;
+        documents.unlocked = false;
         stageController.addStage(
                 new Condition() {
                     @Override
@@ -209,19 +212,55 @@ public class Homicide extends Level{
                 new Action() {
                     @Override
                     public void activate() {
-                        activeObjects.remove(thresholdL);
-                        activeObjects.remove(thresholdR);
-                        activeObjects.add(iThresholdL);
-                        activeObjects.add(iThresholdR);
-
-                        car.unlocked = true;
+                        documents.unlocked = true;
                         music.stopMusic();
                         music.setMusic("El Huervo - Crush.mp3");
                         music.playMusic();
                     }
                 },
-                "Return to car"
+                "Check documents"
         );
+
+        final PlayerCar car = new PlayerCar(new Vector3(0f, -0.1f, -14), 180, player);
+        car.unlocked = false;
+        documents.setAction(new Action() {
+            @Override
+            public void activate() {
+                player.lookAt(documents.position.x, documents.position.z, -35f);
+                player.textBox.text.clear();
+                player.textBox.text.add("Hockett: Hmm...");
+                player.textBox.text.add("Hockett: ...");
+                player.textBox.text.add("Hockett: '18 Sept, Miami Dock, 1x Colt Commander, 2x Colt M1911, 1x SIG-Sauer P220'");
+                player.textBox.text.add("Hockett: ...");
+                player.textBox.text.add("*CLICK*");
+                player.textBox.text.add("*DIAL TONE");
+                player.textBox.text.add("Hudds: You okay Hockett?");
+                player.textBox.text.add("Hockett: Yeah I'm fine.");
+                player.textBox.text.add("Hockett: It seems like they're planning on taking in a shipment in two days.");
+                player.textBox.text.add("Hockett: It's quite a big one, I reckon Rogerigo will be there to oversee it.");
+                player.textBox.text.add("Hudds: Thanks man.");
+                player.textBox.text.add("Hudds: Did you take care of everyone?");
+                player.textBox.text.add("Hockett: ...");
+                player.textBox.text.add("Hockett: Yes.");
+                player.textBox.text.add("Hudds: We're going to look into staging a raid.");
+                player.textBox.text.add("Hudds: You should go home and rest.");
+                player.textBox.text.add("Hockett: See you Rico.");
+                player.textBox.text.add("Hudds: Bye Hockett.");
+                player.textBox.setExitAction(new Action() {
+                    @Override
+                    public void activate() {
+                        car.unlocked = true;
+                        activeObjects.remove(thresholdL);
+                        activeObjects.remove(thresholdR);
+                        activeObjects.add(iThresholdL);
+                        activeObjects.add(iThresholdR);
+                    }
+                });
+                player.textBox.open();
+                player.hud.objectiveText = "Return to car";
+            }
+        }, "(RMB) Check");
+        activeObjects.add(documents);
 
         car.setAction(new Action() {
             @Override

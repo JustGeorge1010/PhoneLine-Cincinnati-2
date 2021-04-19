@@ -88,18 +88,18 @@ public enum ModelName {
     FrontDesk,
     //</editor-fold>
 
-    //<editor-fold desc="Office Items">
+    //<editor-fold desc="Industrial Items">
     ShippingCrateRed,
     ShippingCrateGrey,
     ShippingCrateYellow,
     ShippingCrateBlue,
     //</editor-fold>
 
-    /* old
+    //<editor-fold desc="Old">
+    /*
     Bed,
     Bed2,
     Table,
-    //</editor-fold>
     //<editor-fold desc="Kitchen items">
     KitchenTable,
     KitchenFridge,
@@ -121,7 +121,8 @@ public enum ModelName {
     PlayerStairsP2,
     PlayerStairsP3,
     PlayerStairsP4,
-     */
+    //</editor-fold>
+    */
     //</editor-fold>
 
     //<editor-fold desc="Level1 only">
@@ -145,6 +146,7 @@ public enum ModelName {
     //Misc
     GravelPieces,
     TrashPiece,
+    HuddsWall,
 
     //Vehicles
     PlayerCar,
@@ -154,6 +156,7 @@ public enum ModelName {
     Bat,
     GolfClub,
     M16,
+    M1911,
 
     Bullet,
 

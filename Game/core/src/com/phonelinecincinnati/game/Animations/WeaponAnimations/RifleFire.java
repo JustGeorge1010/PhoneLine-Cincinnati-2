@@ -5,7 +5,7 @@ import com.badlogic.gdx.math.Vector3;
 import com.phonelinecincinnati.game.GameObjects.Objects.Misc.SoundSource;
 
 public class RifleFire extends WeaponAnimation {
-    private SoundSource gunshot;
+    SoundSource gunshot;
     private boolean fired = false;
     private boolean recoiling = false;
 

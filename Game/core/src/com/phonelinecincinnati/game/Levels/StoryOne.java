@@ -68,7 +68,7 @@ public class StoryOne extends Level {
                 player.textBox.text.add("Hudds: Hey Hockett!");
                 player.textBox.text.add("(You) Hockett: Hudds. What sort of time do you call this?");
                 player.textBox.text.add("Hudds: Jeez only one o'clock in the morning. You getting old already?");
-                player.textBox.text.add("Hudds: Ever hear of a local dealer name of Rogerio?");
+                player.textBox.text.add("Hudds: Ever hear of a local dealer name of Rogerigo?");
                 player.textBox.text.add("Hockett: Hm *Murmurs negatively*");
                 player.textBox.text.add("Hudds: 'Bout four weeks ago one of our detectives set himself up for a meet");
                 player.textBox.text.add("Hudds: The bust went sour, our guy was shot to death");

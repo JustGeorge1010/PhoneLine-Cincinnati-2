@@ -45,6 +45,7 @@ public class Player extends GameObject {
     public TextBox textBox;
     public Hud hud;
 
+    public float speedMod;
     private float floorY;
     private float ySpeed;
 
@@ -65,6 +66,7 @@ public class Player extends GameObject {
         textBox = new TextBox();
         hud = new Hud();
 
+        speedMod = 0.2f;
         floorY = y;
         ySpeed = 0.08f;
 
@@ -114,16 +116,18 @@ public class Player extends GameObject {
         if(inControl) {
             if(!textBox.isOpen()) {
                 if(!mounted) {
+                    boolean interacting = false;
                     for(GameObject object : Main.levelHandler.getActiveObjects()) {
                         if(InteractiveModel.class.isAssignableFrom(object.getClass())) {
                             InteractiveModel model = (InteractiveModel)object;
                             if(model.canInteract(this)) {
                                 hud.interactionText = "";
                                 model.interact();
+                                interacting = true;
                             }
                         }
                     }
-                    switchWeapon();
+                    if(!interacting) switchWeapon();
                 }
             } else {
                 textBox.next();
@@ -196,8 +200,8 @@ public class Player extends GameObject {
 
         tempVelocity = tempVelocity.nor();
 
-        tempVelocity.x = tempVelocity.x * 0.2f;
-        tempVelocity.y = tempVelocity.y * 0.2f;
+        tempVelocity.x = tempVelocity.x * speedMod;
+        tempVelocity.y = tempVelocity.y * speedMod;
 
         if(Main.debug) {
             if(keys.get(Input.Keys.SPACE)) {
@@ -218,8 +222,8 @@ public class Player extends GameObject {
         if(keys.get(Input.Keys.A) || keys.get(Input.Keys.D)) {
             tempVelocity.rotate(90);
             tempVelocity = tempVelocity.nor();
-            tempVelocity.x = tempVelocity.x * 0.2f;
-            tempVelocity.y = tempVelocity.y * 0.2f;
+            tempVelocity.x = tempVelocity.x * speedMod;
+            tempVelocity.y = tempVelocity.y * speedMod;
 
             if(keys.get(Input.Keys.A) && !keys.get(Input.Keys.D)) {
                 tempPosition.add(-tempVelocity.x, 0, -tempVelocity.y);
@@ -328,6 +332,14 @@ public class Player extends GameObject {
         }
     }
 
+    public void giveWeapon(Weapon weapon) {
+        if(weapon != null) {
+            Main.levelHandler.addObjectToCurrentLevel(new WeaponPickUp(position.cpy(), this.weapon));
+        }
+        pickupSound.playSound();
+        this.weapon = weapon;
+    }
+
     private void useWeapon() {
         if(!PauseMenuHandler.isPaused) {
             weapon.use(mainCam.position.cpy().sub(0 ,0.1f, 0), mainCam.direction.cpy());
@@ -403,6 +415,10 @@ public class Player extends GameObject {
     @Override
     public void postRender(Renderer renderer) {
         if(weapon != null) weapon.render(renderer);
+        if(Main.levelHandler.currentLevel.isDark) {
+            renderer.renderTransparentRect(0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight(),
+                    ShapeRenderer.ShapeType.Filled, new Color(0, 0, 0, 0.5f));
+        }
         hud.render(renderer);
         textBox.render(renderer);
 

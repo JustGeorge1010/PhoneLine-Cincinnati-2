@@ -46,14 +46,17 @@ public class InteractiveModel extends Model{
     }
 
     public boolean canInteract(GameObject object) {
+        if(!unlocked || action == null) {
+            return false;
+        }
         float range = 3f;
         if(boundingBox.getWidth() > boundingBox.getDepth()) {
             range += boundingBox.getWidth()/2;
         } else {
             range += boundingBox.getDepth()/2;
         }
-        Vector3 pos = new Vector3(object.getPosition().x, 0, object.getPosition().z);
-        return pos.dst(position.x, position.y, position.z) < range && unlocked;
+        Vector3 pos = object.position.cpy();
+        return pos.dst(position.x, position.y, position.z) < range;
     }
 
     public void interact() {
