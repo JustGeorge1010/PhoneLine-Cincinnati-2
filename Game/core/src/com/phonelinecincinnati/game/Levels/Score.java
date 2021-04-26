@@ -8,7 +8,6 @@ import com.phonelinecincinnati.game.GameObjects.Objects.GameObject;
 import com.phonelinecincinnati.game.Main;
 import com.phonelinecincinnati.game.Renderer;
 import com.phonelinecincinnati.game.GameObjects.Objects.MenuObjects.MovingText;
-import javafx.util.Pair;
 
 
 import java.util.ArrayList;
@@ -61,16 +60,15 @@ public class Score {
             }
         }
 
-        ArrayList<String> currentActions = determineActions(alertedEnemies, action);
+        ArrayList<String> currentActions = determineExposure(alertedEnemies, action);
         actions.addAll(currentActions);
         this.currentActions.addAll(currentActions);
 
         total += score + (alertedBonus * alertedEnemies);
-        //TODO: change this to affect the hud total rollup speed;
         displayedTotalRaiseAmount = (total-displayedTotal)/100;
     }
 
-    private ArrayList<String> determineActions(int alertedEnemies, String action) {
+    private ArrayList<String> determineExposure(int alertedEnemies, String action) {
         ArrayList<String> currentActions = new ArrayList<String>();
         if(!action.equals("") && !action.equals("Thrown")) {
             currentActions.add(action);
@@ -170,7 +168,7 @@ public class Score {
         if(!display) {
             return;
         }
-        glyphLayout.setText(Renderer.hudBottomFont, "G");
+        glyphLayout.setText(Renderer.hudBottomFont, "Temp");
         float offsetBase = glyphLayout.height + 10;
         if(currentActions.isEmpty()) {
             offset = offsetBase;

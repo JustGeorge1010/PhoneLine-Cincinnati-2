@@ -1,13 +1,10 @@
 package com.phonelinecincinnati.game.Levels;
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.g2d.GlyphLayout;
 import com.phonelinecincinnati.game.GameObjects.Objects.GameObject;
 import com.phonelinecincinnati.game.GameObjects.Objects.Misc.Action;
 import com.phonelinecincinnati.game.GameObjects.Objects.Misc.Condition;
 import com.phonelinecincinnati.game.Main;
 import com.phonelinecincinnati.game.Renderer;
-import com.phonelinecincinnati.game.GameObjects.Objects.MenuObjects.MovingText;
 
 import java.util.ArrayList;
 
@@ -16,12 +13,10 @@ public class StageController extends GameObject {
 
     private ArrayList<Stage> stages;
     private Stage currentStage;
-    private MovingText movingText;
 
     StageController(String objectiveText) {
         stages = new ArrayList<Stage>();
         Main.levelHandler.player.hud.objectiveText = objectiveText;
-        movingText = new MovingText(Renderer.hudTopFont, Renderer.hudBottomFont);
     }
 
     public void addStage(Condition condition, Action doOnComplete, String objectiveText){
@@ -42,8 +37,6 @@ public class StageController extends GameObject {
             stages.remove(currentStage);
             currentStage = null;
         }
-
-        movingText.update();
     }
 
     @Override
