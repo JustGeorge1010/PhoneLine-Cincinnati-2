@@ -1,12 +1,12 @@
 package com.phonelinecincinnati.game.Levels;
 
+import javafx.util.Pair;
 import java.util.ArrayList;
-import java.util.Map;
 
 public class LevelJson {
-    ArrayList<Map.Entry<String, ArrayList<String>>> json;
+    ArrayList<Pair<String, ArrayList<String>>> json;
 
     LevelJson() {
-        json = new ArrayList<Map.Entry<String, ArrayList<String>>>();
+        json = new ArrayList<Pair<String, ArrayList<String>>>();
     }
 }
