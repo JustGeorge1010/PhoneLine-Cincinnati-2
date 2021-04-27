@@ -4,7 +4,7 @@ import com.badlogic.gdx.math.Vector3;
 import com.phonelinecincinnati.game.GameObjects.Objects.Enemies.Mafia.MafiaMob;
 import com.phonelinecincinnati.game.GameObjects.Objects.Enemies.PathFinding.AStar;
 
-public class StateMachine {
+public class Pathfinder {
     Vector3 currentPosition;
     Vector3 goalPosition;
 

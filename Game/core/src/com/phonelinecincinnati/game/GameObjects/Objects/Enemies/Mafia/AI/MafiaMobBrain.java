@@ -19,21 +19,21 @@ public class MafiaMobBrain {
         Returning
     }
     public State currentState;
-    public StateMachine stateMachine;
+    public Pathfinder pathfinder;
 
     private MafiaMob mob;
     private Player player;
 
     public MafiaMobBrain(MafiaMob mob, Player player) {
         currentState = Patrolling;
-        stateMachine = new StateMachine();
+        pathfinder = new Pathfinder();
         this.mob = mob;
         this.player = player;
     }
 
     public void update() {
-        stateMachine.currentPosition = mob.position;
-        if(!mob.currentPath.isEmpty()) stateMachine.goalPosition = mob.currentPath.get(mob.currentPath.size()-1);
+        pathfinder.currentPosition = mob.position;
+        if(!mob.currentPath.isEmpty()) pathfinder.goalPosition = mob.currentPath.get(mob.currentPath.size()-1);
         if(CollisionMaths.lineOfSightClear(player.position.cpy(), mob.position.cpy().add(mob.body.head.getPosition()))
                 && !Main.debugBlindEnemies) {
             if(canSeePlayer()) {
@@ -44,18 +44,18 @@ public class MafiaMobBrain {
                 }
             }
             if(currentState == MovingTo) {
-                stateMachine.moveTo(mob, player.position.cpy());
+                pathfinder.moveTo(mob, player.position.cpy());
             }
         }
         else {
             if(currentState == MovingTo || currentState == Following) {
                 currentState = Tracking;
-                stateMachine.track(mob, player.position.cpy());
+                pathfinder.track(mob, player.position.cpy());
             }
-            else if(currentState == Tracking && !stateMachine.isTracking()) {
+            else if(currentState == Tracking && !pathfinder.isTracking()) {
                 currentState = Returning;
             }
-            else if(currentState == Returning && !stateMachine.isReturning()) {
+            else if(currentState == Returning && !pathfinder.isReturning()) {
                 currentState = Patrolling;
 
             }
