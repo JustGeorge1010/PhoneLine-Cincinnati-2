@@ -29,15 +29,8 @@ public class Pathfinder {
     }
 
     public void track(MafiaMob mob, Vector3 goalPosition) {
-        this.currentPosition = mob.position;
-        this.goalPosition = new Vector3(goalPosition);
         tracking = true;
-        try {
-            mob.currentPath = AStar.getAStar().pathfind(new Vector3(mob.position), new Vector3(goalPosition));
-            mob.index = 0;
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        moveTo(mob, goalPosition);
     }
 
     public boolean isReturning() {
