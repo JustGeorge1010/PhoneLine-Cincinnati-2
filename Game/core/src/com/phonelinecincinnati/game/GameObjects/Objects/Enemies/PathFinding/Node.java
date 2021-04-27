@@ -2,7 +2,6 @@ package com.phonelinecincinnati.game.GameObjects.Objects.Enemies.PathFinding;
 
 import com.badlogic.gdx.math.Vector3;
 import com.phonelinecincinnati.game.GameObjects.Objects.Door;
-import com.phonelinecincinnati.game.GameObjects.Objects.GameObject;
 import com.phonelinecincinnati.game.Utility.CollisionMaths;
 
 import java.util.ArrayList;

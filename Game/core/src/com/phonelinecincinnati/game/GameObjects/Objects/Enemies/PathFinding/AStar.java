@@ -147,10 +147,12 @@ public class AStar {
         allNodes = new HashMap<Vector3, Node>();
         allNodes.putAll(nodes);
         allNodes.put(startPosition, getNode(startPosition));
-        allNodes.put(endPosition, getNode(endPosition));
+        Node endClosest = getClosestNode(endPosition);
+        endPosition = endClosest.position;
+        allNodes.put(endPosition, endClosest);
 
-        allNodes.get(startPosition).findNeighbors(allNodes.values(), true);
-        allNodes.get(endPosition).findNeighbors(allNodes.values(), true);
+        allNodes.get(startPosition).findNeighbors(allNodes.values());
+        allNodes.get(endPosition).findNeighbors(allNodes.values());
 
         if(Main.debugDrawPaths) {
             ArrayList<Node> newNodes = new ArrayList<Node>();
@@ -251,6 +253,17 @@ public class AStar {
         Node node = new Node(position);
         allNodes.put(position, node);
         return node;
+    }
+    private Node getClosestNode(Vector3 position) {
+        float closestDistance = 1000000000;
+        Node closestNode = new Node(position);
+        for(Node node : allNodes.values()) {
+            if(node.position.dst(position) < closestDistance) {
+                closestDistance = node.position.dst(position);
+                closestNode = node;
+            }
+        }
+        return closestNode;
     }
 
     private Stack<Vector3> generatePath(Node current) {

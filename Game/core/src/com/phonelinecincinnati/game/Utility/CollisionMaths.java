@@ -113,12 +113,12 @@ public class CollisionMaths {
                 return false;
             }
         }
-        if(object instanceof Door) {
-            if(((Door)object).open) return false;
-            Rectangle2D[] faces = CollisionMaths.collidableTo2DFaces((Collidable)object, modifier);
-            return line[0].intersects(faces[0]) && line[1].intersects(faces[1]) && line[2].intersects(faces[2]);
-        }
+
         if(object instanceof Collidable) {
+            if(object instanceof Door) {
+                Door door = (Door) object;
+                if(door.open) return false;
+            }
             Rectangle2D[] faces = CollisionMaths.collidableTo2DFaces((Collidable)object, modifier);
             return line[0].intersects(faces[0]) && line[1].intersects(faces[1]) && line[2].intersects(faces[2]);
         }
