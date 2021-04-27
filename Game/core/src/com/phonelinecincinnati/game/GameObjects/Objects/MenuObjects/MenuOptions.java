@@ -9,20 +9,18 @@ import com.phonelinecincinnati.game.GameObjects.Objects.Misc.Action;
 import com.phonelinecincinnati.game.GameObjects.Objects.Misc.SoundSource;
 import com.phonelinecincinnati.game.Main;
 import com.phonelinecincinnati.game.Renderer;
+import javafx.util.Pair;
 
-import java.util.AbstractMap;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class MenuOptions extends GameObject{
     private float x, y;
 
-    private CopyOnWriteArrayList<Map.Entry<String, Action>> options;
-    private CopyOnWriteArrayList<Map.Entry<String, Action>> settingsOptions;
+    private CopyOnWriteArrayList<Pair<String, Action>> options;
+    private CopyOnWriteArrayList<Pair<String, Action>> settingsOptions;
 
-    private Map.Entry<String, Action> currentSelection;
+    private Pair<String, Action> currentSelection;
     private static boolean pressed = false, accepted = false;
 
     private BitmapFont deSelectedFont;
@@ -38,16 +36,16 @@ public class MenuOptions extends GameObject{
         this.x = x;
         this.y = y;
 
-        options = new CopyOnWriteArrayList<Map.Entry<String, Action>>();
-        settingsOptions = new CopyOnWriteArrayList<Map.Entry<String, Action>>();
-        settingsOptions.add(new AbstractMap.SimpleEntry<String, Action>("Music: ", new Action() {
+        options = new CopyOnWriteArrayList<Pair<String, Action>>();
+        settingsOptions = new CopyOnWriteArrayList<Pair<String, Action>>();
+        settingsOptions.add(new Pair<String, Action>("Music: ", new Action() {
             @Override
             public void activate() {
                 settingGlobalMusic = true;
             }
         }));
 
-        settingsOptions.add(new AbstractMap.SimpleEntry<String, Action>("SFX: ", new Action() {
+        settingsOptions.add(new Pair<String, Action>("SFX: ", new Action() {
             @Override
             public void activate() {
                 settingGlobalSound = true;
@@ -68,7 +66,7 @@ public class MenuOptions extends GameObject{
     }
 
     public MenuOptions addOption(String text, Action action) {
-        options.add(new AbstractMap.SimpleEntry<String, Action>(text, action));
+        options.add(new Pair<String, Action>(text, action));
         return this;
     }
 
@@ -96,7 +94,7 @@ public class MenuOptions extends GameObject{
         }
     }
 
-    private void selectionManagement(CopyOnWriteArrayList<Map.Entry<String, Action>> options) {
+    private void selectionManagement(CopyOnWriteArrayList<Pair<String, Action>> options) {
         if(Main.controlHandler.keys.get(Input.Keys.DOWN) && !pressed) {
             down.playSound();
             int index = options.indexOf(currentSelection)+1;
@@ -179,7 +177,7 @@ public class MenuOptions extends GameObject{
         GlyphLayout layout = new GlyphLayout();
 
         if(!inSettings) {
-            for(Map.Entry<String, Action> option : options) {
+            for(Pair<String, Action> option : options) {
                 if(option == currentSelection) {
                     layout.setText(selectedFont, option.getKey());
                     renderer.renderText(x-(layout.width/2), y-currentYOffset, option.getKey(), selectedFont);
@@ -191,7 +189,7 @@ public class MenuOptions extends GameObject{
             }
         } else {
             float xOffset = -150f;
-            for(Map.Entry<String, Action> option : settingsOptions) {
+            for(Pair<String, Action> option : settingsOptions) {
                 if(option == currentSelection) {
                     layout.setText(selectedFont, option.getKey());
                     renderer.renderText(x-layout.width+xOffset, y-currentYOffset, option.getKey(), selectedFont);

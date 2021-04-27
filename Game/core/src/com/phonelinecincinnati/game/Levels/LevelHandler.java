@@ -5,15 +5,15 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.phonelinecincinnati.game.GameObjects.Objects.GameObject;
 import com.phonelinecincinnati.game.GameObjects.Objects.Misc.BuilderWidget;
+import com.phonelinecincinnati.game.GameObjects.Objects.Misc.SoundSource;
 import com.phonelinecincinnati.game.GameObjects.Objects.Player.Player;
 import com.phonelinecincinnati.game.Main;
+import javafx.util.Pair;
 
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.AbstractMap;
 import java.util.ArrayList;
-import java.util.Map;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class LevelHandler {
@@ -82,7 +82,7 @@ public class LevelHandler {
         }
 
         assert level != null;
-        for(Map.Entry<String, ArrayList<String>> object : level.json) {
+        for(Pair<String, ArrayList<String>> object : level.json) {
             if(object.getValue().isEmpty())
                 continue;
             try {
@@ -101,7 +101,7 @@ public class LevelHandler {
             String key = object.getClass().getName();
             ArrayList<String> values = object.getConstructParams();
             if(!values.isEmpty()) {
-                level.json.add(new AbstractMap.SimpleEntry<String, ArrayList<String>>(key, values));
+                level.json.add(new Pair<String, ArrayList<String>>(key, values));
             }
         }
 
