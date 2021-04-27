@@ -1,4 +1,8 @@
 # Phoneline-Cincinnati-3D
+
+Prerequisites:
+ - In order to run the game in its current state, you **must** have Java 8 only. This is due to JavaFX changes in later versions that render the game unplayable. This may be fixed in the future but needs more investigation.
+
 In order to run the game first you must clone this git reposisotory.  
 Then you have two options:
 1. Use the pre built version:
